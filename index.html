@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دار العطور الفاخرة | Luxury Perfumes</title>
+    <style>
+        /* التنسيقات العامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        /* الهيدر */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            background: rgba(11, 11, 11, 0.95);
+            border-bottom: 1px solid #222;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        /* تنسيق صورة اللوجو في الهيدر */
+        .logo-img {
+            height: 50px;             /* ضبط ارتفاع اللوجو ليناسب الشريط العلوي */
+            width: auto;              /* المحافظة على نسبة العرض إلى الارتفاع */
+            object-fit: contain;
+            display: block;
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);   /* لمسة تفاعلية خفيفة عند التحويم */
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-right: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* حاوية الصفحات */
+        .container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #d4af37;
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+
+        /* شبكة المنتجات */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #141414;
+            border: 1px solid #282828;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            border-color: #d4af37;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .product-card .price {
+            color: #d4af37;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(45deg, #d4af37, #f3e5ab);
+            color: #000;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-gold:hover {
+            opacity: 0.9;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+        }
+
+        /* صفحة / قسم الطلب */
+        .order-section {
+            background: #141414;
+            border: 1px solid #282828;
+            border-radius: 8px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 60px auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            color: #ccc;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .form-group input, 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1eb855;
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* التجاوب مع الهواتف */
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 5%;
+            }
+            .logo-img {
+                height: 40px;         /* تصغير الارتفاع قليلاً على شاشات الهواتف */
+            }
+            .order-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الشريط العلوي -->
+    <header>
+        <a href="#">
+            <img src="Adobe Express - file.png" alt="A&P AURA PARFUMS" class="logo-img">
+        </a>
+        <nav>
+            <a href="#products">المنتجات</a>
+            <a href="#order">الطلب</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- قسم معرض المنتجات -->
+        <section id="products">
+            <h2 class="section-title">المجموعة الفاخرة</h2>
+            <div class="products-grid">
+                
+                <!-- منتج 1 -->
+                <div class="product-card">
+                    <img src="parfum1.jpg" alt="الملكي - Royal Oud">
+                    <h3>الملكي - Royal Oud</h3>
+                    <div class="price">40 درهم</div>
+                    <button class="btn-gold" onclick="selectProduct('الملكي - Royal Oud')">طلب الآن</button>
+                </div>
+
+                <!-- منتج 2 -->
+                <div class="product-card">
+                    <img src="parfum4.jpg" alt="سحر العنبر - Amber Night">
+                    <h3>سحر العنبر - Amber Night</h3>
+                    <div class="price">40 درهم</div>
+                    <button class="btn-gold" onclick="selectProduct('سحر العنبر - Amber Night')">طلب الآن</button>
+                </div>
+
+                <!-- منتج 3 -->
+                <div class="product-card">
+                    <img src="parfum3.jpg" alt="الزهرة السوداء - Black Orchid">
+                    <h3>الزهرة السوداء - Black Orchid</h3>
+                    <div class="price">40 درهم</div>
+                    <button class="btn-gold" onclick="selectProduct('الزهرة السوداء - Black Orchid')">طلب الآن</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- قسم استمارة الطلب عبر الواتساب -->
+        <section id="order" class="order-section">
+            <h2 class="section-title" style="font-size: 24px; margin-bottom: 20px;">استمارة الطلب المباشر</h2>
+            
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label>العطر المختار:</label>
+                    <select id="perfume" required>
+                        <option value="الملكي - Royal Oud">الملكي - Royal Oud</option>
+                        <option value="سحر العنبر - Amber Night">سحر العنبر - Amber Night</option>
+                        <option value="الزهرة السوداء - Black Orchid">الزهرة السوداء - Black Orchid</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>الاسم الكامل:</label>
+                    <input type="text" id="name" placeholder="أدخل اسمك الكريم" required>
+                </div>
+
+                <div class="form-group">
+                    <label>المدينة والعنوان:</label>
+                    <input type="text" id="address" placeholder="المدينة والتفاصيل" required>
+                </div>
+
+                <div class="form-group">
+                    <label>الكمية:</label>
+                    <input type="number" id="quantity" value="1" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ملاحظات إضافية (اختياري):</label>
+                    <textarea id="notes" rows="3" placeholder="أي ملاحظة بخصوص التوصيل أو التغليف"></textarea>
+                </div>
+
+                <button type="button" class="btn-gold btn-whatsapp" onclick="sendToWhatsApp()">
+                    تأكيد الطلب عبر WhatsApp 💬
+                </button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        // تغيير العطر المختار تلقائياً في النموذج عند الضغط على أزرار المنتجات
+        function selectProduct(productName) {
+            document.getElementById('perfume').value = productName;
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // دالة إرسال البيانات للواتساب
+        function sendToWhatsApp() {
+            const phoneNumber = "212649982831"; 
+
+            const perfume = document.getElementById('perfume').value;
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const quantity = document.getElementById('quantity').value;
+            const notes = document.getElementById('notes').value;
+
+            if (!name || !address) {
+                alert("يرجى ملء الاسم والعنوان لطـلب العطر.");
+                return;
+            }
+
+            // صياغة الرسالة المنسقة
+            let message = `مرحباً، أريد تأكيد طلب عطر من الموقع:\n\n`;
+            message += `اسم العطر: *${perfume}*\n`;
+            message += `الكمية: *${quantity}*\n`;
+            message += `الاسم: *${name}*\n`;
+            message += `العنوان: *${address}*\n`;
+            if (notes) {
+                message += `ملاحظات: ${notes}\n`;
+            }
+
+            // فتح رابط الواتساب مباشر
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
