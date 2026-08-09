@@ -33,10 +33,9 @@
             z-index: 100;
         }
 
-        /* تنسيق صورة اللوجو في الهيدر */
         .logo-img {
-            height: 50px;             /* ضبط ارتفاع اللوجو ليناسب الشريط العلوي */
-            width: auto;              /* المحافظة على نسبة العرض إلى الارتفاع */
+            height: 50px;
+            width: auto;
             object-fit: contain;
             display: block;
             border-radius: 4px;
@@ -44,7 +43,7 @@
         }
 
         .logo-img:hover {
-            transform: scale(1.05);   /* لمسة تفاعلية خفيفة عند التحويم */
+            transform: scale(1.05);
         }
 
         nav a {
@@ -136,25 +135,66 @@
             box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* صفحة / قسم الطلب */
+        /* النافذة المنبثقة للطلب (Modal Pop-up) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
         .order-section {
             background: #141414;
-            border: 1px solid #282828;
+            border: 1px solid #d4af37;
             border-radius: 8px;
-            padding: 40px;
-            max-width: 600px;
-            margin: 60px auto 0;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 24px;
+            color: #aaa;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #d4af37;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             text-align: right;
         }
 
         .form-group label {
             display: block;
             color: #ccc;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-size: 14px;
         }
 
@@ -195,7 +235,7 @@
                 padding: 12px 5%;
             }
             .logo-img {
-                height: 40px;         /* تصغير الارتفاع قليلاً على شاشات الهواتف */
+                height: 40px;
             }
             .order-section {
                 padding: 20px;
@@ -212,7 +252,6 @@
         </a>
         <nav>
             <a href="#products">المنتجات</a>
-            <a href="#order">الطلب</a>
         </nav>
     </header>
 
@@ -225,41 +264,44 @@
                 <!-- منتج 1 -->
                 <div class="product-card">
                     <img src="parfum1.jpg" alt="الملكي - Royal Oud">
-                    <h3>الملكي - Royal Oud</h3>
-                    <div class="price">40 درهم</div>
-                    <button class="btn-gold" onclick="selectProduct('الملكي - Royal Oud')">طلب الآن</button>
+                    <h3>1 milion</h3>
+                    <div class="price">45 درهم</div>
+                    <button class="btn-gold" onclick="openOrderModal('الملكي - Royal Oud')"> اطلب الان</button>
                 </div>
 
                 <!-- منتج 2 -->
                 <div class="product-card">
                     <img src="parfum4.jpg" alt="سحر العنبر - Amber Night">
-                    <h3>سحر العنبر - Amber Night</h3>
-                    <div class="price">40 درهم</div>
-                    <button class="btn-gold" onclick="selectProduct('سحر العنبر - Amber Night')">طلب الآن</button>
+                    <h3>Ultra male</h3>
+                    <div class="price">45 درهم</div>
+                    <button class="btn-gold" onclick="openOrderModal('سحر العنبر - Amber Night')">اطلب الان</button>
                 </div>
 
                 <!-- منتج 3 -->
                 <div class="product-card">
                     <img src="parfum3.jpg" alt="الزهرة السوداء - Black Orchid">
-                    <h3>الزهرة السوداء - Black Orchid</h3>
-                    <div class="price">40 درهم</div>
-                    <button class="btn-gold" onclick="selectProduct('الزهرة السوداء - Black Orchid')">طلب الآن</button>
+                    <h3>Imagination Louis Vuitton</h3>
+                    <div class="price">45 درهم</div>
+                    <button class="btn-gold" onclick="openOrderModal('الزهرة السوداء - Black Orchid')">اطلب الان</button>
                 </div>
 
             </div>
         </section>
+    </div>
 
-        <!-- قسم استمارة الطلب عبر الواتساب -->
-        <section id="order" class="order-section">
-            <h2 class="section-title" style="font-size: 24px; margin-bottom: 20px;">استمارة الطلب المباشر</h2>
+    <!-- نافذة استمارة الطلب المنبثقة -->
+    <div id="orderModal" class="modal-overlay" onclick="closeOnOverlay(event)">
+        <section class="order-section">
+            <span class="close-btn" onclick="closeOrderModal()">&times;</span>
+            <h2 class="section-title" style="font-size: 22px; margin-bottom: 20px;">استمارة الطلب المباشر</h2>
             
             <form id="whatsappForm">
                 <div class="form-group">
                     <label>العطر المختار:</label>
                     <select id="perfume" required>
-                        <option value="الملكي - Royal Oud">الملكي - Royal Oud</option>
-                        <option value="سحر العنبر - Amber Night">سحر العنبر - Amber Night</option>
-                        <option value="الزهرة السوداء - Black Orchid">الزهرة السوداء - Black Orchid</option>
+                        <option value="الملكي - Royal Oud">1 million</option>
+                        <option value="سحر العنبر - Amber Night">Ultra male</option>
+                        <option value="الزهرة السوداء - Black Orchid">Imagination louis Vuitton</option>
                     </select>
                 </div>
 
@@ -280,7 +322,7 @@
 
                 <div class="form-group">
                     <label>ملاحظات إضافية (اختياري):</label>
-                    <textarea id="notes" rows="3" placeholder="أي ملاحظة بخصوص التوصيل أو التغليف"></textarea>
+                    <textarea id="notes" rows="2" placeholder="أي ملاحظة بخصوص التوصيل"></textarea>
                 </div>
 
                 <button type="button" class="btn-gold btn-whatsapp" onclick="sendToWhatsApp()">
@@ -291,10 +333,22 @@
     </div>
 
     <script>
-        // تغيير العطر المختار تلقائياً في النموذج عند الضغط على أزرار المنتجات
-        function selectProduct(productName) {
+        // فتح النافذة المنبثقة للطلب وتحديد المنتج
+        function openOrderModal(productName) {
             document.getElementById('perfume').value = productName;
-            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('orderModal').classList.add('active');
+        }
+
+        // إغلاق نافذة الطلب
+        function closeOrderModal() {
+            document.getElementById('orderModal').classList.remove('active');
+        }
+
+        // إغلاق النافذة عند الضغط خارج المربع
+        function closeOnOverlay(event) {
+            if (event.target.id === 'orderModal') {
+                closeOrderModal();
+            }
         }
 
         // دالة إرسال البيانات للواتساب
@@ -308,11 +362,10 @@
             const notes = document.getElementById('notes').value;
 
             if (!name || !address) {
-                alert("يرجى ملء الاسم والعنوان لطـلب العطر.");
+                alert("يرجى ملء الاسم والعنوان لطلب العطر.");
                 return;
             }
 
-            // صياغة الرسالة المنسقة
             let message = `مرحباً، أريد تأكيد طلب عطر من الموقع:\n\n`;
             message += `اسم العطر: *${perfume}*\n`;
             message += `الكمية: *${quantity}*\n`;
@@ -322,7 +375,6 @@
                 message += `ملاحظات: ${notes}\n`;
             }
 
-            // فتح رابط الواتساب مباشر
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.open(whatsappUrl, '_blank');
         }
