@@ -3,37 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&P AURA PARFUMS | دار العطور الفاخرة</title>
+    <title>A&P AURA PARFUMS | دار العطور الملكية</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+        /* ===== 1. SYSTEM ROOT & VARIABLES ===== */
+        :root {
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa7c11;
+            --bg-black: #030303;
+            --card-glass: rgba(18, 18, 18, 0.65);
+            --border-gold: rgba(212, 175, 55, 0.25);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Readex Pro', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: #080808;
-            background-image: 
-                radial-gradient(circle at 50% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
-                radial-gradient(circle at 80% 80%, rgba(170, 124, 17, 0.05) 0%, transparent 50%);
-            background-attachment: fixed;
+            background-color: var(--bg-black);
             color: #f5f5f5;
             line-height: 1.6;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 10% 40%, rgba(170, 124, 17, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+            background-attachment: fixed;
         }
 
-        /* شريط التنبيهات العلوي */
+        /* ===== 2. UIVERSE ANNOUNCEMENT BAR ===== */
         .announcement-bar {
-            background: linear-gradient(90deg, #aa7c11, #d4af37, #aa7c11);
+            background: linear-gradient(90deg, #aa7c11, #ffd700, #aa7c11);
+            background-size: 200% auto;
+            animation: shineGradient 4s linear infinite;
             color: #000;
             text-align: center;
-            padding: 7px 30px;
+            padding: 8px 30px;
             font-size: 13px;
             font-weight: 700;
             position: fixed;
@@ -43,12 +57,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        @keyframes shineGradient {
+            to { background-position: 200% center; }
         }
 
         .close-bar-btn {
             position: absolute;
-            left: 15px;
+            left: 20px;
             font-size: 18px;
             cursor: pointer;
             font-weight: bold;
@@ -56,19 +74,21 @@
         }
 
         body.bar-closed header { top: 0 !important; }
-        body.bar-closed .container { margin-top: 120px !important; }
+        body.bar-closed .hero { padding-top: 130px; }
 
-        /* الهيدر */
+        /* ===== 3. GLASS HEADER ===== */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 8%;
-            background: rgba(12, 12, 12, 0.95);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding: 15px 8%;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-gold);
             position: fixed;
             width: 100%;
-            top: 33px;
+            top: 35px;
             z-index: 100;
             transition: top 0.3s ease;
         }
@@ -76,176 +96,290 @@
         .logo-img {
             height: 55px;
             width: auto;
-            object-fit: contain;
-            display: block;
-            border-radius: 4px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
         }
 
-        nav { display: flex; gap: 20px; }
+        nav { display: flex; gap: 30px; }
 
         nav a {
-            color: #ccc;
+            color: #e0e0e0;
             text-decoration: none;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 500;
-            transition: color 0.2s ease;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
-        nav a:hover { color: #d4af37; }
+        nav a:hover { color: var(--gold-primary); }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold-primary);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
 
+        /* ===== 4. LUXURY HERO SECTION ===== */
+        .hero {
+            padding: 180px 20px 80px;
+            text-align: center;
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-subtitle {
+            color: var(--gold-primary);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 30%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero p {
+            color: #aaa;
+            font-size: 16px;
+            font-weight: 300;
+            max-width: 650px;
+            margin: 0 auto 35px;
+        }
+
+        /* ===== 5. FEATURES BAR (UIVERSE CARDS) ===== */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: var(--card-glass);
+            border: 1px solid var(--border-gold);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--gold-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .feature-card h4 {
+            color: var(--gold-primary);
+            font-size: 15px;
+            margin-bottom: 4px;
+        }
+
+        .feature-card p {
+            color: #888;
+            font-size: 12px;
+        }
+
+        /* ===== 6. PRODUCTS SECTION ===== */
         .container {
-            max-width: 1100px;
-            margin: 150px auto 50px;
+            max-width: 1200px;
+            margin: 0 auto 80px;
             padding: 0 20px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 28px;
-            color: #d4af37;
-            margin-bottom: 35px;
+            font-size: 32px;
+            color: var(--gold-primary);
+            margin-bottom: 50px;
             font-weight: 700;
             position: relative;
-            text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 80px;
             height: 2px;
-            background: #d4af37;
-            margin: 8px auto 0;
-            box-shadow: 0 0 8px #d4af37;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            margin: 12px auto 0;
         }
 
-        /* شبكة المنتجات */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-bottom: 70px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
+        /* ===== UIVERSE GLASSMORPHIC PRODUCT CARD ===== */
         .product-card {
-            background: #111111;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 14px;
-            padding: 20px;
+            background: rgba(15, 15, 15, 0.7);
+            border: 1px solid var(--border-gold);
+            border-radius: 20px;
+            padding: 25px;
             text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+            backdrop-filter: blur(12px);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
         }
 
         .product-card:hover {
-            border-color: #d4af37;
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
+            border-color: var(--gold-primary);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2);
         }
+
+        .product-card:hover::before { opacity: 1; }
 
         .img-wrapper {
             overflow: hidden;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
         }
 
         .product-card img {
             width: 100%;
-            height: 240px;
+            height: 270px;
             object-fit: cover;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
         .product-card:hover img {
-            transform: scale(1.04);
+            transform: scale(1.08);
         }
 
         .product-card h3 {
             color: #fff;
             font-size: 18px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            letter-spacing: 0.5px;
         }
 
         .product-card .price {
-            color: #d4af37;
-            font-size: 20px;
+            color: var(--gold-primary);
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
         }
 
+        /* ===== UIVERSE SHIMMER BUTTON ===== */
         .btn-gold {
-            display: block;
+            position: relative;
             width: 100%;
-            padding: 12px;
-            background: linear-gradient(135deg, #d4af37, #aa7c11);
+            padding: 14px 20px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
             color: #000;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 700;
+            font-size: 15px;
             cursor: pointer;
             text-decoration: none;
             text-align: center;
-            transition: opacity 0.2s ease, filter 0.2s ease;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn-gold::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transition: left 0.6s ease;
         }
 
         .btn-gold:hover {
-            filter: brightness(1.1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
         }
 
-        /* قسم التقييمات */
+        .btn-gold:hover::before {
+            left: 100%;
+        }
+
+        /* ===== 7. REVIEWS SECTION ===== */
         .reviews-section {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .reviews-header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 35px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .btn-add-review {
-            background: transparent;
-            border: 1px solid #d4af37;
-            color: #d4af37;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-
-        .btn-add-review:hover {
-            background: rgba(212, 175, 55, 0.1);
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid var(--border-gold);
         }
 
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
         .review-card {
-            background: #111111;
-            border: 1px solid rgba(212, 175, 55, 0.15);
-            border-radius: 12px;
-            padding: 22px;
+            background: var(--card-glass);
+            border: 1px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 25px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: border-color 0.2s ease;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
         }
 
         .review-card:hover {
-            border-color: rgba(212, 175, 55, 0.4);
+            border-color: var(--gold-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
         }
 
         .review-header {
@@ -256,181 +390,189 @@
         }
 
         .client-name { font-weight: 600; font-size: 15px; color: #fff; }
-        .stars { color: #d4af37; font-size: 14px; }
-        .review-text { color: #ddd; font-size: 13px; margin-bottom: 12px; }
-        .client-city { font-size: 11px; color: #888; }
+        .stars { color: var(--gold-primary); font-size: 14px; letter-spacing: 2px; }
+        .review-text { color: #ccc; font-size: 13px; margin-bottom: 14px; line-height: 1.7; }
+        .client-city { font-size: 11px; color: #777; }
 
-        /* النوافذ المنبثقة */
+        /* ===== 8. UIVERSE MODAL & FORM ===== */
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(12px);
             display: none;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             padding: 15px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .modal-overlay.active { display: flex !important; }
+        .modal-overlay.active {
+            display: flex !important;
+            opacity: 1;
+        }
 
         .order-section {
-            background: #121212;
-            border: 1px solid #d4af37;
-            border-radius: 16px;
-            padding: 25px;
+            background: rgba(15, 15, 15, 0.95);
+            border: 1px solid var(--gold-primary);
+            border-radius: 22px;
+            padding: 30px;
             width: 100%;
             max-width: 480px;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.2);
         }
 
         .close-btn {
             position: absolute;
-            top: 15px;
-            left: 18px;
+            top: 18px; left: 22px;
             font-size: 24px;
             color: #888;
             cursor: pointer;
+            transition: color 0.2s;
         }
+        .close-btn:hover { color: var(--gold-primary); }
 
-        .modal-header { text-align: center; margin-bottom: 18px; }
-        .modal-header h2 { font-size: 20px; color: #d4af37; }
-        .modal-header p { font-size: 12px; color: #888; }
+        .modal-header { text-align: center; margin-bottom: 22px; }
+        .modal-header h2 { font-size: 22px; color: var(--gold-primary); font-weight: 700; }
+        .modal-header p { font-size: 12px; color: #888; margin-top: 4px; }
 
         .selected-product-box {
             background: rgba(212, 175, 55, 0.08);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 10px;
-            padding: 12px;
-            margin-bottom: 15px;
+            border: 1px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
         }
 
         .item-row {
             display: flex;
             justify-content: space-between;
-            padding: 4px 0;
+            padding: 5px 0;
             font-size: 13px;
         }
 
         .total-price-box {
             display: flex;
             justify-content: space-between;
-            margin-top: 8px;
-            padding-top: 8px;
-            border-top: 1px solid #d4af37;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--gold-primary);
             font-weight: 700;
+            font-size: 15px;
         }
 
         .btn-add-extra {
             background: transparent;
-            border: 1px dashed #d4af37;
-            color: #d4af37;
-            padding: 8px;
-            border-radius: 6px;
+            border: 1px dashed var(--gold-primary);
+            color: var(--gold-primary);
+            padding: 10px;
+            border-radius: 8px;
             width: 100%;
             font-size: 12px;
+            font-weight: 600;
             cursor: pointer;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            transition: all 0.2s;
         }
+        .btn-add-extra:hover { background: rgba(212, 175, 55, 0.1); }
 
         .extra-selection-box {
             background: #080808;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 15px;
+            border: 1px solid var(--border-gold);
+            padding: 14px;
+            border-radius: 10px;
+            margin-bottom: 18px;
             display: none;
         }
-
         .extra-selection-box.active { display: block; }
 
-        .form-group { margin-bottom: 12px; text-align: right; }
-        .form-group label { display: block; color: #d4af37; margin-bottom: 4px; font-size: 12px; }
+        .form-group { margin-bottom: 16px; text-align: right; }
+        .form-group label { display: block; color: var(--gold-primary); margin-bottom: 6px; font-size: 12px; }
 
+        /* UIVERSE GLOW INPUTS */
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             background: #080808;
-            border: 1px solid #333;
+            border: 1px solid #252525;
             color: #fff;
-            border-radius: 6px;
+            border-radius: 10px;
             font-size: 13px;
+            outline: none;
+            transition: all 0.3s ease;
         }
 
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+            background: #0c0c0c;
+        }
+
+        /* UIVERSE WHATSAPP BUTTON */
         .btn-whatsapp {
-            background: #25D366;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
             color: #fff;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 700;
             border: none;
-            border-radius: 6px;
-            padding: 12px;
+            border-radius: 10px;
+            padding: 14px;
             width: 100%;
             cursor: pointer;
             margin-top: 10px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
         }
 
         .btn-whatsapp:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
         }
 
-        /* زر الواتساب العائم */
+        /* FLOATING WHATSAPP BUTTON */
         .floating-whatsapp {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
+            bottom: 25px;
+            right: 25px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
             color: white;
             border-radius: 50px;
-            padding: 10px 18px;
+            padding: 12px 22px;
             font-weight: 700;
-            font-size: 14px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            font-size: 13px;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
             text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             z-index: 99;
-            transition: transform 0.2s, opacity 0.2s;
+            transition: all 0.3s ease;
         }
 
         .floating-whatsapp:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
         }
 
-        .floating-whatsapp .btn-text {
-            display: inline;
-        }
-
+        /* ===== 9. RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .products-grid, .reviews-grid { grid-template-columns: 1fr; }
-            header { padding: 10px 4%; }
-            .container { margin-top: 130px; }
-
+            header { padding: 12px 5%; }
+            .hero { padding-top: 150px; }
+            .hero h1 { font-size: 32px; }
+            .products-grid { grid-template-columns: 1fr; }
+            
             .floating-whatsapp {
-                bottom: 15px;
-                right: 15px;
-                width: 46px;
-                height: 46px;
-                padding: 0;
-                border-radius: 50%;
-                justify-content: center;
-                font-size: 20px;
-                opacity: 0.9;
+                bottom: 18px; right: 18px;
+                width: 50px; height: 50px;
+                padding: 0; border-radius: 50%;
+                justify-content: center; font-size: 22px;
             }
-
-            .floating-whatsapp .btn-text {
-                display: none;
-            }
+            .floating-whatsapp .btn-text { display: none; }
         }
     </style>
 </head>
@@ -444,12 +586,41 @@
     <header>
         <a href="#"><img src="Adobe Express - file.png" alt="A&P AURA PARFUMS" class="logo-img"></a>
         <nav>
-            <a href="#products">المنتجات</a>
-            <a href="#reviews">آراء العملاء</a>
+            <a href="#products">المجموعة</a>
+            <a href="#reviews">التقييمات</a>
         </nav>
     </header>
 
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <span class="hero-subtitle">A&P AURA PARFUMS</span>
+        <h1>عالم العطور الفاخرة التي تأثر الحواس</h1>
+        <p>مجموعة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة، مصممة بثبات يدوم طويلاً لتعكس شخصيتك الفريدة.</p>
+        <a href="#products" class="btn-gold" style="display:inline-block; width:auto; padding:14px 40px;">استكشف المجموعة</a>
+    </section>
+
     <div class="container">
+        
+        <!-- FEATURES BAR -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">✨</span>
+                <h4>تركيز عالي</h4>
+                <p>عطور مركزة تدوم طويلاً</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🚚</span>
+                <h4>توصيل سريع</h4>
+                <p>لكافة مدن المملكة</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">💵</span>
+                <h4>الدفع عند الاستلام</h4>
+                <p>لا تدفع حتى تعاين طلبك</p>
+            </div>
+        </div>
+
+        <!-- PRODUCTS -->
         <section id="products">
             <h2 class="section-title">المجموعة الفاخرة</h2>
             <div class="products-grid">
@@ -492,13 +663,10 @@
             </div>
         </section>
 
+        <!-- REVIEWS -->
         <section id="reviews" class="reviews-section">
-            <div class="reviews-header-flex">
-                <h2 class="section-title" style="margin-bottom:0;">آراء زبنائنا الكرام</h2>
-                <button type="button" class="btn-add-review" onclick="alert('شكراً لاهتمامك! تقييمك يسعدنا عبر الواتساب.')">+ أضف رأيك</button>
-            </div>
-
-            <div class="reviews-grid" id="reviewsContainer">
+            <h2 class="section-title">آراء زبنائنا الكرام</h2>
+            <div class="reviews-grid">
                 <div class="review-card">
                     <div>
                         <div class="review-header">
@@ -535,7 +703,7 @@
         </section>
     </div>
 
-    <!-- نافذة الطلب -->
+    <!-- ORDER MODAL -->
     <div id="orderModal" class="modal-overlay">
         <section class="order-section">
             <span class="close-btn" onclick="closeOrderModal()">&times;</span>
@@ -547,17 +715,17 @@
             <div class="selected-product-box">
                 <div id="mainPerfumeRow" class="item-row">
                     <span id="displayPerfumeName">---</span>
-                    <span id="displayMainPrice" style="color:#d4af37;">45 درهم</span>
+                    <span id="displayMainPrice" style="color:var(--gold-primary);">45 درهم</span>
                 </div>
                 
                 <div id="extraPerfumeRow" class="item-row" style="display: none;">
                     <span id="displayExtraName">---</span>
-                    <span id="displayExtraPrice" style="color:#d4af37;">0 درهم</span>
+                    <span id="displayExtraPrice" style="color:var(--gold-primary);">0 درهم</span>
                 </div>
 
                 <div class="total-price-box">
                     <span>المجموع الكلي:</span>
-                    <span id="displayTotalPrice" style="color:#d4af37;">45 درهم</span>
+                    <span id="displayTotalPrice" style="color:var(--gold-primary);">45 درهم</span>
                 </div>
             </div>
 
@@ -609,13 +777,12 @@
         </section>
     </div>
 
-    <!-- زر الواتساب العائم -->
-    <a href="https://wa.me/212 649982831" class="floating-whatsapp" target="_blank">
+    <!-- FLOATING BUTTON WITH YOUR PHONE NUMBER -->
+    <a href="https://wa.me/212649982831" class="floating-whatsapp" target="_blank">
         <span>💬</span>
         <span class="btn-text">تواصل معنا</span>
     </a>
 
-    <!-- سكربت التفاعلات والجافاسكريبت -->
     <script>
         let currentPerfumePrice = 45;
         let currentPerfumeName = '';
@@ -681,7 +848,7 @@
         }
 
         function sendToWhatsApp() {
-            const phoneNum = "212 649982831"; // 👈 استبدل الرقم برقم هاتفك الخاص
+            const phoneNum = "212649982831"; // 👈 تم وضع رقم الواتساب الخاص بك هنا
             const name = document.getElementById('name').value;
             const address = document.getElementById('address').value;
             const clientPhone = document.getElementById('phone').value;
