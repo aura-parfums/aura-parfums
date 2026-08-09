@@ -383,7 +383,7 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
         }
 
-        /* زر الواتساب المتجاوب (مستطيل للحاسوب ودائري صغير للهاتف) */
+        /* زر الواتساب العائم */
         .floating-whatsapp {
             position: fixed;
             bottom: 20px;
@@ -416,7 +416,6 @@
             header { padding: 10px 4%; }
             .container { margin-top: 130px; }
 
-            /* تحويل الزر لدائري غير مزعج في الهواتف */
             .floating-whatsapp {
                 bottom: 15px;
                 right: 15px;
@@ -456,6 +455,20 @@
             <div class="products-grid">
                 
                 <div class="product-card">
+                    <div class="img-wrapper"><img src="parfum5.jpg" alt="STRONGER WITH YOU INTENSELY"></div>
+                    <h3>STRONGER WITH YOU INTENSELY</h3>
+                    <div class="price">45 درهم</div>
+                    <button type="button" class="btn-gold" onclick="openOrderModal('STRONGER WITH YOU INTENSELY', 45)">اطلب الآن</button>
+                </div>
+                
+                <div class="product-card">
+                    <div class="img-wrapper"><img src="parfum2.jpg" alt="BLEU DE CHANEL"></div>
+                    <h3>BLEU DE CHANEL</h3>
+                    <div class="price">45 درهم</div>
+                    <button type="button" class="btn-gold" onclick="openOrderModal('BLEU DE CHANEL', 45)">اطلب الآن</button>
+                </div>
+                
+                <div class="product-card">
                     <div class="img-wrapper"><img src="parfum1.jpg" alt="1 MILLION"></div>
                     <h3>1 MILLION</h3>
                     <div class="price">45 درهم</div>
@@ -482,7 +495,7 @@
         <section id="reviews" class="reviews-section">
             <div class="reviews-header-flex">
                 <h2 class="section-title" style="margin-bottom:0;">آراء زبنائنا الكرام</h2>
-                <button type="button" class="btn-add-review" onclick="openReviewModal()">+ أضف رأيك</button>
+                <button type="button" class="btn-add-review" onclick="alert('شكراً لاهتمامك! تقييمك يسعدنا عبر الواتساب.')">+ أضف رأيك</button>
             </div>
 
             <div class="reviews-grid" id="reviewsContainer">
@@ -563,6 +576,8 @@
                         <label>✨ اختر العطر الإضافي:</label>
                         <select id="extraPerfumeSelect" onchange="calculateTotal()">
                             <option value="">-- اختر عطراً --</option>
+                            <option value="STRONGER WITH YOU INTENSELY">STRONGER WITH YOU INTENSELY (45 درهم)</option>
+                            <option value="BLEU DE CHANEL">BLEU DE CHANEL (45 درهم)</option>
                             <option value="1 MILLION">1 MILLION (45 درهم)</option>
                             <option value="ULTRA MALE">ULTRA MALE (45 درهم)</option>
                             <option value="IMAGINATION LOUIS VUITTON">IMAGINATION LOUIS VUITTON (45 درهم)</option>
@@ -581,65 +596,29 @@
 
                 <div class="form-group">
                     <label>📍 المدينة والعنوان الكامل:</label>
-                    <input type="text" id="address" placeholder="مثال: الدار البيضاء، حي المعاريف" required>
+                    <textarea id="address" placeholder="أدخل مدينتك والعنوان بدقة" rows="2" required></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>📝 ملاحظات إضافية (اختياري):</label>
-                    <textarea id="notes" rows="2" placeholder="أي تفاصيل خاصة بالتوصيل"></textarea>
+                    <label>📱 رقم الهاتف:</label>
+                    <input type="tel" id="phone" placeholder="06XXXXXXXX" required>
                 </div>
 
-                <button type="submit" class="btn-whatsapp">تأكيد الطلب عبر WhatsApp 💬</button>
+                <button type="submit" class="btn-whatsapp">💬 تأكيد الطلب عبر الواتساب</button>
             </form>
         </section>
     </div>
 
-    <!-- نافذة التقييم -->
-    <div id="reviewModal" class="modal-overlay">
-        <section class="order-section">
-            <span class="close-btn" onclick="closeReviewModal()">&times;</span>
-            <div class="modal-header">
-                <h2>شاركنا رأيك</h2>
-            </div>
-            
-            <form onsubmit="event.preventDefault(); processReview();">
-                <div class="form-group">
-                    <label>👤 الاسم:</label>
-                    <input type="text" id="reviewerName" placeholder="اسمك الكريم" required>
-                </div>
-
-                <div class="form-group">
-                    <label>📍 المدينة (اختياري):</label>
-                    <input type="text" id="reviewerCity" placeholder="مثال: أكادير">
-                </div>
-
-                <div class="form-group">
-                    <label>⭐ التقييم:</label>
-                    <select id="reviewerRating">
-                        <option value="5">★★★★★ (5/5 ممتاز)</option>
-                        <option value="4">★★★★☆ (4/5 جيد جداً)</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>💬 رأيك وانطباعك:</label>
-                    <textarea id="reviewerComment" rows="3" placeholder="اكتب انطباعك..." required></textarea>
-                </div>
-
-                <button type="submit" class="btn-gold">نشر التقييم 🌟</button>
-            </form>
-        </section>
-    </div>
-
-    <!-- زر الواتساب المتجاوب -->
-    <a href="https://wa.me/212649982831" target="_blank" class="floating-whatsapp" title="تواصل معنا عبر واتساب">
-        💬 <span class="btn-text">تواصل معنا</span>
+    <!-- زر الواتساب العائم -->
+    <a href="https://wa.me/212600000000" class="floating-whatsapp" target="_blank">
+        <span>💬</span>
+        <span class="btn-text">تواصل معنا</span>
     </a>
 
+    <!-- سكربت التفاعلات والجافاسكريبت -->
     <script>
-        const phoneNumber = "212649982831";
-        let currentPerfumeName = "";
         let currentPerfumePrice = 45;
+        let currentPerfumeName = '';
         let isExtraActive = false;
 
         function closeAnnouncementBar() {
@@ -647,10 +626,11 @@
             document.body.classList.add('bar-closed');
         }
 
-        function openOrderModal(perfumeName, price) {
-            currentPerfumeName = perfumeName;
+        function openOrderModal(name, price) {
+            currentPerfumeName = name;
             currentPerfumePrice = price;
-            document.getElementById('displayPerfumeName').innerText = perfumeName;
+            document.getElementById('displayPerfumeName').innerText = name;
+            document.getElementById('displayMainPrice').innerText = price + ' درهم';
             document.getElementById('orderModal').classList.add('active');
             calculateTotal();
         }
@@ -660,21 +640,20 @@
         }
 
         function toggleExtraPerfume() {
-            const extraBox = document.getElementById('extraSelectionBox');
-            const extraRow = document.getElementById('extraPerfumeRow');
-            const toggleBtn = document.getElementById('toggleExtraBtn');
-
+            const box = document.getElementById('extraSelectionBox');
+            const row = document.getElementById('extraPerfumeRow');
+            const btn = document.getElementById('toggleExtraBtn');
+            
             isExtraActive = !isExtraActive;
-
             if (isExtraActive) {
-                extraBox.classList.add('active');
-                extraRow.style.display = 'flex';
-                toggleBtn.innerText = "❌ إلغاء العطر الإضافي";
+                box.classList.add('active');
+                row.style.display = 'flex';
+                btn.innerText = '❌ إلغاء العطر الإضافي';
             } else {
-                extraBox.classList.remove('active');
-                extraRow.style.display = 'none';
-                document.getElementById('extraPerfumeSelect').value = "";
-                toggleBtn.innerText = "➕ إضافة عطر آخر للطلبية؟";
+                box.classList.remove('active');
+                row.style.display = 'none';
+                document.getElementById('extraPerfumeSelect').value = '';
+                btn.innerText = '➕ إضافة عطر آخر للطلبية؟';
             }
             calculateTotal();
         }
@@ -683,89 +662,50 @@
             const mainQty = parseInt(document.getElementById('perfumeQty').value) || 1;
             let total = currentPerfumePrice * mainQty;
 
-            document.getElementById('displayMainPrice').innerText = `${currentPerfumePrice * mainQty} درهم (${mainQty}x)`;
-
             if (isExtraActive) {
                 const extraSelect = document.getElementById('extraPerfumeSelect');
                 const extraQty = parseInt(document.getElementById('extraPerfumeQty').value) || 1;
                 
-                if (extraSelect.value) {
-                    const extraPrice = 45 * extraQty;
-                    total += extraPrice;
-                    document.getElementById('displayExtraName').innerText = extraSelect.value;
-                    document.getElementById('displayExtraPrice').innerText = `${extraPrice} درهم (${extraQty}x)`;
+                if (extraSelect.value !== '') {
+                    const extraPrice = 45;
+                    total += extraPrice * extraQty;
+                    document.getElementById('displayExtraName').innerText = extraSelect.value + ' (x' + extraQty + ')';
+                    document.getElementById('displayExtraPrice').innerText = (extraPrice * extraQty) + ' درهم';
                 } else {
-                    document.getElementById('displayExtraName').innerText = "لم يتم الاختيار";
-                    document.getElementById('displayExtraPrice').innerText = "0 درهم";
+                    document.getElementById('displayExtraName').innerText = 'لم يتم الاختيار';
+                    document.getElementById('displayExtraPrice').innerText = '0 درهم';
                 }
             }
 
-            document.getElementById('displayTotalPrice').innerText = `${total} درهم`;
-            return total;
+            document.getElementById('displayTotalPrice').innerText = total + ' درهم';
         }
 
         function sendToWhatsApp() {
+            const phoneNum = "212600000000"; // 👈 استبدل الرقم برقم هاتفك الخاص
             const name = document.getElementById('name').value;
             const address = document.getElementById('address').value;
-            const notes = document.getElementById('notes').value;
+            const clientPhone = document.getElementById('phone').value;
             const mainQty = document.getElementById('perfumeQty').value;
-            const total = calculateTotal();
+            const totalPrice = document.getElementById('displayTotalPrice').innerText;
 
-            let message = `سلام عليكم، أريد تأكيد طلبي من موقع AURA PARFUMS 🌸\n\n`;
-            message += `📌 *الطلب الرئيسي:* ${currentPerfumeName} (العدد: ${mainQty})\n`;
+            let msg = `مرحباً A&P AURA PARFUMS، أرغب في تأكيد الطلب التالي:\n\n`;
+            msg += `📌 *العطر الأساسي:* ${currentPerfumeName} (الكمية: ${mainQty})\n`;
 
             if (isExtraActive) {
-                const extraName = document.getElementById('extraPerfumeSelect').value;
+                const extraSelect = document.getElementById('extraPerfumeSelect').value;
                 const extraQty = document.getElementById('extraPerfumeQty').value;
-                if (extraName) {
-                    message += `➕ *عطر إضافي:* ${extraName} (العدد: ${extraQty})\n`;
+                if (extraSelect) {
+                    msg += `📌 *العطر الإضافي:* ${extraSelect} (الكمية: ${extraQty})\n`;
                 }
             }
 
-            message += `💰 *المجموع الكلي:* ${total} درهم\n\n`;
-            message += `👤 *الاسم الكامل:* ${name}\n`;
-            message += `📍 *العنوان والمدينة:* ${address}\n`;
-            
-            if (notes) {
-                message += `📝 *ملاحظات:* ${notes}\n`;
-            }
+            msg += `💰 *المجموع الكلي:* ${totalPrice}\n\n`;
+            msg += `👤 *الاسم:* ${name}\n`;
+            msg += `📍 *العنوان والمدينة:* ${address}\n`;
+            msg += `📱 *رقم الهاتف:* ${clientPhone}`;
 
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
-        }
-
-        function openReviewModal() {
-            document.getElementById('reviewModal').classList.add('active');
-        }
-
-        function closeReviewModal() {
-            document.getElementById('reviewModal').classList.remove('active');
-        }
-
-        function processReview() {
-            const name = document.getElementById('reviewerName').value;
-            const city = document.getElementById('reviewerCity').value || "المغرب";
-            const rating = document.getElementById('reviewerRating').value;
-            const comment = document.getElementById('reviewerComment').value;
-
-            const starsText = "★".repeat(rating) + "☆".repeat(5 - rating);
-
-            const newReviewHtml = `
-                <div class="review-card">
-                    <div>
-                        <div class="review-header">
-                            <span class="client-name">${name}</span>
-                            <div class="stars">${starsText}</div>
-                        </div>
-                        <p class="review-text">"${comment}"</p>
-                    </div>
-                    <span class="client-city">📍 ${city}</span>
-                </div>
-            `;
-
-            document.getElementById('reviewsContainer').insertAdjacentHTML('afterbegin', newReviewHtml);
-            closeReviewModal();
-            alert("شكراً لك! تم إضافة تقييمك بنجاح ✨");
+            const encodedMsg = encodeURIComponent(msg);
+            window.open(`https://wa.me/${phoneNum}?text=${encodedMsg}`, '_blank');
         }
     </script>
 </body>
