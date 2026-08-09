@@ -3,66 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&P AURA PARFUMS | دار العطور الفاخرة</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="A&P AURA PARFUMS - مجموعة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة بثبات يدوم طويلاً.">
+
+    <title>A&P AURA PARFUMS | Signature Fragrance Experience</title>
+
+    <meta name="description"
+          content="A&P AURA PARFUMS - تشكيلة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة بثبات يدوم طويلاً وتوصيل لكافة مدن المغرب.">
+
     <meta property="og:title" content="A&P AURA PARFUMS | دار العطور الفاخرة">
-    <meta property="og:description" content="عطرك... بصمتك الخاصة. اكتشف تشكيلتنا الأنيقة مع خدمة التوصيل والدفع عند الاستلام.">
+    <meta property="og:description"
+          content="عطرك... بصمتك الخاصة. اكتشف تشكيلة Signature Collection الفاخرة مع خدمة التوصيل والدفع عند الاستلام.">
     <meta property="og:type" content="website">
 
-    <!-- Typography (Cinzel & Readex Pro) -->
+    <!-- Optimized Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Restored Original Google Fonts with display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ===== 1. DESIGN SYSTEM & ROOT VARIABLES ===== */
+
+        /* =========================================================
+           AURA PARFUMS — PERFORMANCE OPTIMIZED
+           Same luxury identity, lighter rendering
+        ========================================================= */
+
         :root {
-            --bg-black: #050505;
-            --bg-surface: #0a0a0a;
-            --bg-card: rgba(18, 18, 18, 0.75);
-            --champagne-gold: #e6c687;
-            --gold-accent: #c5a059;
-            --gold-dark: #8a6d3b;
-            --gold-glow: rgba(230, 198, 135, 0.12);
-            --border-gold: rgba(197, 160, 89, 0.22);
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --text-main: #f8f8f8;
-            --text-muted: #a0a0a0;
-            --text-dim: #666666;
-            --radius-sm: 8px;
-            --radius-md: 14px;
+            --bg-dark: #070706;
+            --bg-surface: #0e0e0d;
+
+            --champagne-gold: #e2c99b;
+            --gold-accent: #c8a768;
+
+            --gold-subtle: rgba(200, 167, 104, 0.14);
+            --gold-border: rgba(200, 167, 104, 0.22);
+
+            --text-ivory: #f7f5f0;
+            --text-muted: #a3a099;
+            --text-dim: #686661;
+
+            --border-subtle: rgba(255, 255, 255, 0.06);
+
+            --radius-sm: 6px;
+            --radius-md: 12px;
             --radius-lg: 20px;
-            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+            --transition: 0.25s ease;
         }
 
-        * {
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Readex Pro', sans-serif;
+        }
+
+        html {
             scroll-behavior: smooth;
-            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: var(--bg-black);
-            color: var(--text-main);
-            line-height: 1.7;
+            background-color: var(--bg-dark);
+            color: var(--text-ivory);
+            line-height: 1.8;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 85% 30%, rgba(138, 109, 59, 0.04) 0%, transparent 40%),
-                radial-gradient(circle at 15% 70%, rgba(197, 160, 89, 0.04) 0%, transparent 40%);
-            background-attachment: fixed;
+
+            background-image:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(200, 167, 104, 0.06) 0%,
+                    transparent 60%
+                ),
+                radial-gradient(
+                    circle at 85% 40%,
+                    rgba(200, 167, 104, 0.03) 0%,
+                    transparent 40%
+                ),
+                radial-gradient(
+                    circle at 15% 80%,
+                    rgba(200, 167, 104, 0.02) 0%,
+                    transparent 50%
+                );
         }
 
-        /* Utility Classes */
-        .cinzel-font { font-family: 'Cinzel', serif; }
-        .gold-text { color: var(--champagne-gold); }
-        
-        /* Container */
+        img {
+            max-width: 100%;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        a,
+        button {
+            -webkit-tap-highlight-color: transparent;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -70,25 +116,60 @@
             padding: 0 24px;
         }
 
-        /* ===== 2. HEADER ===== */
+
+        /* =========================================================
+           TYPOGRAPHY
+        ========================================================= */
+
+        .cinzel-font {
+            font-family: 'Cinzel', serif;
+        }
+
+        .champagne-text {
+            color: var(--champagne-gold);
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(5, 5, 5, 0.75);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-gold);
-            transition: var(--transition-smooth);
+
+            background: rgba(7, 7, 6, 0.94);
+
+            border-bottom: 1px solid var(--gold-border);
+
+            transition:
+                background-color var(--transition),
+                box-shadow var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(7, 7, 6, 0.98);
+            border-bottom-color: rgba(200, 167, 104, 0.30);
+
+            box-shadow:
+                0 8px 24px rgba(0, 0, 0, 0.55);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 75px;
+
+            height: 80px;
+
+            transition: height var(--transition);
+        }
+
+        header.scrolled .header-container {
+            height: 70px;
         }
 
         .logo-link {
@@ -98,25 +179,39 @@
         }
 
         .logo-img {
-            height: 48px;
+            height: 50px;
             width: auto;
             object-fit: contain;
-            filter: drop-shadow(0 2px 8px rgba(197, 160, 89, 0.25));
+
+            transition: height var(--transition);
         }
+
+        header.scrolled .logo-img {
+            height: 42px;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
 
         nav {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 36px;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
+
             font-size: 13px;
-            font-weight: 400;
+            font-weight: 300;
             letter-spacing: 0.5px;
-            transition: var(--transition-smooth);
+
+            transition:
+                color var(--transition);
+
             position: relative;
         }
 
@@ -126,650 +221,1097 @@
 
         nav a::after {
             content: '';
+
             position: absolute;
-            bottom: -4px;
+            bottom: -6px;
             right: 0;
+
             width: 0;
             height: 1px;
+
             background: var(--champagne-gold);
-            transition: var(--transition-smooth);
+
+            transition: width var(--transition);
         }
 
         nav a:hover::after {
             width: 100%;
         }
 
+
+        /* =========================================================
+           WHATSAPP NAV BUTTON
+        ========================================================= */
+
         .nav-whatsapp-btn {
             display: inline-flex;
             align-items: center;
+
             gap: 8px;
-            padding: 8px 16px;
-            border-radius: 50px;
-            background: rgba(37, 211, 102, 0.08);
-            border: 1px solid rgba(37, 211, 102, 0.3);
+
+            padding: 8px 18px;
+
+            border-radius: 40px;
+
+            background: rgba(37, 211, 102, 0.06);
+
+            border: 1px solid rgba(37, 211, 102, 0.25);
+
             color: #25D366;
+
             font-size: 12px;
-            font-weight: 500;
+            font-weight: 400;
+
             text-decoration: none;
-            transition: var(--transition-smooth);
+
+            transition:
+                background-color var(--transition),
+                border-color var(--transition),
+                transform var(--transition);
         }
 
         .nav-whatsapp-btn:hover {
-            background: rgba(37, 211, 102, 0.18);
+            background: rgba(37, 211, 102, 0.12);
             border-color: #25D366;
             transform: translateY(-1px);
         }
 
-        /* ===== 3. HERO SECTION ===== */
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
         .hero {
             position: relative;
-            padding: 160px 0 100px;
+
+            padding: 190px 0 110px;
+
             text-align: center;
+
             overflow: hidden;
         }
 
         .hero::before {
             content: '';
+
             position: absolute;
-            top: 20%;
+
+            top: 15%;
             left: 50%;
+
             transform: translateX(-50%);
-            width: 600px;
-            height: 300px;
-            background: radial-gradient(ellipse, rgba(197, 160, 89, 0.12) 0%, transparent 70%);
+
+            width: 700px;
+            height: 350px;
+
+            background:
+                radial-gradient(
+                    ellipse,
+                    rgba(200, 167, 104, 0.09) 0%,
+                    transparent 70%
+                );
+
             pointer-events: none;
         }
 
         .hero-brand-badge {
             display: inline-block;
+
             font-family: 'Cinzel', serif;
-            font-size: 12px;
-            letter-spacing: 5px;
+
+            font-size: 11px;
+
+            letter-spacing: 6px;
+
             text-transform: uppercase;
+
             color: var(--gold-accent);
-            margin-bottom: 16px;
-            padding: 4px 16px;
-            border-radius: 30px;
-            background: rgba(197, 160, 89, 0.06);
-            border: 1px solid var(--border-gold);
+
+            margin-bottom: 20px;
+
+            padding: 5px 20px;
+
+            border-radius: 40px;
+
+            background: rgba(200, 167, 104, 0.05);
+
+            border: 1px solid var(--gold-border);
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 600;
+            font-size: 52px;
+
+            font-weight: 500;
+
             line-height: 1.25;
-            color: #ffffff;
-            margin-bottom: 20px;
+
+            color: var(--text-ivory);
+
+            margin-bottom: 22px;
+
             letter-spacing: -0.5px;
         }
 
         .hero p {
             color: var(--text-muted);
+
             font-size: 15px;
+
             font-weight: 300;
-            max-width: 580px;
-            margin: 0 auto 36px;
+
+            max-width: 600px;
+
+            margin: 0 auto 40px;
+
             line-height: 1.8;
         }
 
         .hero-cta-group {
             display: flex;
+
             justify-content: center;
             align-items: center;
-            gap: 16px;
+
+            gap: 18px;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 15px 36px;
+
+            font-size: 13px;
+
+            border-radius: var(--radius-sm);
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition:
+                transform var(--transition),
+                background-color var(--transition),
+                border-color var(--transition),
+                color var(--transition),
+                box-shadow var(--transition);
         }
 
         .btn-primary {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: 14px 32px;
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--gold-accent) 100%);
-            color: #000;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--champagne-gold) 0%,
+                    var(--gold-accent) 100%
+                );
+
+            color: #070706;
+
             font-weight: 600;
-            font-size: 14px;
-            border-radius: var(--radius-sm);
-            text-decoration: none;
+
             border: none;
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            box-shadow: 0 4px 20px rgba(197, 160, 89, 0.15);
+
+            box-shadow:
+                0 4px 16px rgba(200, 167, 104, 0.12);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3);
-            filter: brightness(1.05);
+
+            box-shadow:
+                0 7px 22px rgba(200, 167, 104, 0.20);
         }
 
         .btn-secondary {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            padding: 14px 32px;
             background: transparent;
-            color: var(--text-main);
-            font-weight: 400;
-            font-size: 14px;
-            border-radius: var(--radius-sm);
-            text-decoration: none;
-            border: 1px solid var(--border-gold);
-            transition: var(--transition-smooth);
+
+            color: var(--text-ivory);
+
+            font-weight: 300;
+
+            border: 1px solid var(--gold-border);
         }
 
         .btn-secondary:hover {
-            background: rgba(197, 160, 89, 0.08);
+            background: rgba(200, 167, 104, 0.08);
+
             border-color: var(--gold-accent);
+
             color: var(--champagne-gold);
         }
 
-        /* ===== 4. TRUST / BENEFITS ===== */
+
+        /* =========================================================
+           TRUST BAR
+        ========================================================= */
+
         .trust-section {
-            padding: 20px 0 80px;
+            padding: 0 0 90px;
         }
 
         .trust-bar {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 16px;
-            padding: 24px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-gold);
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+
+            padding: 28px 32px;
+
+            background: rgba(18, 18, 16, 0.92);
+
+            border: 1px solid var(--gold-border);
+
             border-radius: var(--radius-md);
-            backdrop-filter: blur(12px);
         }
 
         .trust-item {
             display: flex;
-            flex-direction: column;
+
             align-items: center;
-            text-align: center;
-            padding: 8px;
+
+            justify-content: center;
+
+            gap: 14px;
+
+            text-align: right;
         }
 
         .trust-icon {
-            font-size: 20px;
-            margin-bottom: 8px;
+            font-size: 22px;
+
             color: var(--champagne-gold);
+
+            flex-shrink: 0;
+        }
+
+        .trust-text-wrap {
+            display: flex;
+
+            flex-direction: column;
         }
 
         .trust-title {
-            font-size: 12px;
+            font-size: 13px;
+
             font-weight: 500;
-            color: var(--text-main);
-            margin-bottom: 2px;
+
+            color: var(--text-ivory);
         }
 
         .trust-desc {
             font-size: 11px;
+
             color: var(--text-dim);
         }
 
-        /* ===== 5. SECTION HEADINGS ===== */
+
+        /* =========================================================
+           SECTION HEADERS
+        ========================================================= */
+
         .section-header {
             text-align: center;
-            margin-bottom: 48px;
+
+            margin-bottom: 56px;
         }
 
         .section-subtitle {
             font-family: 'Cinzel', serif;
+
             font-size: 11px;
-            letter-spacing: 4px;
+
+            letter-spacing: 5px;
+
             text-transform: uppercase;
+
             color: var(--gold-accent);
+
             display: block;
-            margin-bottom: 8px;
+
+            margin-bottom: 10px;
         }
 
         .section-title {
-            font-size: 30px;
-            font-weight: 600;
-            color: #ffffff;
+            font-size: 32px;
+
+            font-weight: 500;
+
+            color: var(--text-ivory);
+
             position: relative;
+
             display: inline-block;
         }
 
         .section-title::after {
             content: '';
+
             display: block;
-            width: 40px;
+
+            width: 36px;
+
             height: 1px;
+
             background: var(--gold-accent);
-            margin: 12px auto 0;
-            opacity: 0.7;
+
+            margin: 14px auto 0;
+
+            opacity: 0.6;
         }
 
-        /* ===== 6. PRODUCTS SECTION ===== */
+
+        /* =========================================================
+           PRODUCTS
+        ========================================================= */
+
         .products-section {
-            padding: 40px 0 100px;
+            padding: 30px 0 110px;
         }
 
         .products-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+
+            gap: 36px;
         }
 
         .product-card {
-            background: var(--bg-card);
+            background: rgba(18, 18, 16, 0.94);
+
             border: 1px solid var(--border-subtle);
+
             border-radius: var(--radius-md);
-            padding: 20px;
+
+            padding: 22px;
+
             display: flex;
+
             flex-direction: column;
-            transition: var(--transition-smooth);
+
             position: relative;
+
             overflow: hidden;
-            backdrop-filter: blur(10px);
+
+            transition:
+                transform var(--transition),
+                border-color var(--transition),
+                box-shadow var(--transition);
         }
 
         .product-card:hover {
-            border-color: var(--border-gold);
-            transform: translateY(-6px);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px var(--gold-glow);
+            border-color: var(--gold-border);
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 14px 30px rgba(0, 0, 0, 0.45);
         }
 
         .product-badge {
             position: absolute;
-            top: 32px;
-            right: 32px;
+
+            top: 34px;
+            right: 34px;
+
             z-index: 2;
-            background: rgba(10, 10, 10, 0.75);
-            border: 1px solid var(--border-gold);
-            backdrop-filter: blur(8px);
+
+            background: rgba(7, 7, 6, 0.92);
+
+            border: 1px solid var(--gold-border);
+
             color: var(--champagne-gold);
+
+            font-family: 'Cinzel', serif;
+
             font-size: 10px;
-            padding: 4px 10px;
+
+            padding: 4px 12px;
+
             border-radius: 30px;
+
             letter-spacing: 1px;
         }
 
         .product-img-wrapper {
             width: 100%;
-            height: 290px;
+
+            height: 310px;
+
             border-radius: var(--radius-sm);
+
             overflow: hidden;
-            margin-bottom: 20px;
+
+            margin-bottom: 22px;
+
             background: #000;
+
             position: relative;
         }
 
         .product-img {
             width: 100%;
+
             height: 100%;
+
             object-fit: cover;
+
             object-position: center;
-            transition: transform 0.6s ease;
+
+            display: block;
+
+            transition: transform 0.35s ease;
         }
 
         .product-card:hover .product-img {
-            transform: scale(1.05);
+            transform: scale(1.035);
         }
 
         .product-info {
             display: flex;
+
             flex-direction: column;
+
             flex-grow: 1;
         }
 
         .product-type {
             font-size: 11px;
+
             color: var(--gold-accent);
-            margin-bottom: 4px;
+
+            margin-bottom: 6px;
+
             font-weight: 300;
         }
 
         .product-title {
             font-size: 16px;
+
             font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 12px;
+
+            color: var(--text-ivory);
+
+            margin-bottom: 14px;
+
             line-height: 1.4;
-            min-height: 45px;
+
+            min-height: 48px;
+
             display: flex;
+
             align-items: center;
         }
 
         .product-meta {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
-            margin-bottom: 20px;
-            padding-top: 12px;
+
+            margin-bottom: 22px;
+
+            padding-top: 14px;
+
             border-top: 1px solid var(--border-subtle);
         }
 
         .product-size {
             font-size: 12px;
+
             color: var(--text-dim);
         }
 
         .product-price {
-            font-size: 20px;
+            font-size: 22px;
+
             font-weight: 600;
+
             color: var(--champagne-gold);
         }
 
         .btn-order {
             width: 100%;
-            padding: 12px;
-            background: rgba(197, 160, 89, 0.1);
-            border: 1px solid var(--border-gold);
+
+            padding: 13px;
+
+            background: rgba(200, 167, 104, 0.08);
+
+            border: 1px solid var(--gold-border);
+
             color: var(--champagne-gold);
+
             font-size: 13px;
+
             font-weight: 500;
+
             border-radius: var(--radius-sm);
+
             cursor: pointer;
-            transition: var(--transition-smooth);
+
+            transition:
+                background-color var(--transition),
+                color var(--transition),
+                border-color var(--transition);
         }
 
         .product-card:hover .btn-order {
-            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--gold-accent) 100%);
-            color: #000;
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--champagne-gold) 0%,
+                    var(--gold-accent) 100%
+                );
+
+            color: #070706;
+
             border-color: transparent;
+
             font-weight: 600;
         }
 
-        /* ===== 7. WHY AURA SECTION ===== */
-        .why-aura-section {
-            padding: 80px 0;
+
+        /* =========================================================
+           STORY
+        ========================================================= */
+
+        .story-section {
+            padding: 90px 0;
+
             border-top: 1px solid var(--border-subtle);
+
+            border-bottom: 1px solid var(--border-subtle);
+
+            background: var(--bg-surface);
+
+            text-align: center;
+        }
+
+        .story-content {
+            max-width: 750px;
+
+            margin: 0 auto;
+        }
+
+        .story-quote {
+            font-size: 24px;
+
+            font-weight: 300;
+
+            line-height: 1.7;
+
+            color: var(--text-ivory);
+
+            margin-bottom: 20px;
+
+            letter-spacing: -0.2px;
+        }
+
+        .story-author {
+            font-family: 'Cinzel', serif;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            color: var(--gold-accent);
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           WHY AURA
+        ========================================================= */
+
+        .why-aura-section {
+            padding: 110px 0;
         }
 
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 36px;
         }
 
         .why-card {
             background: var(--bg-surface);
+
             border: 1px solid var(--border-subtle);
-            padding: 32px 24px;
+
+            padding: 40px 30px;
+
             border-radius: var(--radius-md);
-            transition: var(--transition-smooth);
-            position: relative;
+
+            transition:
+                transform var(--transition),
+                border-color var(--transition);
         }
 
         .why-card:hover {
-            border-color: var(--border-gold);
+            border-color: var(--gold-border);
+
             transform: translateY(-4px);
         }
 
         .why-number {
             font-family: 'Cinzel', serif;
-            font-size: 28px;
-            color: var(--gold-accent);
-            opacity: 0.5;
-            margin-bottom: 16px;
+
+            font-size: 36px;
+
+            font-weight: 600;
+
+            color: var(--champagne-gold);
+
+            opacity: 0.4;
+
+            margin-bottom: 18px;
+
             display: block;
         }
 
         .why-title {
-            font-size: 16px;
+            font-size: 17px;
+
             font-weight: 500;
-            color: #ffffff;
-            margin-bottom: 8px;
+
+            color: var(--text-ivory);
+
+            margin-bottom: 10px;
         }
 
         .why-desc {
-            font-size: 12px;
+            font-size: 13px;
+
             color: var(--text-muted);
-            line-height: 1.7;
+
+            line-height: 1.8;
+
+            font-weight: 300;
         }
 
-        /* ===== 8. HOW TO ORDER ===== */
+
+        /* =========================================================
+           HOW TO ORDER
+        ========================================================= */
+
         .how-order-section {
-            padding: 80px 0;
-            background: radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 0.8) 0%, var(--bg-black) 100%);
+            padding: 100px 0;
+
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(14, 14, 13, 0.9) 0%,
+                    var(--bg-dark) 100%
+                );
+
+            border-top: 1px solid var(--border-subtle);
         }
 
         .steps-grid {
             display: grid;
+
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            position: relative;
+
+            gap: 24px;
         }
 
         .step-item {
             text-align: center;
-            padding: 24px 16px;
-            position: relative;
+
+            padding: 20px 10px;
         }
 
-        .step-icon-wrap {
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            background: rgba(197, 160, 89, 0.08);
-            border: 1px solid var(--border-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            color: var(--champagne-gold);
-            font-size: 18px;
+        .step-number-wrap {
+            font-family: 'Cinzel', serif;
+
+            font-size: 26px;
+
             font-weight: 600;
+
+            color: var(--gold-accent);
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            background: rgba(200, 167, 104, 0.05);
+
+            border: 1px solid var(--gold-border);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin: 0 auto 20px;
         }
 
         .step-title {
-            font-size: 14px;
+            font-size: 15px;
+
             font-weight: 500;
-            color: #fff;
-            margin-bottom: 6px;
+
+            color: var(--text-ivory);
+
+            margin-bottom: 8px;
         }
 
         .step-desc {
             font-size: 12px;
+
             color: var(--text-dim);
+
+            line-height: 1.6;
         }
 
-        /* ===== 9. REVIEWS SECTION ===== */
+
+        /* =========================================================
+           REVIEWS
+        ========================================================= */
+
         .reviews-section {
-            padding: 80px 0 100px;
+            padding: 110px 0;
+
             border-top: 1px solid var(--border-subtle);
         }
 
         .reviews-grid {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+
+            gap: 32px;
         }
 
         .review-card {
-            background: var(--bg-card);
+            background: rgba(18, 18, 16, 0.94);
+
             border: 1px solid var(--border-subtle);
+
             border-radius: var(--radius-md);
-            padding: 28px;
+
+            padding: 32px;
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: space-between;
-            backdrop-filter: blur(10px);
-            transition: var(--transition-smooth);
+
+            transition:
+                transform var(--transition),
+                border-color var(--transition);
         }
 
         .review-card:hover {
-            border-color: var(--border-gold);
+            border-color: var(--gold-border);
+
             transform: translateY(-4px);
         }
 
         .review-stars {
             color: var(--champagne-gold);
-            font-size: 13px;
-            letter-spacing: 2px;
-            margin-bottom: 14px;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 16px;
         }
 
         .review-text {
             color: var(--text-muted);
+
             font-size: 13px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-style: italic;
+
+            line-height: 1.85;
+
+            margin-bottom: 24px;
+
+            font-weight: 300;
         }
 
         .review-author {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
-            padding-top: 14px;
+
+            padding-top: 16px;
+
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .client-name {
             font-size: 13px;
+
             font-weight: 500;
-            color: #ffffff;
+
+            color: var(--text-ivory);
         }
 
         .client-city {
             font-size: 11px;
+
             color: var(--text-dim);
         }
 
-        /* ===== 10. ORDER MODAL ===== */
+
+        /* =========================================================
+           ORDER MODAL
+        ========================================================= */
+
         .modal-overlay {
             position: fixed;
-            top: 0;
-            left: 0;
+
+            inset: 0;
+
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+
+            background: rgba(0, 0, 0, 0.90);
+
             display: none;
+
             justify-content: center;
+
             align-items: center;
+
             z-index: 2000;
+
             padding: 20px;
+
             opacity: 0;
-            transition: opacity 0.3s ease;
+
+            transition: opacity 0.25s ease;
         }
 
         .modal-overlay.active {
             display: flex;
+
             opacity: 1;
         }
 
         .order-modal {
-            background: #0f0f0f;
-            border: 1px solid var(--border-gold);
+            background: #0d0d0c;
+
+            border: 1px solid var(--gold-border);
+
             border-radius: var(--radius-lg);
-            padding: 32px;
+
+            padding: 36px;
+
             width: 100%;
+
             max-width: 500px;
+
             max-height: 90vh;
+
             overflow-y: auto;
+
             position: relative;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 30px var(--gold-glow);
-            animation: modalSlideUp 0.35s ease-out;
+
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.90);
+
+            animation:
+                modalSlideUp 0.28s ease;
         }
 
         @keyframes modalSlideUp {
-            from { transform: translateY(20px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(18px);
+
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+
+                opacity: 1;
+            }
         }
 
         .modal-close {
             position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 32px;
-            height: 32px;
+
+            top: 22px;
+
+            left: 22px;
+
+            width: 34px;
+
+            height: 34px;
+
             border-radius: 50%;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
             color: var(--text-muted);
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
+
             cursor: pointer;
+
             font-size: 18px;
-            transition: var(--transition-smooth);
+
+            transition:
+                background-color var(--transition),
+                color var(--transition),
+                border-color var(--transition);
         }
 
         .modal-close:hover {
             color: #fff;
-            background: rgba(255,255,255,0.15);
-            border-color: var(--border-gold);
+
+            background: rgba(255, 255, 255, 0.10);
+
+            border-color: var(--gold-border);
         }
 
         .modal-header {
             text-align: center;
-            margin-bottom: 24px;
+
+            margin-bottom: 26px;
         }
 
         .modal-header h3 {
             font-size: 20px;
-            color: #fff;
-            font-weight: 600;
-            margin-bottom: 4px;
+
+            color: var(--text-ivory);
+
+            font-weight: 500;
+
+            margin-bottom: 6px;
         }
 
         .modal-header p {
             font-size: 12px;
+
             color: var(--text-muted);
+
+            font-weight: 300;
         }
 
+
+        /* =========================================================
+           ORDER SUMMARY
+        ========================================================= */
+
         .order-summary-box {
-            background: rgba(197, 160, 89, 0.05);
-            border: 1px solid var(--border-gold);
+            background: rgba(200, 167, 104, 0.04);
+
+            border: 1px solid var(--gold-border);
+
             border-radius: var(--radius-sm);
-            padding: 16px;
-            margin-bottom: 20px;
+
+            padding: 18px;
+
+            margin-bottom: 24px;
         }
 
         .summary-row {
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
+
             font-size: 13px;
-            padding: 4px 0;
+
+            padding: 5px 0;
+
             color: var(--text-muted);
         }
 
         .summary-row.total {
-            margin-top: 8px;
-            padding-top: 10px;
-            border-top: 1px solid var(--border-gold);
-            color: #fff;
+            margin-top: 10px;
+
+            padding-top: 12px;
+
+            border-top: 1px solid var(--gold-border);
+
+            color: var(--text-ivory);
+
             font-weight: 600;
-            font-size: 15px;
+
+            font-size: 16px;
         }
 
         .summary-price {
             color: var(--champagne-gold);
+
             font-weight: 500;
         }
+
+
+        /* =========================================================
+           EXTRA PERFUME
+        ========================================================= */
 
         .btn-toggle-extra {
             width: 100%;
-            padding: 10px;
+
+            padding: 11px;
+
             background: transparent;
-            border: 1px dashed var(--border-gold);
+
+            border: 1px dashed var(--gold-border);
+
             color: var(--champagne-gold);
+
             font-size: 12px;
+
             font-weight: 500;
+
             border-radius: var(--radius-sm);
+
             cursor: pointer;
-            margin-bottom: 20px;
-            transition: var(--transition-smooth);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
+
+            margin-bottom: 22px;
+
+            transition:
+                background-color var(--transition);
         }
 
         .btn-toggle-extra:hover {
-            background: rgba(197, 160, 89, 0.08);
+            background: rgba(200, 167, 104, 0.08);
         }
 
         .extra-box {
             background: #050505;
+
             border: 1px solid var(--border-subtle);
+
             border-radius: var(--radius-sm);
-            padding: 16px;
-            margin-bottom: 20px;
+
+            padding: 18px;
+
+            margin-bottom: 22px;
+
             display: none;
         }
 
@@ -777,131 +1319,234 @@
             display: block;
         }
 
+
+        /* =========================================================
+           FORM
+        ========================================================= */
+
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 18px;
+
             text-align: right;
         }
 
         .form-group label {
             display: block;
+
             font-size: 12px;
+
             color: var(--text-muted);
-            margin-bottom: 6px;
+
+            margin-bottom: 8px;
+
+            font-weight: 300;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 14px;
+
+            padding: 13px 16px;
+
             background: #050505;
+
             border: 1px solid var(--border-subtle);
+
             border-radius: var(--radius-sm);
+
             color: #fff;
+
             font-size: 13px;
+
             outline: none;
-            transition: var(--transition-smooth);
+
+            transition:
+                border-color var(--transition),
+                background-color var(--transition);
         }
 
         .form-control:focus {
             border-color: var(--gold-accent);
-            box-shadow: 0 0 10px rgba(197, 160, 89, 0.15);
+
             background: #080808;
         }
 
         select.form-control option {
-            background: #0f0f0f;
+            background: #0d0d0c;
+
             color: #fff;
         }
 
+
+        /* =========================================================
+           WHATSAPP SUBMIT
+        ========================================================= */
+
         .btn-submit-wa {
             width: 100%;
-            padding: 14px;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+
+            padding: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #25D366 0%,
+                    #128C7E 100%
+                );
+
             color: #fff;
+
             font-weight: 600;
+
             font-size: 14px;
+
             border: none;
+
             border-radius: var(--radius-sm);
+
             cursor: pointer;
+
             display: flex;
+
             align-items: center;
+
             justify-content: center;
-            gap: 8px;
-            transition: var(--transition-smooth);
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-            margin-top: 8px;
+
+            gap: 10px;
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+
+            box-shadow:
+                0 4px 16px rgba(37, 211, 102, 0.18);
+
+            margin-top: 10px;
         }
 
         .btn-submit-wa:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+
+            box-shadow:
+                0 7px 20px rgba(37, 211, 102, 0.25);
         }
 
-        /* ===== 11. FLOATING WHATSAPP BUTTON ===== */
+
+        /* =========================================================
+           FLOATING WHATSAPP
+        ========================================================= */
+
         .floating-wa {
             position: fixed;
+
             bottom: 24px;
+
             left: 24px;
+
             z-index: 999;
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: #ffffff;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #25D366 0%,
+                    #128C7E 100%
+                );
+
+            color: #fff;
+
             padding: 10px 18px;
+
             border-radius: 50px;
+
             text-decoration: none;
+
             font-size: 13px;
+
             font-weight: 500;
+
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
-            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(4px);
+
+            box-shadow:
+                0 4px 16px rgba(37, 211, 102, 0.25);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+
+            border: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .floating-wa:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
-            color: #ffffff;
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 20px rgba(37, 211, 102, 0.30);
+
+            color: #fff;
         }
 
         .floating-wa svg {
             width: 18px;
+
             height: 18px;
+
             fill: currentColor;
+
             flex-shrink: 0;
         }
 
-        /* ===== 12. FOOTER ===== */
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
         footer {
-            background: #020202;
-            border-top: 1px solid var(--border-gold);
-            padding: 60px 0 30px;
+            background: #030303;
+
+            border-top: 1px solid var(--gold-border);
+
+            padding: 70px 0 35px;
         }
 
         .footer-grid {
             display: grid;
+
             grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
+
+            gap: 48px;
+
+            margin-bottom: 48px;
         }
 
         .footer-brand .logo-img {
-            height: 44px;
-            margin-bottom: 16px;
+            height: 46px;
+
+            margin-bottom: 18px;
         }
 
         .footer-brand p {
             color: var(--text-dim);
+
             font-size: 13px;
-            max-width: 320px;
-            line-height: 1.7;
+
+            max-width: 340px;
+
+            line-height: 1.8;
+
+            font-weight: 300;
         }
 
         .footer-title {
             font-size: 14px;
+
             font-weight: 500;
+
             color: var(--champagne-gold);
-            margin-bottom: 16px;
+
+            margin-bottom: 18px;
         }
 
         .footer-links {
@@ -909,14 +1554,19 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .footer-links a {
             color: var(--text-muted);
+
             text-decoration: none;
+
             font-size: 13px;
-            transition: var(--transition-smooth);
+
+            font-weight: 300;
+
+            transition: color var(--transition);
         }
 
         .footer-links a:hover {
@@ -924,576 +1574,1995 @@
         }
 
         .footer-bottom {
-            padding-top: 24px;
+            padding-top: 28px;
+
             border-top: 1px solid var(--border-subtle);
+
             text-align: center;
+
             font-size: 12px;
+
             color: var(--text-dim);
+
+            font-weight: 300;
         }
 
-        /* ===== 13. RESPONSIVE BREAKPOINTS ===== */
+
+        /* =========================================================
+           RESPONSIVE — TABLET
+        ========================================================= */
+
         @media (max-width: 1024px) {
-            .products-grid { grid-template-columns: repeat(2, 1fr); }
-            .why-grid { grid-template-columns: repeat(2, 1fr); }
-            .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
-            .trust-bar { grid-template-columns: repeat(3, 1fr); }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 32px;
+            }
+
+            .trust-bar {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 20px;
+            }
         }
+
+
+        /* =========================================================
+           RESPONSIVE — MOBILE
+        ========================================================= */
 
         @media (max-width: 768px) {
-            header { height: 65px; }
-            .header-container { height: 65px; }
-            .logo-img { height: 38px; }
-            
-            .hero { padding: 130px 0 60px; }
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 13px; }
-            
+
+            header {
+                height: 68px;
+            }
+
+            .header-container {
+                height: 68px;
+            }
+
+            .logo-img {
+                height: 40px;
+            }
+
+            header.scrolled .header-container {
+                height: 64px;
+            }
+
+            header.scrolled .logo-img {
+                height: 38px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .hero {
+                padding: 140px 0 70px;
+            }
+
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 13px;
+            }
+
+            .hero::before {
+                width: 500px;
+                height: 250px;
+            }
+
             .hero-cta-group {
                 flex-direction: column;
+
                 width: 100%;
-                max-width: 300px;
+
+                max-width: 320px;
+
                 margin: 0 auto;
             }
-            .btn-primary, .btn-secondary { width: 100%; }
 
-            .trust-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-            
-            .products-grid { grid-template-columns: 1fr; }
-            .reviews-grid { grid-template-columns: 1fr; }
-            .why-grid { grid-template-columns: 1fr; }
-            .steps-grid { grid-template-columns: 1fr; }
-            
-            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+
+            .trust-section {
+                padding-bottom: 60px;
+            }
+
+            .trust-bar {
+                grid-template-columns: 1fr;
+
+                gap: 16px;
+
+                padding: 20px;
+            }
+
+            .trust-item {
+                justify-content: flex-start;
+            }
+
+            .products-section {
+                padding-bottom: 80px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+
+                gap: 24px;
+            }
+
+            .product-img-wrapper {
+                height: 330px;
+            }
+
+            .why-aura-section,
+            .reviews-section {
+                padding: 80px 0;
+            }
+
+            .why-grid,
+            .reviews-grid,
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                gap: 20px;
+            }
+
+            .steps-grid {
+                gap: 18px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+
+                gap: 36px;
+            }
+
             .floating-wa {
                 bottom: 20px;
+
                 left: 16px;
+
                 padding: 0;
-                width: 46px;
-                height: 46px;
+
+                width: 48px;
+
+                height: 48px;
+
                 border-radius: 50%;
+
                 justify-content: center;
             }
-            .floating-wa-text { display: none; }
-            .floating-wa svg { width: 22px; height: 22px; }
+
+            .floating-wa-text {
+                display: none;
+            }
+
+            .floating-wa svg {
+                width: 22px;
+
+                height: 22px;
+            }
+
+            .section-header {
+                margin-bottom: 42px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .story-section {
+                padding: 70px 0;
+            }
+
+            .story-quote {
+                font-size: 20px;
+            }
         }
+
+
+        /* =========================================================
+           SMALL PHONES
+        ========================================================= */
 
         @media (max-width: 412px) {
-            .trust-bar { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 28px; }
-            .order-modal { padding: 24px 18px; }
+
+            .container {
+                padding: 0 18px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero-brand-badge {
+                font-size: 10px;
+
+                letter-spacing: 4px;
+            }
+
+            .story-quote {
+                font-size: 19px;
+            }
+
+            .order-modal {
+                padding: 26px 20px;
+            }
+
+            .product-card {
+                padding: 18px;
+            }
+
+            .product-img-wrapper {
+                height: 300px;
+            }
         }
+
+
+        /* =========================================================
+           REDUCE MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: 0.01ms !important;
+            }
+        }
+
     </style>
 </head>
+
+
 <body>
 
-    <!-- ===== HEADER ===== -->
-    <header>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header id="mainHeader">
+
         <div class="container header-container">
+
             <a href="#" class="logo-link">
-                <img src="Adobe Express - file.png" alt="A&P AURA PARFUMS" class="logo-img">
+
+                <img
+                    src="Adobe Express - file.png"
+                    alt="A&P AURA PARFUMS"
+                    class="logo-img"
+                    width="180"
+                    height="50"
+                >
+
             </a>
-            
+
+
             <nav>
+
                 <a href="#products">المجموعة</a>
-                <a href="#reviews">التقييمات</a>
-                <a href="#order-process">كيف تطلب؟</a>
+
+                <a href="#reviews">آراء العملاء</a>
+
+                <a href="#why-aura">لماذا AURA</a>
+
+                <a href="#products">اطلب الآن</a>
+
             </nav>
 
-            <a href="https://wa.me/212649982831" target="_blank" class="nav-whatsapp-btn">
+
+            <a
+                href="https://wa.me/212649982831"
+                target="_blank"
+                rel="noopener"
+                class="nav-whatsapp-btn"
+            >
                 <span>💬</span>
                 <span>واتساب</span>
             </a>
+
         </div>
+
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
     <section class="hero">
+
         <div class="container">
-            <span class="hero-brand-badge">A&P AURA PARFUMS</span>
-            <h1>عطرك... بصمتك الخاصة</h1>
-            <p>مجموعة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة، مصممة بتركيز عالٍ وثبات يدوم طويلاً لتعكس حضورك الاستثنائي.</p>
-            
+
+            <span class="hero-brand-badge">
+                AURA PARFUMS
+            </span>
+
+            <h1>
+                عطرك... بصمتك الخاصة
+            </h1>
+
+            <p>
+                مجموعة حصرية من أرقى العطور العالمية المستلهمة من
+                الفخامة والأناقة، مصممة بتركيز عالٍ وثبات يدوم طويلاً
+                لتعكس حضورك الاستثنائي.
+            </p>
+
+
             <div class="hero-cta-group">
-                <a href="#products" class="btn-primary">اكتشف المجموعة</a>
-                <a href="#products" class="btn-secondary">اطلب الآن</a>
+
+                <a href="#products" class="btn-primary">
+                    اكتشف المجموعة
+                </a>
+
+                <a href="#products" class="btn-secondary">
+                    اطلب الآن
+                </a>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ===== TRUST / BENEFITS ===== -->
+
+    <!-- =========================================================
+         TRUST BAR
+    ========================================================= -->
+
     <section class="trust-section">
+
         <div class="container">
+
             <div class="trust-bar">
+
                 <div class="trust-item">
+
                     <span class="trust-icon">🚚</span>
-                    <span class="trust-title">توصيل سريع</span>
-                    <span class="trust-desc">لكافة مدن المغرب</span>
+
+                    <div class="trust-text-wrap">
+
+                        <span class="trust-title">
+                            توصيل لجميع المدن
+                        </span>
+
+                        <span class="trust-desc">
+                            لكافة مدن المغرب
+                        </span>
+
+                    </div>
+
                 </div>
+
+
                 <div class="trust-item">
+
                     <span class="trust-icon">💵</span>
-                    <span class="trust-title">الدفع عند الاستلام</span>
-                    <span class="trust-desc">بعد معاينة الطلب</span>
+
+                    <div class="trust-text-wrap">
+
+                        <span class="trust-title">
+                            الدفع عند الاستلام
+                        </span>
+
+                        <span class="trust-desc">
+                            معاينة قبل الأداء
+                        </span>
+
+                    </div>
+
                 </div>
+
+
                 <div class="trust-item">
+
                     <span class="trust-icon">💬</span>
-                    <span class="trust-title">تأكيد أسرع</span>
-                    <span class="trust-desc">مباشرة عبر WhatsApp</span>
+
+                    <div class="trust-text-wrap">
+
+                        <span class="trust-title">
+                            تأكيد أسرع
+                        </span>
+
+                        <span class="trust-desc">
+                            مباشرة عبر WhatsApp
+                        </span>
+
+                    </div>
+
                 </div>
+
+
                 <div class="trust-item">
+
                     <span class="trust-icon">✨</span>
-                    <span class="trust-title">جودة عالية</span>
-                    <span class="trust-desc">عطور مستوحاة بدقة</span>
+
+                    <div class="trust-text-wrap">
+
+                        <span class="trust-title">
+                            جودة واختيار مميز
+                        </span>
+
+                        <span class="trust-desc">
+                            تركيز يدوم طويلاً
+                        </span>
+
+                    </div>
+
                 </div>
-                <div class="trust-item">
-                    <span class="trust-icon">⏳</span>
-                    <span class="trust-title">ثبات يدوم</span>
-                    <span class="trust-desc">تركيز يدوم طويلاً</span>
-                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ===== PRODUCTS SECTION ===== -->
+
+    <!-- =========================================================
+         PRODUCTS
+    ========================================================= -->
+
     <section id="products" class="products-section">
+
         <div class="container">
+
             <div class="section-header">
-                <span class="section-subtitle">EXCLUSIVE COLLECTION</span>
-                <h2 class="section-title">المجموعة الفاخرة</h2>
+
+                <span class="section-subtitle">
+                    SIGNATURE COLLECTION
+                </span>
+
+                <h2 class="section-title">
+                    المجموعة الفاخرة
+                </h2>
+
             </div>
+
 
             <div class="products-grid">
-                
-                <!-- Product 1 -->
+
+
+                <!-- PRODUCT 1 -->
+
                 <div class="product-card">
-                    <span class="product-badge">30ml</span>
+
+                    <span class="product-badge">
+                        30ML
+                    </span>
+
                     <div class="product-img-wrapper">
-                        <img src="parfum5.jpg" alt="STRONGER WITH YOU INTENSELY" class="product-img">
+
+                        <img
+                            src="parfum5.jpg"
+                            alt="STRONGER WITH YOU INTENSELY"
+                            class="product-img"
+                            width="1536"
+                            height="1536"
+                            loading="eager"
+                            fetchpriority="high"
+                            decoding="async"
+                        >
+
                     </div>
+
+
                     <div class="product-info">
-                        <span class="product-type">عطر مستوحى</span>
-                        <h3 class="product-title">STRONGER WITH YOU INTENSELY</h3>
+
+                        <span class="product-type">
+                            عطر مستوحى
+                        </span>
+
+                        <h3 class="product-title">
+                            STRONGER WITH YOU INTENSELY
+                        </h3>
+
                         <div class="product-meta">
-                            <span class="product-size">الحجم: 30 مل</span>
-                            <span class="product-price">45 درهم</span>
+
+                            <span class="product-size">
+                                الحجم: 30ml
+                            </span>
+
+                            <span class="product-price">
+                                45 درهم
+                            </span>
+
                         </div>
-                        <button type="button" class="btn-order" onclick="openOrderModal('STRONGER WITH YOU INTENSELY', 45)">اطلب الآن</button>
+
+
+                        <button
+                            type="button"
+                            class="btn-order"
+                            onclick="openOrderModal('STRONGER WITH YOU INTENSELY', 45)"
+                        >
+                            اطلب الآن
+                        </button>
+
                     </div>
+
                 </div>
 
-                <!-- Product 2 -->
+
+                <!-- PRODUCT 2 -->
+
                 <div class="product-card">
-                    <span class="product-badge">30ml</span>
+
+                    <span class="product-badge">
+                        30ML
+                    </span>
+
                     <div class="product-img-wrapper">
-                        <img src="parfum2.jpg" alt="BLEU DE CHANEL" class="product-img">
+
+                        <img
+                            src="parfum2.jpg"
+                            alt="BLEU DE CHANEL"
+                            class="product-img"
+                            width="1536"
+                            height="1536"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
                     </div>
+
+
                     <div class="product-info">
-                        <span class="product-type">عطر مستوحى</span>
-                        <h3 class="product-title">BLEU DE CHANEL</h3>
+
+                        <span class="product-type">
+                            عطر مستوحى
+                        </span>
+
+                        <h3 class="product-title">
+                            BLEU DE CHANEL
+                        </h3>
+
                         <div class="product-meta">
-                            <span class="product-size">الحجم: 30 مل</span>
-                            <span class="product-price">45 درهم</span>
+
+                            <span class="product-size">
+                                الحجم: 30ml
+                            </span>
+
+                            <span class="product-price">
+                                45 درهم
+                            </span>
+
                         </div>
-                        <button type="button" class="btn-order" onclick="openOrderModal('BLEU DE CHANEL', 45)">اطلب الآن</button>
+
+
+                        <button
+                            type="button"
+                            class="btn-order"
+                            onclick="openOrderModal('BLEU DE CHANEL', 45)"
+                        >
+                            اطلب الآن
+                        </button>
+
                     </div>
+
                 </div>
 
-                <!-- Product 3 -->
+
+                <!-- PRODUCT 3 -->
+
                 <div class="product-card">
-                    <span class="product-badge">30ml</span>
+
+                    <span class="product-badge">
+                        30ML
+                    </span>
+
                     <div class="product-img-wrapper">
-                        <img src="parfum1.jpg" alt="1 MILLION" class="product-img">
+
+                        <img
+                            src="parfum1.jpg"
+                            alt="1 MILLION"
+                            class="product-img"
+                            width="1536"
+                            height="1536"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
                     </div>
+
+
                     <div class="product-info">
-                        <span class="product-type">عطر مستوحى</span>
-                        <h3 class="product-title">1 MILLION</h3>
+
+                        <span class="product-type">
+                            عطر مستوحى
+                        </span>
+
+                        <h3 class="product-title">
+                            1 MILLION
+                        </h3>
+
                         <div class="product-meta">
-                            <span class="product-size">الحجم: 30 مل</span>
-                            <span class="product-price">45 درهم</span>
+
+                            <span class="product-size">
+                                الحجم: 30ml
+                            </span>
+
+                            <span class="product-price">
+                                45 درهم
+                            </span>
+
                         </div>
-                        <button type="button" class="btn-order" onclick="openOrderModal('1 MILLION', 45)">اطلب الآن</button>
+
+
+                        <button
+                            type="button"
+                            class="btn-order"
+                            onclick="openOrderModal('1 MILLION', 45)"
+                        >
+                            اطلب الآن
+                        </button>
+
                     </div>
+
                 </div>
 
-                <!-- Product 4 -->
+
+                <!-- PRODUCT 4 -->
+
                 <div class="product-card">
-                    <span class="product-badge">30ml</span>
+
+                    <span class="product-badge">
+                        30ML
+                    </span>
+
                     <div class="product-img-wrapper">
-                        <img src="parfum4.jpg" alt="ULTRA MALE" class="product-img">
+
+                        <img
+                            src="parfum4.jpg"
+                            alt="ULTRA MALE"
+                            class="product-img"
+                            width="1536"
+                            height="1536"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
                     </div>
+
+
                     <div class="product-info">
-                        <span class="product-type">عطر مستوحى</span>
-                        <h3 class="product-title">ULTRA MALE</h3>
+
+                        <span class="product-type">
+                            عطر مستوحى
+                        </span>
+
+                        <h3 class="product-title">
+                            ULTRA MALE
+                        </h3>
+
                         <div class="product-meta">
-                            <span class="product-size">الحجم: 30 مل</span>
-                            <span class="product-price">45 درهم</span>
+
+                            <span class="product-size">
+                                الحجم: 30ml
+                            </span>
+
+                            <span class="product-price">
+                                45 درهم
+                            </span>
+
                         </div>
-                        <button type="button" class="btn-order" onclick="openOrderModal('ULTRA MALE', 45)">اطلب الآن</button>
+
+
+                        <button
+                            type="button"
+                            class="btn-order"
+                            onclick="openOrderModal('ULTRA MALE', 45)"
+                        >
+                            اطلب الآن
+                        </button>
+
                     </div>
+
                 </div>
 
-                <!-- Product 5 -->
+
+                <!-- PRODUCT 5 -->
+
                 <div class="product-card">
-                    <span class="product-badge">30ml</span>
+
+                    <span class="product-badge">
+                        30ML
+                    </span>
+
                     <div class="product-img-wrapper">
-                        <img src="parfum3.jpg" alt="IMAGINATION LOUIS VUITTON" class="product-img">
+
+                        <img
+                            src="parfum3.jpg"
+                            alt="IMAGINATION LOUIS VUITTON"
+                            class="product-img"
+                            width="1536"
+                            height="1536"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
                     </div>
+
+
                     <div class="product-info">
-                        <span class="product-type">عطر مستوحى</span>
-                        <h3 class="product-title">IMAGINATION LOUIS VUITTON</h3>
+
+                        <span class="product-type">
+                            عطر مستوحى
+                        </span>
+
+                        <h3 class="product-title">
+                            IMAGINATION LOUIS VUITTON
+                        </h3>
+
                         <div class="product-meta">
-                            <span class="product-size">الحجم: 30 مل</span>
-                            <span class="product-price">45 درهم</span>
+
+                            <span class="product-size">
+                                الحجم: 30ml
+                            </span>
+
+                            <span class="product-price">
+                                45 درهم
+                            </span>
+
                         </div>
-                        <button type="button" class="btn-order" onclick="openOrderModal('IMAGINATION LOUIS VUITTON', 45)">اطلب الآن</button>
+
+
+                        <button
+                            type="button"
+                            class="btn-order"
+                            onclick="openOrderModal('IMAGINATION LOUIS VUITTON', 45)"
+                        >
+                            اطلب الآن
+                        </button>
+
                     </div>
+
                 </div>
+
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- ===== WHY AURA PARFUMS ===== -->
-    <section class="why-aura-section">
+
+    <!-- =========================================================
+         BRAND STORY
+    ========================================================= -->
+
+    <section class="story-section">
+
         <div class="container">
-            <div class="section-header">
-                <span class="section-subtitle">OUR VALUES</span>
-                <h2 class="section-title">لماذا AURA PARFUMS؟</h2>
+
+            <div class="story-content">
+
+                <p class="story-quote">
+                    "AURA PARFUMS ليست مجرد عطور صُممت لتُشم،
+                    بل هي هالة أنيقة وحضور صامت يترك أثرًا لا يُنسى."
+                </p>
+
+                <span class="story-author">
+                    THE AURA PHILOSOPHY
+                </span>
+
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         WHY AURA
+    ========================================================= -->
+
+    <section id="why-aura" class="why-aura-section">
+
+        <div class="container">
+
+            <div class="section-header">
+
+                <span class="section-subtitle">
+                    EXCELLENCE & ESSENCE
+                </span>
+
+                <h2 class="section-title">
+                    لماذا AURA PARFUMS؟
+                </h2>
+
+            </div>
+
 
             <div class="why-grid">
-                <div class="why-card">
-                    <span class="why-number">01</span>
-                    <h3 class="why-title">اختيارات مميزة</h3>
-                    <p class="why-desc">ننتقي لك أرقى النوتات العطرية المستلهمة من أشهر الدور العالمية بدقة فائقة.</p>
-                </div>
 
                 <div class="why-card">
-                    <span class="why-number">02</span>
-                    <h3 class="why-title">سعر مناسب</h3>
-                    <p class="why-desc">نقدم لك رفاهية العطور الفاخرة بأسعار مناسبة وجودة تنافسية ممتازة.</p>
+
+                    <span class="why-number">
+                        01
+                    </span>
+
+                    <h3 class="why-title">
+                        اختيارات مميزة
+                    </h3>
+
+                    <p class="why-desc">
+                        ننتقي لك أرقى النوتات العطرية المستلهمة من
+                        أشهر الدور العالمية بدقة فائقة وثبات استثنائي.
+                    </p>
+
                 </div>
 
-                <div class="why-card">
-                    <span class="why-number">03</span>
-                    <h3 class="why-title">تجربة أنيقة</h3>
-                    <p class="why-desc">اهتمام بالغ بالتفاصيل والتغليف ليوصل لك إحساس الفخامة من اللحظة الأولى.</p>
-                </div>
 
                 <div class="why-card">
-                    <span class="why-number">04</span>
-                    <h3 class="why-title">طلب سهل وسريع</h3>
-                    <p class="why-desc">عملية طلب بسيطة ومباشرة عبر الواتساب لتأكيد سريع وتوصيل مريح.</p>
+
+                    <span class="why-number">
+                        02
+                    </span>
+
+                    <h3 class="why-title">
+                        سعر مناسب
+                    </h3>
+
+                    <p class="why-desc">
+                        نقدم لك رفاهية العطور الفاخرة وتجربة الاقتناء
+                        الملكية بأسعار مدروسة تناسب تطلعك للتميز.
+                    </p>
+
                 </div>
+
+
+                <div class="why-card">
+
+                    <span class="why-number">
+                        03
+                    </span>
+
+                    <h3 class="why-title">
+                        تجربة طلب سهلة
+                    </h3>
+
+                    <p class="why-desc">
+                        خطوات طلب مباشرة وسلسة تضمن لك وصول عطرك
+                        المفضّل حتى باب منزلك بسرعة وأمان.
+                    </p>
+
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ===== HOW TO ORDER ===== -->
-    <section id="order-process" class="how-order-section">
+
+    <!-- =========================================================
+         HOW TO ORDER
+    ========================================================= -->
+
+    <section class="how-order-section">
+
         <div class="container">
+
             <div class="section-header">
-                <span class="section-subtitle">SIMPLE PROCESS</span>
-                <h2 class="section-title">كيف تطلب؟</h2>
+
+                <span class="section-subtitle">
+                    FOUR SIMPLE STEPS
+                </span>
+
+                <h2 class="section-title">
+                    كيف تطلب؟
+                </h2>
+
             </div>
+
 
             <div class="steps-grid">
-                <div class="step-item">
-                    <div class="step-icon-wrap">1</div>
-                    <h3 class="step-title">اختر عطرك</h3>
-                    <p class="step-desc">تصفح التشكيلة واختر عطرك المفضل</p>
-                </div>
 
                 <div class="step-item">
-                    <div class="step-icon-wrap">2</div>
-                    <h3 class="step-title">أرسل طلبك</h3>
-                    <p class="step-desc">اضغط على "اطلب الآن" واملأ بياناتك</p>
+
+                    <div class="step-number-wrap">
+                        01
+                    </div>
+
+                    <h3 class="step-title">
+                        اختر عطرك
+                    </h3>
+
+                    <p class="step-desc">
+                        تصفح تشكيلة Signature Collection واختر عطرك المفضل.
+                    </p>
+
                 </div>
 
-                <div class="step-item">
-                    <div class="step-icon-wrap">3</div>
-                    <h3 class="step-title">تأكيد عبر WhatsApp</h3>
-                    <p class="step-desc">نؤكد معك الطلب والعنوان بلمسة واحدة</p>
-                </div>
 
                 <div class="step-item">
-                    <div class="step-icon-wrap">4</div>
-                    <h3 class="step-title">استلم طلبك</h3>
-                    <p class="step-desc">استلم عطرك حتى باب منزلك وادفع عند الاستلام</p>
+
+                    <div class="step-number-wrap">
+                        02
+                    </div>
+
+                    <h3 class="step-title">
+                        أرسل طلبك
+                    </h3>
+
+                    <p class="step-desc">
+                        اضغط على "اطلب الآن" وأدخل معلوماتك البسيطة.
+                    </p>
+
                 </div>
+
+
+                <div class="step-item">
+
+                    <div class="step-number-wrap">
+                        03
+                    </div>
+
+                    <h3 class="step-title">
+                        نؤكد معك عبر WhatsApp
+                    </h3>
+
+                    <p class="step-desc">
+                        يصلنا طلبك منسقاً لتأكيد العنوان والشحن مباشرة.
+                    </p>
+
+                </div>
+
+
+                <div class="step-item">
+
+                    <div class="step-number-wrap">
+                        04
+                    </div>
+
+                    <h3 class="step-title">
+                        استلم طلبك
+                    </h3>
+
+                    <p class="step-desc">
+                        استلم شحنتك حتى باب منزلك وادفع براحة عند الاستلام.
+                    </p>
+
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ===== REVIEWS SECTION ===== -->
+
+    <!-- =========================================================
+         REVIEWS
+    ========================================================= -->
+
     <section id="reviews" class="reviews-section">
+
         <div class="container">
+
             <div class="section-header">
-                <span class="section-subtitle">TESTIMONIALS</span>
-                <h2 class="section-title">آراء العملاء</h2>
+
+                <span class="section-subtitle">
+                    GUEST EXPERIENCES
+                </span>
+
+                <h2 class="section-title">
+                    آراء العملاء
+                </h2>
+
             </div>
+
 
             <div class="reviews-grid">
-                <div class="review-card">
-                    <div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"صراحة العطر فوق التوقعات، الرائحة ثابتة جداً والتغليف فاخر ومتقن."</p>
-                    </div>
-                    <div class="review-author">
-                        <span class="client-name">أمينة العبادي</span>
-                        <span class="client-city">الدار البيضاء</span>
-                    </div>
-                </div>
+
 
                 <div class="review-card">
+
                     <div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"عطر ULTRA MALE ممتاز وثباته يدوم طوال اليوم. والتوصيل كان سريعاً."</p>
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                        <p class="review-text">
+                            "صراحة العطر فوق التوقعات، الرائحة ثابتة جداً
+                            والتغليف فاخر ومتقن."
+                        </p>
+
                     </div>
+
                     <div class="review-author">
-                        <span class="client-name">ياسين المنصوري</span>
-                        <span class="client-city">الرباط</span>
+
+                        <span class="client-name">
+                            أمينة العبادي
+                        </span>
+
+                        <span class="client-city">
+                            الدار البيضاء
+                        </span>
+
                     </div>
+
                 </div>
 
+
                 <div class="review-card">
+
                     <div>
-                        <div class="review-stars">★★★★★</div>
-                        <p class="review-text">"تجربتي مع عطر IMAGINATION كانت رائعة جداً، جودة ممتازة."</p>
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                        <p class="review-text">
+                            "عطر ULTRA MALE ممتاز وثباته يدوم طوال اليوم.
+                            والتوصيل كان سريعاً."
+                        </p>
+
                     </div>
+
                     <div class="review-author">
-                        <span class="client-name">سارة الإدريسي</span>
-                        <span class="client-city">مراكش</span>
+
+                        <span class="client-name">
+                            ياسين المنصوري
+                        </span>
+
+                        <span class="client-city">
+                            الرباط
+                        </span>
+
                     </div>
+
                 </div>
+
+
+                <div class="review-card">
+
+                    <div>
+
+                        <div class="review-stars">
+                            ★★★★★
+                        </div>
+
+                        <p class="review-text">
+                            "تجربتي مع عطر IMAGINATION كانت رائعة جداً،
+                            جودة ممتازة."
+                        </p>
+
+                    </div>
+
+                    <div class="review-author">
+
+                        <span class="client-name">
+                            سارة الإدريسي
+                        </span>
+
+                        <span class="client-city">
+                            مراكش
+                        </span>
+
+                    </div>
+
+                </div>
+
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- ===== FOOTER ===== -->
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
     <footer>
+
         <div class="container">
+
             <div class="footer-grid">
+
+
                 <div class="footer-brand">
-                    <img src="Adobe Express - file.png" alt="A&P AURA PARFUMS" class="logo-img">
-                    <p>عطور أنيقة. حضور مختلف. نقدم لك أرقى النفحات العطرية المصممة لتعكس تميزك وفخامتك اليومية.</p>
+
+                    <img
+                        src="Adobe Express - file.png"
+                        alt="A&P AURA PARFUMS"
+                        class="logo-img"
+                        width="180"
+                        height="46"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <p>
+                        عطور أنيقة. حضور مختلف.
+                        نبتكر لك أرقى تجارب العطور المستلهمة
+                        من الفخامة لتلائم ذوقك الرفيع.
+                    </p>
+
                 </div>
 
-                <div>
-                    <h4 class="footer-title">روابط السريعة</h4>
-                    <ul class="footer-links">
-                        <li><a href="#products">المجموعة الفاخرة</a></li>
-                        <li><a href="#reviews">آراء العملاء</a></li>
-                        <li><a href="#order-process">طريقة الطلب</a></li>
-                    </ul>
-                </div>
 
                 <div>
-                    <h4 class="footer-title">التواصل المباشر</h4>
+
+                    <h4 class="footer-title">
+                        التصفح السريع
+                    </h4>
+
                     <ul class="footer-links">
-                        <li><a href="https://wa.me/212649982831" target="_blank">WhatsApp: +212 649-982831</a></li>
-                        <li><a href="#">الدفع عند الاستلام</a></li>
-                        <li><a href="#">توصيل لكافة المدن</a></li>
+
+                        <li>
+                            <a href="#products">
+                                المجموعة
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#reviews">
+                                آراء العملاء
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#why-aura">
+                                لماذا AURA
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#products">
+                                اطلب الآن
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
+
+
+                <div>
+
+                    <h4 class="footer-title">
+                        التواصل
+                    </h4>
+
+                    <ul class="footer-links">
+
+                        <li>
+                            <a
+                                href="https://wa.me/212649982831"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                WhatsApp: +212 649-982831
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#products">
+                                توصيل لجميع المدن
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#products">
+                                الدفع عند الاستلام
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
             </div>
+
 
             <div class="footer-bottom">
-                <p>&copy; 2026 A&P AURA PARFUMS. جميع الحقوق محفوظة.</p>
+
+                <p>
+                    &copy; 2026 A&P AURA PARFUMS.
+                    جميع الحقوق محفوظة.
+                </p>
+
             </div>
+
         </div>
+
     </footer>
 
-    <!-- ===== ORDER MODAL ===== -->
-    <div id="orderModal" class="modal-overlay">
+
+    <!-- =========================================================
+         ORDER MODAL
+    ========================================================= -->
+
+    <div
+        id="orderModal"
+        class="modal-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="orderModalTitle"
+    >
+
         <div class="order-modal">
-            <span class="modal-close" onclick="closeOrderModal()">&times;</span>
-            
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="closeOrderModal()"
+                aria-label="إغلاق"
+            >
+                &times;
+            </button>
+
+
             <div class="modal-header">
-                <h3>تأكيد الطلب المباشر</h3>
-                <p>قم بإكمال بياناتك لتأكيد الطلب والتوصيل</p>
+
+                <h3 id="orderModalTitle">
+                    استمارة الطلب المباشر
+                </h3>
+
+                <p>
+                    تأكيد طلبك وتوصيله حتى باب منزلك
+                </p>
+
             </div>
+
+
+            <!-- ORDER SUMMARY -->
 
             <div class="order-summary-box">
+
                 <div class="summary-row">
-                    <span>العطر المختار:</span>
-                    <span id="displayPerfumeName" style="color:#fff; font-weight:500;">---</span>
+
+                    <span>
+                        العطر المختار:
+                    </span>
+
+                    <span
+                        id="displayPerfumeName"
+                        style="color:#fff;font-weight:500;"
+                    >
+                        ---
+                    </span>
+
                 </div>
+
+
                 <div class="summary-row">
-                    <span>السعر:</span>
-                    <span id="displayMainPrice" class="summary-price">45 درهم</span>
+
+                    <span>
+                        السعر:
+                    </span>
+
+                    <span
+                        id="displayMainPrice"
+                        class="summary-price"
+                    >
+                        45 درهم
+                    </span>
+
                 </div>
-                
-                <div id="extraPerfumeRow" class="summary-row" style="display: none; border-top: 1px dashed rgba(255,255,255,0.1); margin-top:4px; padding-top:4px;">
-                    <span id="displayExtraName">---</span>
-                    <span id="displayExtraPrice" class="summary-price">0 درهم</span>
+
+
+                <div
+                    id="extraPerfumeRow"
+                    class="summary-row"
+                    style="display:none;border-top:1px dashed rgba(255,255,255,0.08);margin-top:6px;padding-top:6px;"
+                >
+
+                    <span id="displayExtraName">
+                        ---
+                    </span>
+
+                    <span
+                        id="displayExtraPrice"
+                        class="summary-price"
+                    >
+                        0 درهم
+                    </span>
+
                 </div>
+
 
                 <div class="summary-row total">
-                    <span>المجموع الكلي:</span>
-                    <span id="displayTotalPrice" class="summary-price" style="font-size:18px;">45 درهم</span>
+
+                    <span>
+                        المجموع
+                    </span>
+
+                    <span
+                        id="displayTotalPrice"
+                        class="summary-price"
+                        style="font-size:18px;"
+                    >
+                        45 درهم
+                    </span>
+
                 </div>
+
             </div>
 
-            <form onsubmit="event.preventDefault(); sendToWhatsApp();">
+
+            <!-- ORDER FORM -->
+
+            <form
+                id="orderForm"
+                onsubmit="event.preventDefault(); sendToWhatsApp();"
+            >
+
                 <div class="form-group">
-                    <label for="perfumeQty">الكمية:</label>
-                    <input type="number" id="perfumeQty" class="form-control" value="1" min="1" onchange="calculateTotal()" oninput="calculateTotal()">
+
+                    <label for="perfumeQty">
+                        الكمية:
+                    </label>
+
+                    <input
+                        type="number"
+                        id="perfumeQty"
+                        class="form-control"
+                        value="1"
+                        min="1"
+                        inputmode="numeric"
+                        onchange="calculateTotal()"
+                        oninput="calculateTotal()"
+                        required
+                    >
+
                 </div>
 
-                <button type="button" class="btn-toggle-extra" id="toggleExtraBtn" onclick="toggleExtraPerfume()">
+
+                <button
+                    type="button"
+                    class="btn-toggle-extra"
+                    id="toggleExtraBtn"
+                    onclick="toggleExtraPerfume()"
+                >
                     ➕ إضافة عطر آخر للطلبية؟
                 </button>
 
-                <div id="extraSelectionBox" class="extra-box">
+
+                <div
+                    id="extraSelectionBox"
+                    class="extra-box"
+                >
+
                     <div class="form-group">
-                        <label for="extraPerfumeSelect">اختر العطر الإضافي:</label>
-                        <select id="extraPerfumeSelect" class="form-control" onchange="calculateTotal()">
-                            <option value="">-- اختر عطراً --</option>
-                            <option value="STRONGER WITH YOU INTENSELY">STRONGER WITH YOU INTENSELY (45 درهم)</option>
-                            <option value="BLEU DE CHANEL">BLEU DE CHANEL (45 درهم)</option>
-                            <option value="1 MILLION">1 MILLION (45 درهم)</option>
-                            <option value="ULTRA MALE">ULTRA MALE (45 درهم)</option>
-                            <option value="IMAGINATION LOUIS VUITTON">IMAGINATION LOUIS VUITTON (45 درهم)</option>
+
+                        <label for="extraPerfumeSelect">
+                            اختر العطر الإضافي:
+                        </label>
+
+                        <select
+                            id="extraPerfumeSelect"
+                            class="form-control"
+                            onchange="calculateTotal()"
+                        >
+
+                            <option value="">
+                                -- اختر عطراً --
+                            </option>
+
+                            <option value="STRONGER WITH YOU INTENSELY">
+                                STRONGER WITH YOU INTENSELY (45 درهم)
+                            </option>
+
+                            <option value="BLEU DE CHANEL">
+                                BLEU DE CHANEL (45 درهم)
+                            </option>
+
+                            <option value="1 MILLION">
+                                1 MILLION (45 درهم)
+                            </option>
+
+                            <option value="ULTRA MALE">
+                                ULTRA MALE (45 درهم)
+                            </option>
+
+                            <option value="IMAGINATION LOUIS VUITTON">
+                                IMAGINATION LOUIS VUITTON (45 درهم)
+                            </option>
+
                         </select>
+
                     </div>
-                    <div class="form-group" style="margin-bottom:0;">
-                        <label for="extraPerfumeQty">كمية العطر الإضافي:</label>
-                        <input type="number" id="extraPerfumeQty" class="form-control" value="1" min="1" onchange="calculateTotal()" oninput="calculateTotal()">
+
+
+                    <div
+                        class="form-group"
+                        style="margin-bottom:0;"
+                    >
+
+                        <label for="extraPerfumeQty">
+                            كمية العطر الإضافي:
+                        </label>
+
+                        <input
+                            type="number"
+                            id="extraPerfumeQty"
+                            class="form-control"
+                            value="1"
+                            min="1"
+                            inputmode="numeric"
+                            onchange="calculateTotal()"
+                            oninput="calculateTotal()"
+                        >
+
                     </div>
+
                 </div>
+
 
                 <div class="form-group">
-                    <label for="name">الاسم الكامل:</label>
-                    <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكريم" required>
+
+                    <label for="name">
+                        الاسم الكامل:
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        placeholder="أدخل اسمك الكريم"
+                        autocomplete="name"
+                        required
+                    >
+
                 </div>
+
 
                 <div class="form-group">
-                    <label for="address">المدينة والعنوان الكامل:</label>
-                    <textarea id="address" class="form-control" placeholder="أدخل مدينتك والعنوان بدقة" rows="2" required></textarea>
+
+                    <label for="address">
+                        المدينة والعنوان الكامل:
+                    </label>
+
+                    <textarea
+                        id="address"
+                        class="form-control"
+                        placeholder="أدخل مدينتك والعنوان بدقة"
+                        rows="2"
+                        autocomplete="street-address"
+                        required
+                    ></textarea>
+
                 </div>
+
 
                 <div class="form-group">
-                    <label for="phone">رقم الهاتف:</label>
-                    <input type="tel" id="phone" class="form-control" placeholder="06XXXXXXXX" required>
+
+                    <label for="phone">
+                        رقم الهاتف:
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        class="form-control"
+                        placeholder="06XXXXXXXX"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        required
+                    >
+
                 </div>
 
-                <button type="submit" class="btn-submit-wa">
-                    <span>💬</span>
-                    <span>تأكيد الطلب عبر WhatsApp</span>
+
+                <button
+                    type="submit"
+                    class="btn-submit-wa"
+                >
+
+                    <span>
+                        💬
+                    </span>
+
+                    <span>
+                        تأكيد الطلب عبر WhatsApp
+                    </span>
+
                 </button>
+
             </form>
+
         </div>
+
     </div>
 
-    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
-    <a href="https://wa.me/212649982831" class="floating-wa" target="_blank" aria-label="تواصل معنا عبر الواتساب">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+
+    <!-- =========================================================
+         FLOATING WHATSAPP
+    ========================================================= -->
+
+    <a
+        href="https://wa.me/212649982831"
+        class="floating-wa"
+        target="_blank"
+        rel="noopener"
+        aria-label="تواصل معنا عبر الواتساب"
+    >
+
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            aria-hidden="true"
+        >
+
             <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.9-186.6 184.9zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+
         </svg>
-        <span class="floating-wa-text">تواصل معنا عبر الواتساب</span>
+
+        <span class="floating-wa-text">
+            اطلب عبر WhatsApp
+        </span>
+
     </a>
 
-    <!-- ===== JAVASCRIPT LOGIC ===== -->
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
     <script>
+
+        /* =========================================================
+           GLOBAL ORDER STATE
+        ========================================================= */
+
         let currentPerfumePrice = 45;
+
         let currentPerfumeName = '';
+
         let isExtraActive = false;
 
-        function openOrderModal(name, price) {
-            currentPerfumeName = name;
-            currentPerfumePrice = price;
-            document.getElementById('displayPerfumeName').innerText = name;
-            document.getElementById('displayMainPrice').innerText = price + ' درهم';
-            
-            const modal = document.getElementById('orderModal');
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            calculateTotal();
+
+        /* =========================================================
+           OPTIMIZED HEADER SCROLL
+        ========================================================= */
+
+        const header = document.getElementById('mainHeader');
+
+        let scrollTicking = false;
+
+        function updateHeader() {
+
+            if (window.scrollY > 40) {
+
+                header.classList.add('scrolled');
+
+            } else {
+
+                header.classList.remove('scrolled');
+
+            }
+
+            scrollTicking = false;
         }
+
+        window.addEventListener(
+            'scroll',
+            function () {
+
+                if (!scrollTicking) {
+
+                    window.requestAnimationFrame(updateHeader);
+
+                    scrollTicking = true;
+
+                }
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        /* =========================================================
+           OPEN ORDER MODAL
+        ========================================================= */
+
+        function openOrderModal(name, price) {
+
+            currentPerfumeName = name;
+
+            currentPerfumePrice = price;
+
+
+            document.getElementById(
+                'displayPerfumeName'
+            ).innerText = name;
+
+
+            document.getElementById(
+                'displayMainPrice'
+            ).innerText = price + ' درهم';
+
+
+            const modal =
+                document.getElementById('orderModal');
+
+
+            modal.classList.add('active');
+
+
+            document.body.style.overflow = 'hidden';
+
+
+            calculateTotal();
+
+
+            setTimeout(function () {
+
+                const qty =
+                    document.getElementById('perfumeQty');
+
+                if (qty) {
+
+                    qty.focus();
+
+                }
+
+            }, 100);
+
+        }
+
+
+        /* =========================================================
+           CLOSE MODAL
+        ========================================================= */
 
         function closeOrderModal() {
-            const modal = document.getElementById('orderModal');
+
+            const modal =
+                document.getElementById('orderModal');
+
+
             modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+
+
+            document.body.style.overflow = '';
+
         }
 
-        // Close Modal when clicking overlay outside box
-        window.addEventListener('click', function(event) {
-            const modal = document.getElementById('orderModal');
-            if (event.target === modal) {
-                closeOrderModal();
+
+        /* =========================================================
+           CLOSE MODAL WHEN CLICKING BACKGROUND
+        ========================================================= */
+
+        document
+            .getElementById('orderModal')
+            .addEventListener(
+                'click',
+                function (event) {
+
+                    if (event.target === this) {
+
+                        closeOrderModal();
+
+                    }
+
+                }
+            );
+
+
+        /* =========================================================
+           ESC KEY
+        ========================================================= */
+
+        document.addEventListener(
+            'keydown',
+            function (event) {
+
+                if (
+                    event.key === 'Escape' &&
+                    document
+                        .getElementById('orderModal')
+                        .classList
+                        .contains('active')
+                ) {
+
+                    closeOrderModal();
+
+                }
+
             }
-        });
+        );
+
+
+        /* =========================================================
+           TOGGLE EXTRA PERFUME
+        ========================================================= */
 
         function toggleExtraPerfume() {
-            const box = document.getElementById('extraSelectionBox');
-            const row = document.getElementById('extraPerfumeRow');
-            const btn = document.getElementById('toggleExtraBtn');
-            
+
+            const box =
+                document.getElementById(
+                    'extraSelectionBox'
+                );
+
+
+            const row =
+                document.getElementById(
+                    'extraPerfumeRow'
+                );
+
+
+            const btn =
+                document.getElementById(
+                    'toggleExtraBtn'
+                );
+
+
             isExtraActive = !isExtraActive;
+
+
             if (isExtraActive) {
+
                 box.classList.add('active');
+
                 row.style.display = 'flex';
-                btn.innerHTML = '❌ إلغاء العطر الإضافي';
+
+                btn.innerHTML =
+                    '❌ إلغاء العطر الإضافي';
+
             } else {
+
                 box.classList.remove('active');
+
                 row.style.display = 'none';
-                document.getElementById('extraPerfumeSelect').value = '';
-                btn.innerHTML = '➕ إضافة عطر آخر للطلبية؟';
+
+                document.getElementById(
+                    'extraPerfumeSelect'
+                ).value = '';
+
+                document.getElementById(
+                    'extraPerfumeQty'
+                ).value = '1';
+
+                btn.innerHTML =
+                    '➕ إضافة عطر آخر للطلبية؟';
+
             }
+
+
             calculateTotal();
+
         }
+
+
+        /* =========================================================
+           CALCULATE TOTAL
+        ========================================================= */
 
         function calculateTotal() {
-            const mainQty = parseInt(document.getElementById('perfumeQty').value) || 1;
-            let total = currentPerfumePrice * mainQty;
+
+            const mainQty =
+                parseInt(
+                    document.getElementById(
+                        'perfumeQty'
+                    ).value,
+                    10
+                ) || 1;
+
+
+            let total =
+                currentPerfumePrice * mainQty;
+
 
             if (isExtraActive) {
-                const extraSelect = document.getElementById('extraPerfumeSelect');
-                const extraQty = parseInt(document.getElementById('extraPerfumeQty').value) || 1;
-                
+
+                const extraSelect =
+                    document.getElementById(
+                        'extraPerfumeSelect'
+                    );
+
+
+                const extraQty =
+                    parseInt(
+                        document.getElementById(
+                            'extraPerfumeQty'
+                        ).value,
+                        10
+                    ) || 1;
+
+
                 if (extraSelect.value !== '') {
+
                     const extraPrice = 45;
-                    total += extraPrice * extraQty;
-                    document.getElementById('displayExtraName').innerText = extraSelect.value + ' (x' + extraQty + ')';
-                    document.getElementById('displayExtraPrice').innerText = (extraPrice * extraQty) + ' درهم';
+
+
+                    total +=
+                        extraPrice * extraQty;
+
+
+                    document.getElementById(
+                        'displayExtraName'
+                    ).innerText =
+                        extraSelect.value +
+                        ' (x' +
+                        extraQty +
+                        ')';
+
+
+                    document.getElementById(
+                        'displayExtraPrice'
+                    ).innerText =
+                        (extraPrice * extraQty) +
+                        ' درهم';
+
                 } else {
-                    document.getElementById('displayExtraName').innerText = 'لم يتم اختيار عطر إضافي';
-                    document.getElementById('displayExtraPrice').innerText = '0 درهم';
+
+                    document.getElementById(
+                        'displayExtraName'
+                    ).innerText =
+                        'لم يتم الاختيار';
+
+
+                    document.getElementById(
+                        'displayExtraPrice'
+                    ).innerText =
+                        '0 درهم';
+
                 }
+
             }
 
-            document.getElementById('displayTotalPrice').innerText = total + ' درهم';
+
+            document.getElementById(
+                'displayTotalPrice'
+            ).innerText =
+                total + ' درهم';
+
         }
+
+
+        /* =========================================================
+           SEND ORDER TO WHATSAPP
+        ========================================================= */
 
         function sendToWhatsApp() {
-            const phoneNum = "212649982831";
-            const name = document.getElementById('name').value;
-            const address = document.getElementById('address').value;
-            const clientPhone = document.getElementById('phone').value;
-            const mainQty = document.getElementById('perfumeQty').value;
-            const totalPrice = document.getElementById('displayTotalPrice').innerText;
 
-            let msg = `مرحباً A&P AURA PARFUMS، أرغب في تأكيد الطلب التالي:\n\n`;
-            msg += `📌 *العطر الأساسي:* ${currentPerfumeName} (الكمية: ${mainQty})\n`;
+            const phoneNum =
+                '212649982831';
+
+
+            const name =
+                document.getElementById(
+                    'name'
+                ).value.trim();
+
+
+            const address =
+                document.getElementById(
+                    'address'
+                ).value.trim();
+
+
+            const clientPhone =
+                document.getElementById(
+                    'phone'
+                ).value.trim();
+
+
+            const mainQty =
+                document.getElementById(
+                    'perfumeQty'
+                ).value;
+
+
+            const totalPrice =
+                document.getElementById(
+                    'displayTotalPrice'
+                ).innerText;
+
+
+            let msg =
+                'مرحباً A&P AURA PARFUMS، أرغب في تأكيد الطلب التالي:\n\n';
+
+
+            msg +=
+                '📌 *العطر الأساسي:* ' +
+                currentPerfumeName +
+                ' (الكمية: ' +
+                mainQty +
+                ')\n';
+
 
             if (isExtraActive) {
-                const extraSelect = document.getElementById('extraPerfumeSelect').value;
-                const extraQty = document.getElementById('extraPerfumeQty').value;
+
+                const extraSelect =
+                    document.getElementById(
+                        'extraPerfumeSelect'
+                    ).value;
+
+
+                const extraQty =
+                    document.getElementById(
+                        'extraPerfumeQty'
+                    ).value;
+
+
                 if (extraSelect) {
-                    msg += `📌 *العطر الإضافي:* ${extraSelect} (الكمية: ${extraQty})\n`;
+
+                    msg +=
+                        '📌 *العطر الإضافي:* ' +
+                        extraSelect +
+                        ' (الكمية: ' +
+                        extraQty +
+                        ')\n';
+
                 }
+
             }
 
-            msg += `💰 *المجموع الكلي:* ${totalPrice}\n\n`;
-            msg += `👤 *الاسم:* ${name}\n`;
-            msg += `📍 *العنوان والمدينة:* ${address}\n`;
-            msg += `📱 *رقم الهاتف:* ${clientPhone}`;
 
-            const encodedMsg = encodeURIComponent(msg);
-            window.open(`https://wa.me/${phoneNum}?text=${encodedMsg}`, '_blank');
+            msg +=
+                '💰 *المجموع الكلي:* ' +
+                totalPrice +
+                '\n\n';
+
+
+            msg +=
+                '👤 *الاسم:* ' +
+                name +
+                '\n';
+
+
+            msg +=
+                '📍 *العنوان والمدينة:* ' +
+                address +
+                '\n';
+
+
+            msg +=
+                '📱 *رقم الهاتف:* ' +
+                clientPhone;
+
+
+            const encodedMsg =
+                encodeURIComponent(msg);
+
+
+            window.open(
+                'https://wa.me/' +
+                phoneNum +
+                '?text=' +
+                encodedMsg,
+                '_blank',
+                'noopener'
+            );
+
         }
+
     </script>
+
 </body>
 </html>
