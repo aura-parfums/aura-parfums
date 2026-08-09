@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A&P AURA PARFUMS | دار العطور الملكية</title>
+    <title>A&P AURA PARFUMS | دار العطور الفاخرة</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A&P AURA PARFUMS - مجموعة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة بثبات يدوم طويلاً.">
+    <meta property="og:title" content="A&P AURA PARFUMS | دار العطور الفاخرة">
+    <meta property="og:description" content="عطرك... بصمتك الخاصة. اكتشف تشكيلتنا الأنيقة مع خدمة التوصيل والدفع عند الاستلام.">
+    <meta property="og:type" content="website">
+
+    <!-- Typography (Cinzel & Readex Pro) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* ===== 1. SYSTEM ROOT & VARIABLES ===== */
+        /* ===== 1. DESIGN SYSTEM & ROOT VARIABLES ===== */
         :root {
-            --gold-primary: #d4af37;
-            --gold-light: #f3e5ab;
-            --gold-dark: #aa7c11;
-            --bg-black: #030303;
-            --card-glass: rgba(18, 18, 18, 0.65);
-            --border-gold: rgba(212, 175, 55, 0.25);
+            --bg-black: #050505;
+            --bg-surface: #0a0a0a;
+            --bg-card: rgba(18, 18, 18, 0.75);
+            --champagne-gold: #e6c687;
+            --gold-accent: #c5a059;
+            --gold-dark: #8a6d3b;
+            --gold-glow: rgba(230, 198, 135, 0.12);
+            --border-gold: rgba(197, 160, 89, 0.22);
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --text-main: #f8f8f8;
+            --text-muted: #a0a0a0;
+            --text-dim: #666666;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 20px;
+            --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         * {
@@ -26,723 +43,1312 @@
             box-sizing: border-box;
             font-family: 'Readex Pro', sans-serif;
             scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--bg-black);
-            color: #f5f5f5;
-            line-height: 1.6;
+            color: var(--text-main);
+            line-height: 1.7;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
-                radial-gradient(circle at 10% 40%, rgba(170, 124, 17, 0.08) 0%, transparent 40%),
-                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 50% 0%, rgba(197, 160, 89, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(138, 109, 59, 0.04) 0%, transparent 40%),
+                radial-gradient(circle at 15% 70%, rgba(197, 160, 89, 0.04) 0%, transparent 40%);
             background-attachment: fixed;
         }
 
-        /* ===== 2. UIVERSE ANNOUNCEMENT BAR ===== */
-        .announcement-bar {
-            background: linear-gradient(90deg, #aa7c11, #ffd700, #aa7c11);
-            background-size: 200% auto;
-            animation: shineGradient 4s linear infinite;
-            color: #000;
-            text-align: center;
-            padding: 8px 30px;
-            font-size: 13px;
-            font-weight: 700;
+        /* Utility Classes */
+        .cinzel-font { font-family: 'Cinzel', serif; }
+        .gold-text { color: var(--champagne-gold); }
+        
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== 2. HEADER ===== */
+        header {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
-            z-index: 101;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-gold);
+            transition: var(--transition-smooth);
         }
 
-        @keyframes shineGradient {
-            to { background-position: 200% center; }
-        }
-
-        .close-bar-btn {
-            position: absolute;
-            left: 20px;
-            font-size: 18px;
-            cursor: pointer;
-            font-weight: bold;
-            color: #000;
-        }
-
-        body.bar-closed header { top: 0 !important; }
-        body.bar-closed .hero { padding-top: 130px; }
-
-        /* ===== 3. GLASS HEADER ===== */
-        header {
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 8%;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--border-gold);
-            position: fixed;
-            width: 100%;
-            top: 35px;
-            z-index: 100;
-            transition: top 0.3s ease;
+            height: 75px;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
         }
 
         .logo-img {
-            height: 55px;
+            height: 48px;
             width: auto;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+            object-fit: contain;
+            filter: drop-shadow(0 2px 8px rgba(197, 160, 89, 0.25));
         }
 
-        nav { display: flex; gap: 30px; }
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
 
         nav a {
-            color: #e0e0e0;
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
             position: relative;
         }
 
-        nav a:hover { color: var(--gold-primary); }
-        
+        nav a:hover {
+            color: var(--champagne-gold);
+        }
+
         nav a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -4px;
             right: 0;
             width: 0;
-            height: 2px;
-            background: var(--gold-primary);
-            transition: width 0.3s ease;
+            height: 1px;
+            background: var(--champagne-gold);
+            transition: var(--transition-smooth);
         }
-        nav a:hover::after { width: 100%; }
 
-        /* ===== 4. LUXURY HERO SECTION ===== */
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .nav-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 50px;
+            background: rgba(37, 211, 102, 0.08);
+            border: 1px solid rgba(37, 211, 102, 0.3);
+            color: #25D366;
+            font-size: 12px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-whatsapp-btn:hover {
+            background: rgba(37, 211, 102, 0.18);
+            border-color: #25D366;
+            transform: translateY(-1px);
+        }
+
+        /* ===== 3. HERO SECTION ===== */
         .hero {
-            padding: 180px 20px 80px;
-            text-align: center;
             position: relative;
-            max-width: 900px;
-            margin: 0 auto;
+            padding: 160px 0 100px;
+            text-align: center;
+            overflow: hidden;
         }
 
-        .hero-subtitle {
-            color: var(--gold-primary);
-            font-size: 14px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 300px;
+            background: radial-gradient(ellipse, rgba(197, 160, 89, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-brand-badge {
+            display: inline-block;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            letter-spacing: 5px;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            display: block;
+            color: var(--gold-accent);
+            margin-bottom: 16px;
+            padding: 4px 16px;
+            border-radius: 30px;
+            background: rgba(197, 160, 89, 0.06);
+            border: 1px solid var(--border-gold);
         }
 
         .hero h1 {
-            font-size: 46px;
-            font-weight: 700;
-            background: linear-gradient(135deg, #ffffff 30%, #d4af37 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.3;
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.25;
+            color: #ffffff;
             margin-bottom: 20px;
-            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            letter-spacing: -0.5px;
         }
 
         .hero p {
-            color: #aaa;
-            font-size: 16px;
-            font-weight: 300;
-            max-width: 650px;
-            margin: 0 auto 35px;
-        }
-
-        /* ===== 5. FEATURES BAR (UIVERSE CARDS) ===== */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
-            gap: 20px;
-            margin-bottom: 80px;
-        }
-
-        .feature-card {
-            background: var(--card-glass);
-            border: 1px solid var(--border-gold);
-            border-radius: 14px;
-            padding: 20px;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
-        }
-
-        .feature-icon {
-            font-size: 26px;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .feature-card h4 {
-            color: var(--gold-primary);
+            color: var(--text-muted);
             font-size: 15px;
-            margin-bottom: 4px;
+            font-weight: 300;
+            max-width: 580px;
+            margin: 0 auto 36px;
+            line-height: 1.8;
         }
 
-        .feature-card p {
-            color: #888;
+        .hero-cta-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--gold-accent) 100%);
+            color: #000;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 20px rgba(197, 160, 89, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3);
+            filter: brightness(1.05);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 32px;
+            background: transparent;
+            color: var(--text-main);
+            font-weight: 400;
+            font-size: 14px;
+            border-radius: var(--radius-sm);
+            text-decoration: none;
+            border: 1px solid var(--border-gold);
+            transition: var(--transition-smooth);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(197, 160, 89, 0.08);
+            border-color: var(--gold-accent);
+            color: var(--champagne-gold);
+        }
+
+        /* ===== 4. TRUST / BENEFITS ===== */
+        .trust-section {
+            padding: 20px 0 80px;
+        }
+
+        .trust-bar {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+            padding: 24px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-md);
+            backdrop-filter: blur(12px);
+        }
+
+        .trust-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .trust-icon {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: var(--champagne-gold);
+        }
+
+        .trust-title {
             font-size: 12px;
+            font-weight: 500;
+            color: var(--text-main);
+            margin-bottom: 2px;
         }
 
-        /* ===== 6. PRODUCTS SECTION ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 20px;
+        .trust-desc {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+
+        /* ===== 5. SECTION HEADINGS ===== */
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold-accent);
+            display: block;
+            margin-bottom: 8px;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 32px;
-            color: var(--gold-primary);
-            margin-bottom: 50px;
-            font-weight: 700;
+            font-size: 30px;
+            font-weight: 600;
+            color: #ffffff;
             position: relative;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            display: inline-block;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 80px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            width: 40px;
+            height: 1px;
+            background: var(--gold-accent);
             margin: 12px auto 0;
+            opacity: 0.7;
+        }
+
+        /* ===== 6. PRODUCTS SECTION ===== */
+        .products-section {
+            padding: 40px 0 100px;
         }
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
         }
 
-        /* ===== UIVERSE GLASSMORPHIC PRODUCT CARD ===== */
         .product-card {
-            background: rgba(15, 15, 15, 0.7);
-            border: 1px solid var(--border-gold);
-            border-radius: 20px;
-            padding: 25px;
-            text-align: center;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            transition: var(--transition-smooth);
             position: relative;
-            backdrop-filter: blur(12px);
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15), transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            pointer-events: none;
+            backdrop-filter: blur(10px);
         }
 
         .product-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 30px rgba(212, 175, 55, 0.2);
+            border-color: var(--border-gold);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 20px var(--gold-glow);
         }
 
-        .product-card:hover::before { opacity: 1; }
+        .product-badge {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            z-index: 2;
+            background: rgba(10, 10, 10, 0.75);
+            border: 1px solid var(--border-gold);
+            backdrop-filter: blur(8px);
+            color: var(--champagne-gold);
+            font-size: 10px;
+            padding: 4px 10px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+        }
 
-        .img-wrapper {
+        .product-img-wrapper {
+            width: 100%;
+            height: 290px;
+            border-radius: var(--radius-sm);
             overflow: hidden;
-            border-radius: 14px;
             margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: #000;
             position: relative;
         }
 
-        .product-card img {
+        .product-img {
             width: 100%;
-            height: 270px;
+            height: 100%;
             object-fit: cover;
-            display: block;
-            transition: transform 0.5s ease;
+            object-position: center;
+            transition: transform 0.6s ease;
         }
 
-        .product-card:hover img {
-            transform: scale(1.08);
+        .product-card:hover .product-img {
+            transform: scale(1.05);
         }
 
-        .product-card h3 {
-            color: #fff;
-            font-size: 18px;
-            margin-bottom: 10px;
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-type {
+            font-size: 11px;
+            color: var(--gold-accent);
+            margin-bottom: 4px;
+            font-weight: 300;
+        }
+
+        .product-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            min-height: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        .product-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .product-size {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        .product-price {
+            font-size: 20px;
             font-weight: 600;
-            min-height: 50px;
+            color: var(--champagne-gold);
+        }
+
+        .btn-order {
+            width: 100%;
+            padding: 12px;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid var(--border-gold);
+            color: var(--champagne-gold);
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .product-card:hover .btn-order {
+            background: linear-gradient(135deg, var(--champagne-gold) 0%, var(--gold-accent) 100%);
+            color: #000;
+            border-color: transparent;
+            font-weight: 600;
+        }
+
+        /* ===== 7. WHY AURA SECTION ===== */
+        .why-aura-section {
+            padding: 80px 0;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .why-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-subtle);
+            padding: 32px 24px;
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .why-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-4px);
+        }
+
+        .why-number {
+            font-family: 'Cinzel', serif;
+            font-size: 28px;
+            color: var(--gold-accent);
+            opacity: 0.5;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .why-title {
+            font-size: 16px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .why-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* ===== 8. HOW TO ORDER ===== */
+        .how-order-section {
+            padding: 80px 0;
+            background: radial-gradient(circle at 50% 50%, rgba(10, 10, 10, 0.8) 0%, var(--bg-black) 100%);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
+        .step-item {
+            text-align: center;
+            padding: 24px 16px;
+            position: relative;
+        }
+
+        .step-icon-wrap {
+            width: 54px;
+            height: 54px;
+            border-radius: 50%;
+            background: rgba(197, 160, 89, 0.08);
+            border: 1px solid var(--border-gold);
             display: flex;
             align-items: center;
             justify-content: center;
-            letter-spacing: 0.5px;
+            margin: 0 auto 16px;
+            color: var(--champagne-gold);
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        .product-card .price {
-            color: var(--gold-primary);
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        .step-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 6px;
         }
 
-        /* ===== UIVERSE SHIMMER BUTTON ===== */
-        .btn-gold {
-            position: relative;
-            width: 100%;
-            padding: 14px 20px;
-            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-            color: #000;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            text-decoration: none;
-            text-align: center;
-            overflow: hidden;
-            z-index: 1;
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.25);
-            transition: all 0.3s ease;
+        .step-desc {
+            font-size: 12px;
+            color: var(--text-dim);
         }
 
-        .btn-gold::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
-        }
-
-        .btn-gold:hover::before {
-            left: 100%;
-        }
-
-        /* ===== 7. REVIEWS SECTION ===== */
+        /* ===== 9. REVIEWS SECTION ===== */
         .reviews-section {
-            margin-top: 80px;
-            padding-top: 60px;
-            border-top: 1px solid var(--border-gold);
+            padding: 80px 0 100px;
+            border-top: 1px solid var(--border-subtle);
         }
 
         .reviews-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
         .review-card {
-            background: var(--card-glass);
-            border: 1px solid var(--border-gold);
-            border-radius: 16px;
-            padding: 25px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 28px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            transition: var(--transition-smooth);
         }
 
         .review-card:hover {
-            border-color: var(--gold-primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            border-color: var(--border-gold);
+            transform: translateY(-4px);
         }
 
-        .review-header {
+        .review-stars {
+            color: var(--champagne-gold);
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .review-text {
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .review-author {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 12px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .client-name { font-weight: 600; font-size: 15px; color: #fff; }
-        .stars { color: var(--gold-primary); font-size: 14px; letter-spacing: 2px; }
-        .review-text { color: #ccc; font-size: 13px; margin-bottom: 14px; line-height: 1.7; }
-        .client-city { font-size: 11px; color: #777; }
+        .client-name {
+            font-size: 13px;
+            font-weight: 500;
+            color: #ffffff;
+        }
 
-        /* ===== 8. UIVERSE MODAL & FORM ===== */
+        .client-city {
+            font-size: 11px;
+            color: var(--text-dim);
+        }
+
+        /* ===== 10. ORDER MODAL ===== */
         .modal-overlay {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.88);
-            backdrop-filter: blur(12px);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            padding: 15px;
+            z-index: 2000;
+            padding: 20px;
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
         .modal-overlay.active {
-            display: flex !important;
+            display: flex;
             opacity: 1;
         }
 
-        .order-section {
-            background: rgba(15, 15, 15, 0.95);
-            border: 1px solid var(--gold-primary);
-            border-radius: 22px;
-            padding: 30px;
+        .order-modal {
+            background: #0f0f0f;
+            border: 1px solid var(--border-gold);
+            border-radius: var(--radius-lg);
+            padding: 32px;
             width: 100%;
-            max-width: 480px;
+            max-width: 500px;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95), 0 0 30px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.9), 0 0 30px var(--gold-glow);
+            animation: modalSlideUp 0.35s ease-out;
         }
 
-        .close-btn {
+        @keyframes modalSlideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
             position: absolute;
-            top: 18px; left: 22px;
-            font-size: 24px;
-            color: #888;
+            top: 20px;
+            left: 20px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             cursor: pointer;
-            transition: color 0.2s;
+            font-size: 18px;
+            transition: var(--transition-smooth);
         }
-        .close-btn:hover { color: var(--gold-primary); }
 
-        .modal-header { text-align: center; margin-bottom: 22px; }
-        .modal-header h2 { font-size: 22px; color: var(--gold-primary); font-weight: 700; }
-        .modal-header p { font-size: 12px; color: #888; margin-top: 4px; }
+        .modal-close:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.15);
+            border-color: var(--border-gold);
+        }
 
-        .selected-product-box {
-            background: rgba(212, 175, 55, 0.08);
+        .modal-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .modal-header h3 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .modal-header p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .order-summary-box {
+            background: rgba(197, 160, 89, 0.05);
             border: 1px solid var(--border-gold);
-            border-radius: 12px;
-            padding: 15px;
+            border-radius: var(--radius-sm);
+            padding: 16px;
             margin-bottom: 20px;
         }
 
-        .item-row {
+        .summary-row {
             display: flex;
             justify-content: space-between;
-            padding: 5px 0;
+            align-items: center;
             font-size: 13px;
+            padding: 4px 0;
+            color: var(--text-muted);
         }
 
-        .total-price-box {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 10px;
+        .summary-row.total {
+            margin-top: 8px;
             padding-top: 10px;
-            border-top: 1px solid var(--gold-primary);
-            font-weight: 700;
-            font-size: 15px;
-        }
-
-        .btn-add-extra {
-            background: transparent;
-            border: 1px dashed var(--gold-primary);
-            color: var(--gold-primary);
-            padding: 10px;
-            border-radius: 8px;
-            width: 100%;
-            font-size: 12px;
+            border-top: 1px solid var(--border-gold);
+            color: #fff;
             font-weight: 600;
-            cursor: pointer;
-            margin-bottom: 18px;
-            transition: all 0.2s;
-        }
-        .btn-add-extra:hover { background: rgba(212, 175, 55, 0.1); }
-
-        .extra-selection-box {
-            background: #080808;
-            border: 1px solid var(--border-gold);
-            padding: 14px;
-            border-radius: 10px;
-            margin-bottom: 18px;
-            display: none;
-        }
-        .extra-selection-box.active { display: block; }
-
-        .form-group { margin-bottom: 16px; text-align: right; }
-        .form-group label { display: block; color: var(--gold-primary); margin-bottom: 6px; font-size: 12px; }
-
-        /* UIVERSE GLOW INPUTS */
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background: #080808;
-            border: 1px solid #252525;
-            color: #fff;
-            border-radius: 10px;
-            font-size: 13px;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            border-color: var(--gold-primary);
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
-            background: #0c0c0c;
-        }
-
-        /* UIVERSE WHATSAPP BUTTON */
-        .btn-whatsapp {
-            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-            color: #fff;
             font-size: 15px;
-            font-weight: 700;
-            border: none;
-            border-radius: 10px;
-            padding: 14px;
+        }
+
+        .summary-price {
+            color: var(--champagne-gold);
+            font-weight: 500;
+        }
+
+        .btn-toggle-extra {
             width: 100%;
+            padding: 10px;
+            background: transparent;
+            border: 1px dashed var(--border-gold);
+            color: var(--champagne-gold);
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
             cursor: pointer;
-            margin-top: 10px;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
-        }
-
-        /* FLOATING WHATSAPP BUTTON */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            background: linear-gradient(135deg, #25d366, #128c7e);
-            color: white;
-            border-radius: 50px;
-            padding: 12px 22px;
-            font-weight: 700;
-            font-size: 13px;
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-            text-decoration: none;
+            margin-bottom: 20px;
+            transition: var(--transition-smooth);
             display: flex;
             align-items: center;
-            gap: 10px;
-            z-index: 99;
-            transition: all 0.3s ease;
+            justify-content: center;
+            gap: 6px;
         }
 
-        .floating-whatsapp:hover {
-            transform: scale(1.08);
-            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+        .btn-toggle-extra:hover {
+            background: rgba(197, 160, 89, 0.08);
         }
 
-        /* ===== 9. RESPONSIVE ===== */
+        .extra-box {
+            background: #050505;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .extra-box.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+            text-align: right;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 14px;
+            background: #050505;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        .form-control:focus {
+            border-color: var(--gold-accent);
+            box-shadow: 0 0 10px rgba(197, 160, 89, 0.15);
+            background: #080808;
+        }
+
+        select.form-control option {
+            background: #0f0f0f;
+            color: #fff;
+        }
+
+        .btn-submit-wa {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            border: none;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            margin-top: 8px;
+        }
+
+        .btn-submit-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.35);
+        }
+
+        /* ===== 11. FLOATING WHATSAPP BUTTON ===== */
+        .floating-wa {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            z-index: 999;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 18px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .floating-wa:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+            color: #ffffff;
+        }
+
+        .floating-wa svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        /* ===== 12. FOOTER ===== */
+        footer {
+            background: #020202;
+            border-top: 1px solid var(--border-gold);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand .logo-img {
+            height: 44px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-dim);
+            font-size: 13px;
+            max-width: 320px;
+            line-height: 1.7;
+        }
+
+        .footer-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--champagne-gold);
+            margin-bottom: 16px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 13px;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--champagne-gold);
+        }
+
+        .footer-bottom {
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
+        /* ===== 13. RESPONSIVE BREAKPOINTS ===== */
+        @media (max-width: 1024px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .trust-bar { grid-template-columns: repeat(3, 1fr); }
+        }
+
         @media (max-width: 768px) {
-            header { padding: 12px 5%; }
-            .hero { padding-top: 150px; }
-            .hero h1 { font-size: 32px; }
-            .products-grid { grid-template-columns: 1fr; }
+            header { height: 65px; }
+            .header-container { height: 65px; }
+            .logo-img { height: 38px; }
             
-            .floating-whatsapp {
-                bottom: 18px; right: 18px;
-                width: 50px; height: 50px;
-                padding: 0; border-radius: 50%;
-                justify-content: center; font-size: 22px;
+            .hero { padding: 130px 0 60px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 13px; }
+            
+            .hero-cta-group {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
             }
-            .floating-whatsapp .btn-text { display: none; }
+            .btn-primary, .btn-secondary { width: 100%; }
+
+            .trust-bar { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+            
+            .products-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .steps-grid { grid-template-columns: 1fr; }
+            
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            
+            .floating-wa {
+                bottom: 20px;
+                left: 16px;
+                padding: 0;
+                width: 46px;
+                height: 46px;
+                border-radius: 50%;
+                justify-content: center;
+            }
+            .floating-wa-text { display: none; }
+            .floating-wa svg { width: 22px; height: 22px; }
+        }
+
+        @media (max-width: 412px) {
+            .trust-bar { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 28px; }
+            .order-modal { padding: 24px 18px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="announcement-bar" id="announcementBar">
-        <span>✨ توصيل سريع لكافة المدن | الدفع عند الاستلام ✨</span>
-        <span class="close-bar-btn" onclick="closeAnnouncementBar()">&times;</span>
-    </div>
-
+    <!-- ===== HEADER ===== -->
     <header>
-        <a href="#"><img src="Adobe Express - file.png" alt="A&P AURA PARFUMS" class="logo-img"></a>
-        <nav>
-            <a href="#products">المجموعة</a>
-            <a href="#reviews">التقييمات</a>
-        </nav>
+        <div class="container header-container">
+            <a href="#" class="logo-link">
+                <img src="Adobe Express - file.png" alt="A&P AURA PARFUMS" class="logo-img">
+            </a>
+            
+            <nav>
+                <a href="#products">المجموعة</a>
+                <a href="#reviews">التقييمات</a>
+                <a href="#order-process">كيف تطلب؟</a>
+            </nav>
+
+            <a href="https://wa.me/212649982831" target="_blank" class="nav-whatsapp-btn">
+                <span>💬</span>
+                <span>واتساب</span>
+            </a>
+        </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero">
-        <span class="hero-subtitle">A&P AURA PARFUMS</span>
-        <h1>عالم العطور الفاخرة التي تأثر الحواس</h1>
-        <p>مجموعة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة، مصممة بثبات يدوم طويلاً لتعكس شخصيتك الفريدة.</p>
-        <a href="#products" class="btn-gold" style="display:inline-block; width:auto; padding:14px 40px;">استكشف المجموعة</a>
-    </section>
-
-    <div class="container">
-        
-        <!-- FEATURES BAR -->
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-icon">✨</span>
-                <h4>تركيز عالي</h4>
-                <p>عطور مركزة تدوم طويلاً</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">🚚</span>
-                <h4>توصيل سريع</h4>
-                <p>لكافة مدن المملكة</p>
-            </div>
-            <div class="feature-card">
-                <span class="feature-icon">💵</span>
-                <h4>الدفع عند الاستلام</h4>
-                <p>لا تدفع حتى تعاين طلبك</p>
+        <div class="container">
+            <span class="hero-brand-badge">A&P AURA PARFUMS</span>
+            <h1>عطرك... بصمتك الخاصة</h1>
+            <p>مجموعة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة، مصممة بتركيز عالٍ وثبات يدوم طويلاً لتعكس حضورك الاستثنائي.</p>
+            
+            <div class="hero-cta-group">
+                <a href="#products" class="btn-primary">اكتشف المجموعة</a>
+                <a href="#products" class="btn-secondary">اطلب الآن</a>
             </div>
         </div>
+    </section>
 
-        <!-- PRODUCTS -->
-        <section id="products">
-            <h2 class="section-title">المجموعة الفاخرة</h2>
+    <!-- ===== TRUST / BENEFITS ===== -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-bar">
+                <div class="trust-item">
+                    <span class="trust-icon">🚚</span>
+                    <span class="trust-title">توصيل سريع</span>
+                    <span class="trust-desc">لكافة مدن المغرب</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">💵</span>
+                    <span class="trust-title">الدفع عند الاستلام</span>
+                    <span class="trust-desc">بعد معاينة الطلب</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">💬</span>
+                    <span class="trust-title">تأكيد أسرع</span>
+                    <span class="trust-desc">مباشرة عبر WhatsApp</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">✨</span>
+                    <span class="trust-title">جودة عالية</span>
+                    <span class="trust-desc">عطور مستوحاة بدقة</span>
+                </div>
+                <div class="trust-item">
+                    <span class="trust-icon">⏳</span>
+                    <span class="trust-title">ثبات يدوم</span>
+                    <span class="trust-desc">تركيز يدوم طويلاً</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS SECTION ===== -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">EXCLUSIVE COLLECTION</span>
+                <h2 class="section-title">المجموعة الفاخرة</h2>
+            </div>
+
             <div class="products-grid">
                 
+                <!-- Product 1 -->
                 <div class="product-card">
-                    <div class="img-wrapper"><img src="parfum5.jpg" alt="STRONGER WITH YOU INTENSELY"></div>
-                    <h3>STRONGER WITH YOU INTENSELY</h3>
-                    <div class="price">45 درهم</div>
-                    <button type="button" class="btn-gold" onclick="openOrderModal('STRONGER WITH YOU INTENSELY', 45)">اطلب الآن</button>
-                </div>
-                
-                <div class="product-card">
-                    <div class="img-wrapper"><img src="parfum2.jpg" alt="BLEU DE CHANEL"></div>
-                    <h3>BLEU DE CHANEL</h3>
-                    <div class="price">45 درهم</div>
-                    <button type="button" class="btn-gold" onclick="openOrderModal('BLEU DE CHANEL', 45)">اطلب الآن</button>
-                </div>
-                
-                <div class="product-card">
-                    <div class="img-wrapper"><img src="parfum1.jpg" alt="1 MILLION"></div>
-                    <h3>1 MILLION</h3>
-                    <div class="price">45 درهم</div>
-                    <button type="button" class="btn-gold" onclick="openOrderModal('1 MILLION', 45)">اطلب الآن</button>
+                    <span class="product-badge">30ml</span>
+                    <div class="product-img-wrapper">
+                        <img src="parfum5.jpg" alt="STRONGER WITH YOU INTENSELY" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">عطر مستوحى</span>
+                        <h3 class="product-title">STRONGER WITH YOU INTENSELY</h3>
+                        <div class="product-meta">
+                            <span class="product-size">الحجم: 30 مل</span>
+                            <span class="product-price">45 درهم</span>
+                        </div>
+                        <button type="button" class="btn-order" onclick="openOrderModal('STRONGER WITH YOU INTENSELY', 45)">اطلب الآن</button>
+                    </div>
                 </div>
 
+                <!-- Product 2 -->
                 <div class="product-card">
-                    <div class="img-wrapper"><img src="parfum4.jpg" alt="ULTRA MALE"></div>
-                    <h3>ULTRA MALE</h3>
-                    <div class="price">45 درهم</div>
-                    <button type="button" class="btn-gold" onclick="openOrderModal('ULTRA MALE', 45)">اطلب الآن</button>
+                    <span class="product-badge">30ml</span>
+                    <div class="product-img-wrapper">
+                        <img src="parfum2.jpg" alt="BLEU DE CHANEL" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">عطر مستوحى</span>
+                        <h3 class="product-title">BLEU DE CHANEL</h3>
+                        <div class="product-meta">
+                            <span class="product-size">الحجم: 30 مل</span>
+                            <span class="product-price">45 درهم</span>
+                        </div>
+                        <button type="button" class="btn-order" onclick="openOrderModal('BLEU DE CHANEL', 45)">اطلب الآن</button>
+                    </div>
                 </div>
 
+                <!-- Product 3 -->
                 <div class="product-card">
-                    <div class="img-wrapper"><img src="parfum3.jpg" alt="IMAGINATION LOUIS VUITTON"></div>
-                    <h3>IMAGINATION LOUIS VUITTON</h3>
-                    <div class="price">45 درهم</div>
-                    <button type="button" class="btn-gold" onclick="openOrderModal('IMAGINATION LOUIS VUITTON', 45)">اطلب الآن</button>
+                    <span class="product-badge">30ml</span>
+                    <div class="product-img-wrapper">
+                        <img src="parfum1.jpg" alt="1 MILLION" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">عطر مستوحى</span>
+                        <h3 class="product-title">1 MILLION</h3>
+                        <div class="product-meta">
+                            <span class="product-size">الحجم: 30 مل</span>
+                            <span class="product-price">45 درهم</span>
+                        </div>
+                        <button type="button" class="btn-order" onclick="openOrderModal('1 MILLION', 45)">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <span class="product-badge">30ml</span>
+                    <div class="product-img-wrapper">
+                        <img src="parfum4.jpg" alt="ULTRA MALE" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">عطر مستوحى</span>
+                        <h3 class="product-title">ULTRA MALE</h3>
+                        <div class="product-meta">
+                            <span class="product-size">الحجم: 30 مل</span>
+                            <span class="product-price">45 درهم</span>
+                        </div>
+                        <button type="button" class="btn-order" onclick="openOrderModal('ULTRA MALE', 45)">اطلب الآن</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <span class="product-badge">30ml</span>
+                    <div class="product-img-wrapper">
+                        <img src="parfum3.jpg" alt="IMAGINATION LOUIS VUITTON" class="product-img">
+                    </div>
+                    <div class="product-info">
+                        <span class="product-type">عطر مستوحى</span>
+                        <h3 class="product-title">IMAGINATION LOUIS VUITTON</h3>
+                        <div class="product-meta">
+                            <span class="product-size">الحجم: 30 مل</span>
+                            <span class="product-price">45 درهم</span>
+                        </div>
+                        <button type="button" class="btn-order" onclick="openOrderModal('IMAGINATION LOUIS VUITTON', 45)">اطلب الآن</button>
+                    </div>
                 </div>
 
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- REVIEWS -->
-        <section id="reviews" class="reviews-section">
-            <h2 class="section-title">آراء زبنائنا الكرام</h2>
+    <!-- ===== WHY AURA PARFUMS ===== -->
+    <section class="why-aura-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">OUR VALUES</span>
+                <h2 class="section-title">لماذا AURA PARFUMS؟</h2>
+            </div>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <span class="why-number">01</span>
+                    <h3 class="why-title">اختيارات مميزة</h3>
+                    <p class="why-desc">ننتقي لك أرقى النوتات العطرية المستلهمة من أشهر الدور العالمية بدقة فائقة.</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-number">02</span>
+                    <h3 class="why-title">سعر مناسب</h3>
+                    <p class="why-desc">نقدم لك رفاهية العطور الفاخرة بأسعار مناسبة وجودة تنافسية ممتازة.</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-number">03</span>
+                    <h3 class="why-title">تجربة أنيقة</h3>
+                    <p class="why-desc">اهتمام بالغ بالتفاصيل والتغليف ليوصل لك إحساس الفخامة من اللحظة الأولى.</p>
+                </div>
+
+                <div class="why-card">
+                    <span class="why-number">04</span>
+                    <h3 class="why-title">طلب سهل وسريع</h3>
+                    <p class="why-desc">عملية طلب بسيطة ومباشرة عبر الواتساب لتأكيد سريع وتوصيل مريح.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW TO ORDER ===== -->
+    <section id="order-process" class="how-order-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">SIMPLE PROCESS</span>
+                <h2 class="section-title">كيف تطلب؟</h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-icon-wrap">1</div>
+                    <h3 class="step-title">اختر عطرك</h3>
+                    <p class="step-desc">تصفح التشكيلة واختر عطرك المفضل</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-icon-wrap">2</div>
+                    <h3 class="step-title">أرسل طلبك</h3>
+                    <p class="step-desc">اضغط على "اطلب الآن" واملأ بياناتك</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-icon-wrap">3</div>
+                    <h3 class="step-title">تأكيد عبر WhatsApp</h3>
+                    <p class="step-desc">نؤكد معك الطلب والعنوان بلمسة واحدة</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-icon-wrap">4</div>
+                    <h3 class="step-title">استلم طلبك</h3>
+                    <p class="step-desc">استلم عطرك حتى باب منزلك وادفع عند الاستلام</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== REVIEWS SECTION ===== -->
+    <section id="reviews" class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">TESTIMONIALS</span>
+                <h2 class="section-title">آراء العملاء</h2>
+            </div>
+
             <div class="reviews-grid">
                 <div class="review-card">
                     <div>
-                        <div class="review-header">
-                            <span class="client-name">أمينة العبادي</span>
-                            <div class="stars">★★★★★</div>
-                        </div>
+                        <div class="review-stars">★★★★★</div>
                         <p class="review-text">"صراحة العطر فوق التوقعات، الرائحة ثابتة جداً والتغليف فاخر ومتقن."</p>
                     </div>
-                    <span class="client-city">📍 الدار البيضاء</span>
+                    <div class="review-author">
+                        <span class="client-name">أمينة العبادي</span>
+                        <span class="client-city">الدار البيضاء</span>
+                    </div>
                 </div>
 
                 <div class="review-card">
                     <div>
-                        <div class="review-header">
-                            <span class="client-name">ياسين المنصوري</span>
-                            <div class="stars">★★★★★</div>
-                        </div>
+                        <div class="review-stars">★★★★★</div>
                         <p class="review-text">"عطر ULTRA MALE ممتاز وثباته يدوم طوال اليوم. والتوصيل كان سريعاً."</p>
                     </div>
-                    <span class="client-city">📍 الرباط</span>
+                    <div class="review-author">
+                        <span class="client-name">ياسين المنصوري</span>
+                        <span class="client-city">الرباط</span>
+                    </div>
                 </div>
 
                 <div class="review-card">
                     <div>
-                        <div class="review-header">
-                            <span class="client-name">سارة الإدريسي</span>
-                            <div class="stars">★★★★★</div>
-                        </div>
+                        <div class="review-stars">★★★★★</div>
                         <p class="review-text">"تجربتي مع عطر IMAGINATION كانت رائعة جداً، جودة ممتازة."</p>
                     </div>
-                    <span class="client-city">📍 مراكش</span>
+                    <div class="review-author">
+                        <span class="client-name">سارة الإدريسي</span>
+                        <span class="client-city">مراكش</span>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- ORDER MODAL -->
-    <div id="orderModal" class="modal-overlay">
-        <section class="order-section">
-            <span class="close-btn" onclick="closeOrderModal()">&times;</span>
-            <div class="modal-header">
-                <h2>استمارة الطلب المباشر</h2>
-                <p>تأكيد طلبك وتوصيله حتى باب منزلك</p>
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="Adobe Express - file.png" alt="A&P AURA PARFUMS" class="logo-img">
+                    <p>عطور أنيقة. حضور مختلف. نقدم لك أرقى النفحات العطرية المصممة لتعكس تميزك وفخامتك اليومية.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">روابط السريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#products">المجموعة الفاخرة</a></li>
+                        <li><a href="#reviews">آراء العملاء</a></li>
+                        <li><a href="#order-process">طريقة الطلب</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">التواصل المباشر</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://wa.me/212649982831" target="_blank">WhatsApp: +212 649-982831</a></li>
+                        <li><a href="#">الدفع عند الاستلام</a></li>
+                        <li><a href="#">توصيل لكافة المدن</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="selected-product-box">
-                <div id="mainPerfumeRow" class="item-row">
-                    <span id="displayPerfumeName">---</span>
-                    <span id="displayMainPrice" style="color:var(--gold-primary);">45 درهم</span>
+            <div class="footer-bottom">
+                <p>&copy; 2026 A&P AURA PARFUMS. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== ORDER MODAL ===== -->
+    <div id="orderModal" class="modal-overlay">
+        <div class="order-modal">
+            <span class="modal-close" onclick="closeOrderModal()">&times;</span>
+            
+            <div class="modal-header">
+                <h3>تأكيد الطلب المباشر</h3>
+                <p>قم بإكمال بياناتك لتأكيد الطلب والتوصيل</p>
+            </div>
+
+            <div class="order-summary-box">
+                <div class="summary-row">
+                    <span>العطر المختار:</span>
+                    <span id="displayPerfumeName" style="color:#fff; font-weight:500;">---</span>
+                </div>
+                <div class="summary-row">
+                    <span>السعر:</span>
+                    <span id="displayMainPrice" class="summary-price">45 درهم</span>
                 </div>
                 
-                <div id="extraPerfumeRow" class="item-row" style="display: none;">
+                <div id="extraPerfumeRow" class="summary-row" style="display: none; border-top: 1px dashed rgba(255,255,255,0.1); margin-top:4px; padding-top:4px;">
                     <span id="displayExtraName">---</span>
-                    <span id="displayExtraPrice" style="color:var(--gold-primary);">0 درهم</span>
+                    <span id="displayExtraPrice" class="summary-price">0 درهم</span>
                 </div>
 
-                <div class="total-price-box">
+                <div class="summary-row total">
                     <span>المجموع الكلي:</span>
-                    <span id="displayTotalPrice" style="color:var(--gold-primary);">45 درهم</span>
+                    <span id="displayTotalPrice" class="summary-price" style="font-size:18px;">45 درهم</span>
                 </div>
             </div>
 
             <form onsubmit="event.preventDefault(); sendToWhatsApp();">
                 <div class="form-group">
-                    <label>🔢 كمية العطر الأول:</label>
-                    <input type="number" id="perfumeQty" value="1" min="1" onchange="calculateTotal()" oninput="calculateTotal()">
+                    <label for="perfumeQty">الكمية:</label>
+                    <input type="number" id="perfumeQty" class="form-control" value="1" min="1" onchange="calculateTotal()" oninput="calculateTotal()">
                 </div>
 
-                <button type="button" class="btn-add-extra" id="toggleExtraBtn" onclick="toggleExtraPerfume()">
+                <button type="button" class="btn-toggle-extra" id="toggleExtraBtn" onclick="toggleExtraPerfume()">
                     ➕ إضافة عطر آخر للطلبية؟
                 </button>
 
-                <div id="extraSelectionBox" class="extra-selection-box">
+                <div id="extraSelectionBox" class="extra-box">
                     <div class="form-group">
-                        <label>✨ اختر العطر الإضافي:</label>
-                        <select id="extraPerfumeSelect" onchange="calculateTotal()">
+                        <label for="extraPerfumeSelect">اختر العطر الإضافي:</label>
+                        <select id="extraPerfumeSelect" class="form-control" onchange="calculateTotal()">
                             <option value="">-- اختر عطراً --</option>
                             <option value="STRONGER WITH YOU INTENSELY">STRONGER WITH YOU INTENSELY (45 درهم)</option>
                             <option value="BLEU DE CHANEL">BLEU DE CHANEL (45 درهم)</option>
@@ -752,59 +1358,73 @@
                         </select>
                     </div>
                     <div class="form-group" style="margin-bottom:0;">
-                        <label>🔢 كمية العطر الإضافي:</label>
-                        <input type="number" id="extraPerfumeQty" value="1" min="1" onchange="calculateTotal()" oninput="calculateTotal()">
+                        <label for="extraPerfumeQty">كمية العطر الإضافي:</label>
+                        <input type="number" id="extraPerfumeQty" class="form-control" value="1" min="1" onchange="calculateTotal()" oninput="calculateTotal()">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label>👤 الاسم الكامل:</label>
-                    <input type="text" id="name" placeholder="أدخل اسمك الكريم" required>
+                    <label for="name">الاسم الكامل:</label>
+                    <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكريم" required>
                 </div>
 
                 <div class="form-group">
-                    <label>📍 المدينة والعنوان الكامل:</label>
-                    <textarea id="address" placeholder="أدخل مدينتك والعنوان بدقة" rows="2" required></textarea>
+                    <label for="address">المدينة والعنوان الكامل:</label>
+                    <textarea id="address" class="form-control" placeholder="أدخل مدينتك والعنوان بدقة" rows="2" required></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label>📱 رقم الهاتف:</label>
-                    <input type="tel" id="phone" placeholder="06XXXXXXXX" required>
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="06XXXXXXXX" required>
                 </div>
 
-                <button type="submit" class="btn-whatsapp">💬 تأكيد الطلب عبر الواتساب</button>
+                <button type="submit" class="btn-submit-wa">
+                    <span>💬</span>
+                    <span>تأكيد الطلب عبر WhatsApp</span>
+                </button>
             </form>
-        </section>
+        </div>
     </div>
 
-    <!-- FLOATING BUTTON WITH YOUR PHONE NUMBER -->
-    <a href="https://wa.me/212649982831" class="floating-whatsapp" target="_blank">
-        <span>💬</span>
-        <span class="btn-text">تواصل معنا</span>
+    <!-- ===== FLOATING WHATSAPP BUTTON ===== -->
+    <a href="https://wa.me/212649982831" class="floating-wa" target="_blank" aria-label="تواصل معنا عبر الواتساب">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.9-186.6 184.9zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        <span class="floating-wa-text">تواصل معنا عبر الواتساب</span>
     </a>
 
+    <!-- ===== JAVASCRIPT LOGIC ===== -->
     <script>
         let currentPerfumePrice = 45;
         let currentPerfumeName = '';
         let isExtraActive = false;
-
-        function closeAnnouncementBar() {
-            document.getElementById('announcementBar').style.display = 'none';
-            document.body.classList.add('bar-closed');
-        }
 
         function openOrderModal(name, price) {
             currentPerfumeName = name;
             currentPerfumePrice = price;
             document.getElementById('displayPerfumeName').innerText = name;
             document.getElementById('displayMainPrice').innerText = price + ' درهم';
-            document.getElementById('orderModal').classList.add('active');
+            
+            const modal = document.getElementById('orderModal');
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
             calculateTotal();
         }
 
         function closeOrderModal() {
-            document.getElementById('orderModal').classList.remove('active');
+            const modal = document.getElementById('orderModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
         }
+
+        // Close Modal when clicking overlay outside box
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('orderModal');
+            if (event.target === modal) {
+                closeOrderModal();
+            }
+        });
 
         function toggleExtraPerfume() {
             const box = document.getElementById('extraSelectionBox');
@@ -815,12 +1435,12 @@
             if (isExtraActive) {
                 box.classList.add('active');
                 row.style.display = 'flex';
-                btn.innerText = '❌ إلغاء العطر الإضافي';
+                btn.innerHTML = '❌ إلغاء العطر الإضافي';
             } else {
                 box.classList.remove('active');
                 row.style.display = 'none';
                 document.getElementById('extraPerfumeSelect').value = '';
-                btn.innerText = '➕ إضافة عطر آخر للطلبية؟';
+                btn.innerHTML = '➕ إضافة عطر آخر للطلبية؟';
             }
             calculateTotal();
         }
@@ -839,7 +1459,7 @@
                     document.getElementById('displayExtraName').innerText = extraSelect.value + ' (x' + extraQty + ')';
                     document.getElementById('displayExtraPrice').innerText = (extraPrice * extraQty) + ' درهم';
                 } else {
-                    document.getElementById('displayExtraName').innerText = 'لم يتم الاختيار';
+                    document.getElementById('displayExtraName').innerText = 'لم يتم اختيار عطر إضافي';
                     document.getElementById('displayExtraPrice').innerText = '0 درهم';
                 }
             }
@@ -848,7 +1468,7 @@
         }
 
         function sendToWhatsApp() {
-            const phoneNum = "212649982831"; // 👈 تم وضع رقم الواتساب الخاص بك هنا
+            const phoneNum = "212649982831";
             const name = document.getElementById('name').value;
             const address = document.getElementById('address').value;
             const clientPhone = document.getElementById('phone').value;
