@@ -1,3568 +1,674 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>A&P AURA PARFUMS | Signature Fragrance Experience</title>
-
-    <meta name="description"
-          content="A&P AURA PARFUMS - تشكيلة حصرية من أرقى العطور العالمية المستلهمة من الفخامة والأناقة بثبات يدوم طويلاً وتوصيل لكافة مدن المغرب.">
-
-    <meta property="og:title" content="A&P AURA PARFUMS | دار العطور الفاخرة">
-    <meta property="og:description"
-          content="عطرك... بصمتك الخاصة. اكتشف تشكيلة Signature Collection الفاخرة مع خدمة التوصيل والدفع عند الاستلام.">
-    <meta property="og:type" content="website">
-
-    <!-- Optimized Preconnect for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Restored Original Google Fonts with display=swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        /* =========================================================
-           AURA PARFUMS — PERFORMANCE OPTIMIZED
-           Same luxury identity, lighter rendering
-        ========================================================= */
-
-        :root {
-            --bg-dark: #070706;
-            --bg-surface: #0e0e0d;
-
-            --champagne-gold: #e2c99b;
-            --gold-accent: #c8a768;
-
-            --gold-subtle: rgba(200, 167, 104, 0.14);
-            --gold-border: rgba(200, 167, 104, 0.22);
-
-            --text-ivory: #f7f5f0;
-            --text-muted: #a3a099;
-            --text-dim: #686661;
-
-            --border-subtle: rgba(255, 255, 255, 0.06);
-
-            --radius-sm: 6px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-
-            --transition: 0.25s ease;
-        }
-
-
-        /* =========================================================
-           RESET
-        ========================================================= */
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Readex Pro', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-ivory);
-            line-height: 1.8;
-            overflow-x: hidden;
-
-            background-image:
-                radial-gradient(
-                    circle at 50% 0%,
-                    rgba(200, 167, 104, 0.06) 0%,
-                    transparent 60%
-                ),
-                radial-gradient(
-                    circle at 85% 40%,
-                    rgba(200, 167, 104, 0.03) 0%,
-                    transparent 40%
-                ),
-                radial-gradient(
-                    circle at 15% 80%,
-                    rgba(200, 167, 104, 0.02) 0%,
-                    transparent 50%
-                );
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        button,
-        input,
-        textarea,
-        select {
-            font: inherit;
-        }
-
-        a,
-        button {
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-
-        /* =========================================================
-           TYPOGRAPHY
-        ========================================================= */
-
-        .cinzel-font {
-            font-family: 'Cinzel', serif;
-        }
-
-        .champagne-text {
-            color: var(--champagne-gold);
-        }
-
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-
-            background: rgba(7, 7, 6, 0.94);
-
-            border-bottom: 1px solid var(--gold-border);
-
-            transition:
-                background-color var(--transition),
-                box-shadow var(--transition);
-        }
-
-        header.scrolled {
-            background: rgba(7, 7, 6, 0.98);
-            border-bottom-color: rgba(200, 167, 104, 0.30);
-
-            box-shadow:
-                0 8px 24px rgba(0, 0, 0, 0.55);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            height: 80px;
-
-            transition: height var(--transition);
-        }
-
-        header.scrolled .header-container {
-            height: 70px;
-        }
-
-        .logo-link {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-
-            transition: height var(--transition);
-        }
-
-        header.scrolled .logo-img {
-            height: 42px;
-        }
-
-
-        /* =========================================================
-           NAVIGATION
-        ========================================================= */
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-
-            font-size: 13px;
-            font-weight: 300;
-            letter-spacing: 0.5px;
-
-            transition:
-                color var(--transition);
-
-            position: relative;
-        }
-
-        nav a:hover {
-            color: var(--champagne-gold);
-        }
-
-        nav a::after {
-            content: '';
-
-            position: absolute;
-            bottom: -6px;
-            right: 0;
-
-            width: 0;
-            height: 1px;
-
-            background: var(--champagne-gold);
-
-            transition: width var(--transition);
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-
-        /* =========================================================
-           WHATSAPP NAV BUTTON
-        ========================================================= */
-
-        .nav-whatsapp-btn {
-            display: inline-flex;
-            align-items: center;
-
-            gap: 8px;
-
-            padding: 8px 18px;
-
-            border-radius: 40px;
-
-            background: rgba(37, 211, 102, 0.06);
-
-            border: 1px solid rgba(37, 211, 102, 0.25);
-
-            color: #25D366;
-
-            font-size: 12px;
-            font-weight: 400;
-
-            text-decoration: none;
-
-            transition:
-                background-color var(--transition),
-                border-color var(--transition),
-                transform var(--transition);
-        }
-
-        .nav-whatsapp-btn:hover {
-            background: rgba(37, 211, 102, 0.12);
-            border-color: #25D366;
-            transform: translateY(-1px);
-        }
-
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .hero {
-            position: relative;
-
-            padding: 190px 0 110px;
-
-            text-align: center;
-
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-
-            position: absolute;
-
-            top: 15%;
-            left: 50%;
-
-            transform: translateX(-50%);
-
-            width: 700px;
-            height: 350px;
-
-            background:
-                radial-gradient(
-                    ellipse,
-                    rgba(200, 167, 104, 0.09) 0%,
-                    transparent 70%
-                );
-
-            pointer-events: none;
-        }
-
-        .hero-brand-badge {
-            display: inline-block;
-
-            font-family: 'Cinzel', serif;
-
-            font-size: 11px;
-
-            letter-spacing: 6px;
-
-            text-transform: uppercase;
-
-            color: var(--gold-accent);
-
-            margin-bottom: 20px;
-
-            padding: 5px 20px;
-
-            border-radius: 40px;
-
-            background: rgba(200, 167, 104, 0.05);
-
-            border: 1px solid var(--gold-border);
-        }
-
-        .hero h1 {
-            font-size: 52px;
-
-            font-weight: 500;
-
-            line-height: 1.25;
-
-            color: var(--text-ivory);
-
-            margin-bottom: 22px;
-
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            color: var(--text-muted);
-
-            font-size: 15px;
-
-            font-weight: 300;
-
-            max-width: 600px;
-
-            margin: 0 auto 40px;
-
-            line-height: 1.8;
-        }
-
-        .hero-cta-group {
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            gap: 18px;
-        }
-
-
-        /* =========================================================
-           BUTTONS
-        ========================================================= */
-
-        .btn-primary,
-        .btn-secondary {
-            display: inline-flex;
-
-            justify-content: center;
-            align-items: center;
-
-            padding: 15px 36px;
-
-            font-size: 13px;
-
-            border-radius: var(--radius-sm);
-
-            text-decoration: none;
-
-            cursor: pointer;
-
-            transition:
-                transform var(--transition),
-                background-color var(--transition),
-                border-color var(--transition),
-                color var(--transition),
-                box-shadow var(--transition);
-        }
-
-        .btn-primary {
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--champagne-gold) 0%,
-                    var(--gold-accent) 100%
-                );
-
-            color: #070706;
-
-            font-weight: 600;
-
-            border: none;
-
-            box-shadow:
-                0 4px 16px rgba(200, 167, 104, 0.12);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 7px 22px rgba(200, 167, 104, 0.20);
-        }
-
-        .btn-secondary {
-            background: transparent;
-
-            color: var(--text-ivory);
-
-            font-weight: 300;
-
-            border: 1px solid var(--gold-border);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(200, 167, 104, 0.08);
-
-            border-color: var(--gold-accent);
-
-            color: var(--champagne-gold);
-        }
-
-
-        /* =========================================================
-           TRUST BAR
-        ========================================================= */
-
-        .trust-section {
-            padding: 0 0 90px;
-        }
-
-        .trust-bar {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 20px;
-
-            padding: 28px 32px;
-
-            background: rgba(18, 18, 16, 0.92);
-
-            border: 1px solid var(--gold-border);
-
-            border-radius: var(--radius-md);
-        }
-
-        .trust-item {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 14px;
-
-            text-align: right;
-        }
-
-        .trust-icon {
-            font-size: 22px;
-
-            color: var(--champagne-gold);
-
-            flex-shrink: 0;
-        }
-
-        .trust-text-wrap {
-            display: flex;
-
-            flex-direction: column;
-        }
-
-        .trust-title {
-            font-size: 13px;
-
-            font-weight: 500;
-
-            color: var(--text-ivory);
-        }
-
-        .trust-desc {
-            font-size: 11px;
-
-            color: var(--text-dim);
-        }
-
-
-        /* =========================================================
-           SECTION HEADERS
-        ========================================================= */
-
-        .section-header {
-            text-align: center;
-
-            margin-bottom: 56px;
-        }
-
-        .section-subtitle {
-            font-family: 'Cinzel', serif;
-
-            font-size: 11px;
-
-            letter-spacing: 5px;
-
-            text-transform: uppercase;
-
-            color: var(--gold-accent);
-
-            display: block;
-
-            margin-bottom: 10px;
-        }
-
-        .section-title {
-            font-size: 32px;
-
-            font-weight: 500;
-
-            color: var(--text-ivory);
-
-            position: relative;
-
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-
-            display: block;
-
-            width: 36px;
-
-            height: 1px;
-
-            background: var(--gold-accent);
-
-            margin: 14px auto 0;
-
-            opacity: 0.6;
-        }
-
-
-        /* =========================================================
-           PRODUCTS
-        ========================================================= */
-
-        .products-section {
-            padding: 30px 0 110px;
-        }
-
-        .products-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 36px;
-        }
-
-        .product-card {
-            background: rgba(18, 18, 16, 0.94);
-
-            border: 1px solid var(--border-subtle);
-
-            border-radius: var(--radius-md);
-
-            padding: 22px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            position: relative;
-
-            overflow: hidden;
-
-            transition:
-                transform var(--transition),
-                border-color var(--transition),
-                box-shadow var(--transition);
-        }
-
-        .product-card:hover {
-            border-color: var(--gold-border);
-
-            transform: translateY(-5px);
-
-            box-shadow:
-                0 14px 30px rgba(0, 0, 0, 0.45);
-        }
-
-        .product-badge {
-            position: absolute;
-
-            top: 34px;
-            right: 34px;
-
-            z-index: 2;
-
-            background: rgba(7, 7, 6, 0.92);
-
-            border: 1px solid var(--gold-border);
-
-            color: var(--champagne-gold);
-
-            font-family: 'Cinzel', serif;
-
-            font-size: 10px;
-
-            padding: 4px 12px;
-
-            border-radius: 30px;
-
-            letter-spacing: 1px;
-        }
-
-        .product-img-wrapper {
-            width: 100%;
-
-            height: 310px;
-
-            border-radius: var(--radius-sm);
-
-            overflow: hidden;
-
-            margin-bottom: 22px;
-
-            background: #000;
-
-            position: relative;
-        }
-
-        .product-img {
-            width: 100%;
-
-            height: 100%;
-
-            object-fit: cover;
-
-            object-position: center;
-
-            display: block;
-
-            transition: transform 0.35s ease;
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.035);
-        }
-
-        .product-info {
-            display: flex;
-
-            flex-direction: column;
-
-            flex-grow: 1;
-        }
-
-        .product-type {
-            font-size: 11px;
-
-            color: var(--gold-accent);
-
-            margin-bottom: 6px;
-
-            font-weight: 300;
-        }
-
-        .product-title {
-            font-size: 16px;
-
-            font-weight: 500;
-
-            color: var(--text-ivory);
-
-            margin-bottom: 14px;
-
-            line-height: 1.4;
-
-            min-height: 48px;
-
-            display: flex;
-
-            align-items: center;
-        }
-
-        .product-meta {
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            margin-bottom: 22px;
-
-            padding-top: 14px;
-
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .product-size {
-            font-size: 12px;
-
-            color: var(--text-dim);
-        }
-
-        .product-price {
-            font-size: 22px;
-
-            font-weight: 600;
-
-            color: var(--champagne-gold);
-        }
-
-        .btn-order {
-            width: 100%;
-
-            padding: 13px;
-
-            background: rgba(200, 167, 104, 0.08);
-
-            border: 1px solid var(--gold-border);
-
-            color: var(--champagne-gold);
-
-            font-size: 13px;
-
-            font-weight: 500;
-
-            border-radius: var(--radius-sm);
-
-            cursor: pointer;
-
-            transition:
-                background-color var(--transition),
-                color var(--transition),
-                border-color var(--transition);
-        }
-
-        .product-card:hover .btn-order {
-            background:
-                linear-gradient(
-                    135deg,
-                    var(--champagne-gold) 0%,
-                    var(--gold-accent) 100%
-                );
-
-            color: #070706;
-
-            border-color: transparent;
-
-            font-weight: 600;
-        }
-
-
-        /* =========================================================
-           STORY
-        ========================================================= */
-
-        .story-section {
-            padding: 90px 0;
-
-            border-top: 1px solid var(--border-subtle);
-
-            border-bottom: 1px solid var(--border-subtle);
-
-            background: var(--bg-surface);
-
-            text-align: center;
-        }
-
-        .story-content {
-            max-width: 750px;
-
-            margin: 0 auto;
-        }
-
-        .story-quote {
-            font-size: 24px;
-
-            font-weight: 300;
-
-            line-height: 1.7;
-
-            color: var(--text-ivory);
-
-            margin-bottom: 20px;
-
-            letter-spacing: -0.2px;
-        }
-
-        .story-author {
-            font-family: 'Cinzel', serif;
-
-            font-size: 12px;
-
-            letter-spacing: 4px;
-
-            color: var(--gold-accent);
-
-            text-transform: uppercase;
-        }
-
-
-        /* =========================================================
-           WHY AURA
-        ========================================================= */
-
-        .why-aura-section {
-            padding: 110px 0;
-        }
-
-        .why-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 36px;
-        }
-
-        .why-card {
-            background: var(--bg-surface);
-
-            border: 1px solid var(--border-subtle);
-
-            padding: 40px 30px;
-
-            border-radius: var(--radius-md);
-
-            transition:
-                transform var(--transition),
-                border-color var(--transition);
-        }
-
-        .why-card:hover {
-            border-color: var(--gold-border);
-
-            transform: translateY(-4px);
-        }
-
-        .why-number {
-            font-family: 'Cinzel', serif;
-
-            font-size: 36px;
-
-            font-weight: 600;
-
-            color: var(--champagne-gold);
-
-            opacity: 0.4;
-
-            margin-bottom: 18px;
-
-            display: block;
-        }
-
-        .why-title {
-            font-size: 17px;
-
-            font-weight: 500;
-
-            color: var(--text-ivory);
-
-            margin-bottom: 10px;
-        }
-
-        .why-desc {
-            font-size: 13px;
-
-            color: var(--text-muted);
-
-            line-height: 1.8;
-
-            font-weight: 300;
-        }
-
-
-        /* =========================================================
-           HOW TO ORDER
-        ========================================================= */
-
-        .how-order-section {
-            padding: 100px 0;
-
-            background:
-                radial-gradient(
-                    circle at 50% 50%,
-                    rgba(14, 14, 13, 0.9) 0%,
-                    var(--bg-dark) 100%
-                );
-
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .steps-grid {
-            display: grid;
-
-            grid-template-columns: repeat(4, 1fr);
-
-            gap: 24px;
-        }
-
-        .step-item {
-            text-align: center;
-
-            padding: 20px 10px;
-        }
-
-        .step-number-wrap {
-            font-family: 'Cinzel', serif;
-
-            font-size: 26px;
-
-            font-weight: 600;
-
-            color: var(--gold-accent);
-
-            width: 58px;
-
-            height: 58px;
-
-            border-radius: 50%;
-
-            background: rgba(200, 167, 104, 0.05);
-
-            border: 1px solid var(--gold-border);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            margin: 0 auto 20px;
-        }
-
-        .step-title {
-            font-size: 15px;
-
-            font-weight: 500;
-
-            color: var(--text-ivory);
-
-            margin-bottom: 8px;
-        }
-
-        .step-desc {
-            font-size: 12px;
-
-            color: var(--text-dim);
-
-            line-height: 1.6;
-        }
-
-
-        /* =========================================================
-           REVIEWS
-        ========================================================= */
-
-        .reviews-section {
-            padding: 110px 0;
-
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .reviews-grid {
-            display: grid;
-
-            grid-template-columns: repeat(3, 1fr);
-
-            gap: 32px;
-        }
-
-        .review-card {
-            background: rgba(18, 18, 16, 0.94);
-
-            border: 1px solid var(--border-subtle);
-
-            border-radius: var(--radius-md);
-
-            padding: 32px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
-            transition:
-                transform var(--transition),
-                border-color var(--transition);
-        }
-
-        .review-card:hover {
-            border-color: var(--gold-border);
-
-            transform: translateY(-4px);
-        }
-
-        .review-stars {
-            color: var(--champagne-gold);
-
-            font-size: 12px;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 16px;
-        }
-
-        .review-text {
-            color: var(--text-muted);
-
-            font-size: 13px;
-
-            line-height: 1.85;
-
-            margin-bottom: 24px;
-
-            font-weight: 300;
-        }
-
-        .review-author {
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            padding-top: 16px;
-
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .client-name {
-            font-size: 13px;
-
-            font-weight: 500;
-
-            color: var(--text-ivory);
-        }
-
-        .client-city {
-            font-size: 11px;
-
-            color: var(--text-dim);
-        }
-
-
-        /* =========================================================
-           ORDER MODAL
-        ========================================================= */
-
-        .modal-overlay {
-            position: fixed;
-
-            inset: 0;
-
-            width: 100%;
-            height: 100%;
-
-            background: rgba(0, 0, 0, 0.90);
-
-            display: none;
-
-            justify-content: center;
-
-            align-items: center;
-
-            z-index: 2000;
-
-            padding: 20px;
-
-            opacity: 0;
-
-            transition: opacity 0.25s ease;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-
-            opacity: 1;
-        }
-
-        .order-modal {
-            background: #0d0d0c;
-
-            border: 1px solid var(--gold-border);
-
-            border-radius: var(--radius-lg);
-
-            padding: 36px;
-
-            width: 100%;
-
-            max-width: 500px;
-
-            max-height: 90vh;
-
-            overflow-y: auto;
-
-            position: relative;
-
-            box-shadow:
-                0 25px 50px rgba(0, 0, 0, 0.90);
-
-            animation:
-                modalSlideUp 0.28s ease;
-        }
-
-        @keyframes modalSlideUp {
-            from {
-                transform: translateY(18px);
-
-                opacity: 0;
-            }
-
-            to {
-                transform: translateY(0);
-
-                opacity: 1;
-            }
-        }
-
-        .modal-close {
-            position: absolute;
-
-            top: 22px;
-
-            left: 22px;
-
-            width: 34px;
-
-            height: 34px;
-
-            border-radius: 50%;
-
-            background: rgba(255, 255, 255, 0.04);
-
-            border: 1px solid rgba(255, 255, 255, 0.08);
-
-            color: var(--text-muted);
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            cursor: pointer;
-
-            font-size: 18px;
-
-            transition:
-                background-color var(--transition),
-                color var(--transition),
-                border-color var(--transition);
-        }
-
-        .modal-close:hover {
-            color: #fff;
-
-            background: rgba(255, 255, 255, 0.10);
-
-            border-color: var(--gold-border);
-        }
-
-        .modal-header {
-            text-align: center;
-
-            margin-bottom: 26px;
-        }
-
-        .modal-header h3 {
-            font-size: 20px;
-
-            color: var(--text-ivory);
-
-            font-weight: 500;
-
-            margin-bottom: 6px;
-        }
-
-        .modal-header p {
-            font-size: 12px;
-
-            color: var(--text-muted);
-
-            font-weight: 300;
-        }
-
-
-        /* =========================================================
-           ORDER SUMMARY
-        ========================================================= */
-
-        .order-summary-box {
-            background: rgba(200, 167, 104, 0.04);
-
-            border: 1px solid var(--gold-border);
-
-            border-radius: var(--radius-sm);
-
-            padding: 18px;
-
-            margin-bottom: 24px;
-        }
-
-        .summary-row {
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            font-size: 13px;
-
-            padding: 5px 0;
-
-            color: var(--text-muted);
-        }
-
-        .summary-row.total {
-            margin-top: 10px;
-
-            padding-top: 12px;
-
-            border-top: 1px solid var(--gold-border);
-
-            color: var(--text-ivory);
-
-            font-weight: 600;
-
-            font-size: 16px;
-        }
-
-        .summary-price {
-            color: var(--champagne-gold);
-
-            font-weight: 500;
-        }
-
-
-        /* =========================================================
-           EXTRA PERFUME
-        ========================================================= */
-
-        .btn-toggle-extra {
-            width: 100%;
-
-            padding: 11px;
-
-            background: transparent;
-
-            border: 1px dashed var(--gold-border);
-
-            color: var(--champagne-gold);
-
-            font-size: 12px;
-
-            font-weight: 500;
-
-            border-radius: var(--radius-sm);
-
-            cursor: pointer;
-
-            margin-bottom: 22px;
-
-            transition:
-                background-color var(--transition);
-        }
-
-        .btn-toggle-extra:hover {
-            background: rgba(200, 167, 104, 0.08);
-        }
-
-        .extra-box {
-            background: #050505;
-
-            border: 1px solid var(--border-subtle);
-
-            border-radius: var(--radius-sm);
-
-            padding: 18px;
-
-            margin-bottom: 22px;
-
-            display: none;
-        }
-
-        .extra-box.active {
-            display: block;
-        }
-
-
-        /* =========================================================
-           FORM
-        ========================================================= */
-
-        .form-group {
-            margin-bottom: 18px;
-
-            text-align: right;
-        }
-
-        .form-group label {
-            display: block;
-
-            font-size: 12px;
-
-            color: var(--text-muted);
-
-            margin-bottom: 8px;
-
-            font-weight: 300;
-        }
-
-        .form-control {
-            width: 100%;
-
-            padding: 13px 16px;
-
-            background: #050505;
-
-            border: 1px solid var(--border-subtle);
-
-            border-radius: var(--radius-sm);
-
-            color: #fff;
-
-            font-size: 13px;
-
-            outline: none;
-
-            transition:
-                border-color var(--transition),
-                background-color var(--transition);
-        }
-
-        .form-control:focus {
-            border-color: var(--gold-accent);
-
-            background: #080808;
-        }
-
-        select.form-control option {
-            background: #0d0d0c;
-
-            color: #fff;
-        }
-
-
-        /* =========================================================
-           WHATSAPP SUBMIT
-        ========================================================= */
-
-        .btn-submit-wa {
-            width: 100%;
-
-            padding: 15px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #25D366 0%,
-                    #128C7E 100%
-                );
-
-            color: #fff;
-
-            font-weight: 600;
-
-            font-size: 14px;
-
-            border: none;
-
-            border-radius: var(--radius-sm);
-
-            cursor: pointer;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            gap: 10px;
-
-            transition:
-                transform var(--transition),
-                box-shadow var(--transition);
-
-            box-shadow:
-                0 4px 16px rgba(37, 211, 102, 0.18);
-
-            margin-top: 10px;
-        }
-
-        .btn-submit-wa:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 7px 20px rgba(37, 211, 102, 0.25);
-        }
-
-
-        /* =========================================================
-           FLOATING WHATSAPP
-        ========================================================= */
-
-        .floating-wa {
-            position: fixed;
-
-            bottom: 24px;
-
-            left: 24px;
-
-            z-index: 999;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #25D366 0%,
-                    #128C7E 100%
-                );
-
-            color: #fff;
-
-            padding: 10px 18px;
-
-            border-radius: 50px;
-
-            text-decoration: none;
-
-            font-size: 13px;
-
-            font-weight: 500;
-
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-            box-shadow:
-                0 4px 16px rgba(37, 211, 102, 0.25);
-
-            transition:
-                transform var(--transition),
-                box-shadow var(--transition);
-
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        .floating-wa:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 7px 20px rgba(37, 211, 102, 0.30);
-
-            color: #fff;
-        }
-
-        .floating-wa svg {
-            width: 18px;
-
-            height: 18px;
-
-            fill: currentColor;
-
-            flex-shrink: 0;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            background: #030303;
-
-            border-top: 1px solid var(--gold-border);
-
-            padding: 70px 0 35px;
-        }
-
-        .footer-grid {
-            display: grid;
-
-            grid-template-columns: 2fr 1fr 1fr;
-
-            gap: 48px;
-
-            margin-bottom: 48px;
-        }
-
-        .footer-brand .logo-img {
-            height: 46px;
-
-            margin-bottom: 18px;
-        }
-
-        .footer-brand p {
-            color: var(--text-dim);
-
-            font-size: 13px;
-
-            max-width: 340px;
-
-            line-height: 1.8;
-
-            font-weight: 300;
-        }
-
-        .footer-title {
-            font-size: 14px;
-
-            font-weight: 500;
-
-            color: var(--champagne-gold);
-
-            margin-bottom: 18px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-
-            text-decoration: none;
-
-            font-size: 13px;
-
-            font-weight: 300;
-
-            transition: color var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--champagne-gold);
-        }
-
-        .footer-bottom {
-            padding-top: 28px;
-
-            border-top: 1px solid var(--border-subtle);
-
-            text-align: center;
-
-            font-size: 12px;
-
-            color: var(--text-dim);
-
-            font-weight: 300;
-        }
-
-
-        /* =========================================================
-           RESPONSIVE — TABLET
-        ========================================================= */
-
-        @media (max-width: 1024px) {
-
-            .products-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .steps-grid {
-                grid-template-columns: repeat(2, 1fr);
-
-                gap: 32px;
-            }
-
-            .trust-bar {
-                grid-template-columns: repeat(2, 1fr);
-
-                gap: 20px;
-            }
-        }
-
-
-        /* =========================================================
-           RESPONSIVE — MOBILE
-        ========================================================= */
-
-        @media (max-width: 768px) {
-
-            header {
-                height: 68px;
-            }
-
-            .header-container {
-                height: 68px;
-            }
-
-            .logo-img {
-                height: 40px;
-            }
-
-            header.scrolled .header-container {
-                height: 64px;
-            }
-
-            header.scrolled .logo-img {
-                height: 38px;
-            }
-
-            nav {
-                display: none;
-            }
-
-            .hero {
-                padding: 140px 0 70px;
-            }
-
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            .hero p {
-                font-size: 13px;
-            }
-
-            .hero::before {
-                width: 500px;
-                height: 250px;
-            }
-
-            .hero-cta-group {
-                flex-direction: column;
-
-                width: 100%;
-
-                max-width: 320px;
-
-                margin: 0 auto;
-            }
-
-            .btn-primary,
-            .btn-secondary {
-                width: 100%;
-            }
-
-            .trust-section {
-                padding-bottom: 60px;
-            }
-
-            .trust-bar {
-                grid-template-columns: 1fr;
-
-                gap: 16px;
-
-                padding: 20px;
-            }
-
-            .trust-item {
-                justify-content: flex-start;
-            }
-
-            .products-section {
-                padding-bottom: 80px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-
-                gap: 24px;
-            }
-
-            .product-img-wrapper {
-                height: 330px;
-            }
-
-            .why-aura-section,
-            .reviews-section {
-                padding: 80px 0;
-            }
-
-            .why-grid,
-            .reviews-grid,
-            .steps-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                gap: 20px;
-            }
-
-            .steps-grid {
-                gap: 18px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-
-                gap: 36px;
-            }
-
-            .floating-wa {
-                bottom: 20px;
-
-                left: 16px;
-
-                padding: 0;
-
-                width: 48px;
-
-                height: 48px;
-
-                border-radius: 50%;
-
-                justify-content: center;
-            }
-
-            .floating-wa-text {
-                display: none;
-            }
-
-            .floating-wa svg {
-                width: 22px;
-
-                height: 22px;
-            }
-
-            .section-header {
-                margin-bottom: 42px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .story-section {
-                padding: 70px 0;
-            }
-
-            .story-quote {
-                font-size: 20px;
-            }
-        }
-
-
-        /* =========================================================
-           SMALL PHONES
-        ========================================================= */
-
-        @media (max-width: 412px) {
-
-            .container {
-                padding: 0 18px;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .hero-brand-badge {
-                font-size: 10px;
-
-                letter-spacing: 4px;
-            }
-
-            .story-quote {
-                font-size: 19px;
-            }
-
-            .order-modal {
-                padding: 26px 20px;
-            }
-
-            .product-card {
-                padding: 18px;
-            }
-
-            .product-img-wrapper {
-                height: 300px;
-            }
-        }
-
-
-        /* =========================================================
-           REDUCE MOTION
-        ========================================================= */
-
-        @media (prefers-reduced-motion: reduce) {
-
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-
-                animation-iteration-count: 1 !important;
-
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-    </style>
-</head>
-
-
-<body>
-
-
-    <!-- =========================================================
-         HEADER
-    ========================================================= -->
-
-    <header id="mainHeader">
-
-        <div class="container header-container">
-
-            <a href="#" class="logo-link">
-
-                <img
-                    src="Adobe Express - file.png"
-                    alt="A&P AURA PARFUMS"
-                    class="logo-img"
-                    width="180"
-                    height="50"
-                >
-
-            </a>
-
-
-            <nav>
-
-                <a href="#products">المجموعة</a>
-
-                <a href="#reviews">آراء العملاء</a>
-
-                <a href="#why-aura">لماذا AURA</a>
-
-                <a href="#products">اطلب الآن</a>
-
-            </nav>
-
-
-            <a
-                href="https://wa.me/212649982831"
-                target="_blank"
-                rel="noopener"
-                class="nav-whatsapp-btn"
-            >
-                <span>💬</span>
-                <span>واتساب</span>
-            </a>
-
-        </div>
-
-    </header>
-
-
-    <!-- =========================================================
-         HERO
-    ========================================================= -->
-
-    <section class="hero">
-
-        <div class="container">
-
-            <span class="hero-brand-badge">
-                AURA PARFUMS
-            </span>
-
-            <h1>
-                عطرك... بصمتك الخاصة
-            </h1>
-
-            <p>
-                مجموعة حصرية من أرقى العطور العالمية المستلهمة من
-                الفخامة والأناقة، مصممة بتركيز عالٍ وثبات يدوم طويلاً
-                لتعكس حضورك الاستثنائي.
-            </p>
-
-
-            <div class="hero-cta-group">
-
-                <a href="#products" class="btn-primary">
-                    اكتشف المجموعة
-                </a>
-
-                <a href="#products" class="btn-secondary">
-                    اطلب الآن
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         TRUST BAR
-    ========================================================= -->
-
-    <section class="trust-section">
-
-        <div class="container">
-
-            <div class="trust-bar">
-
-                <div class="trust-item">
-
-                    <span class="trust-icon">🚚</span>
-
-                    <div class="trust-text-wrap">
-
-                        <span class="trust-title">
-                            توصيل لجميع المدن
-                        </span>
-
-                        <span class="trust-desc">
-                            لكافة مدن المغرب
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="trust-item">
-
-                    <span class="trust-icon">💵</span>
-
-                    <div class="trust-text-wrap">
-
-                        <span class="trust-title">
-                            الدفع عند الاستلام
-                        </span>
-
-                        <span class="trust-desc">
-                            معاينة قبل الأداء
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="trust-item">
-
-                    <span class="trust-icon">💬</span>
-
-                    <div class="trust-text-wrap">
-
-                        <span class="trust-title">
-                            تأكيد أسرع
-                        </span>
-
-                        <span class="trust-desc">
-                            مباشرة عبر WhatsApp
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="trust-item">
-
-                    <span class="trust-icon">✨</span>
-
-                    <div class="trust-text-wrap">
-
-                        <span class="trust-title">
-                            جودة واختيار مميز
-                        </span>
-
-                        <span class="trust-desc">
-                            تركيز يدوم طويلاً
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         PRODUCTS
-    ========================================================= -->
-
-    <section id="products" class="products-section">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-subtitle">
-                    SIGNATURE COLLECTION
-                </span>
-
-                <h2 class="section-title">
-                    المجموعة الفاخرة
-                </h2>
-
-            </div>
-
-
-            <div class="products-grid">
-
-
-                <!-- PRODUCT 1 -->
-
-                <div class="product-card">
-
-                    <span class="product-badge">
-                        30ML
-                    </span>
-
-                    <div class="product-img-wrapper">
-
-                        <img
-                            src="parfum5.jpg"
-                            alt="STRONGER WITH YOU INTENSELY"
-                            class="product-img"
-                            width="1536"
-                            height="1536"
-                            loading="eager"
-                            fetchpriority="high"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <span class="product-type">
-                            عطر مستوحى
-                        </span>
-
-                        <h3 class="product-title">
-                            STRONGER WITH YOU INTENSELY
-                        </h3>
-
-                        <div class="product-meta">
-
-                            <span class="product-size">
-                                الحجم: 30ml
-                            </span>
-
-                            <span class="product-price">
-                                45 درهم
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            type="button"
-                            class="btn-order"
-                            onclick="openOrderModal('STRONGER WITH YOU INTENSELY', 45)"
-                        >
-                            اطلب الآن
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 2 -->
-
-                <div class="product-card">
-
-                    <span class="product-badge">
-                        30ML
-                    </span>
-
-                    <div class="product-img-wrapper">
-
-                        <img
-                            src="parfum2.jpg"
-                            alt="BLEU DE CHANEL"
-                            class="product-img"
-                            width="1536"
-                            height="1536"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <span class="product-type">
-                            عطر مستوحى
-                        </span>
-
-                        <h3 class="product-title">
-                            BLEU DE CHANEL
-                        </h3>
-
-                        <div class="product-meta">
-
-                            <span class="product-size">
-                                الحجم: 30ml
-                            </span>
-
-                            <span class="product-price">
-                                45 درهم
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            type="button"
-                            class="btn-order"
-                            onclick="openOrderModal('BLEU DE CHANEL', 45)"
-                        >
-                            اطلب الآن
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 3 -->
-
-                <div class="product-card">
-
-                    <span class="product-badge">
-                        30ML
-                    </span>
-
-                    <div class="product-img-wrapper">
-
-                        <img
-                            src="parfum1.jpg"
-                            alt="1 MILLION"
-                            class="product-img"
-                            width="1536"
-                            height="1536"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <span class="product-type">
-                            عطر مستوحى
-                        </span>
-
-                        <h3 class="product-title">
-                            1 MILLION
-                        </h3>
-
-                        <div class="product-meta">
-
-                            <span class="product-size">
-                                الحجم: 30ml
-                            </span>
-
-                            <span class="product-price">
-                                45 درهم
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            type="button"
-                            class="btn-order"
-                            onclick="openOrderModal('1 MILLION', 45)"
-                        >
-                            اطلب الآن
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 4 -->
-
-                <div class="product-card">
-
-                    <span class="product-badge">
-                        30ML
-                    </span>
-
-                    <div class="product-img-wrapper">
-
-                        <img
-                            src="parfum4.jpg"
-                            alt="ULTRA MALE"
-                            class="product-img"
-                            width="1536"
-                            height="1536"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <span class="product-type">
-                            عطر مستوحى
-                        </span>
-
-                        <h3 class="product-title">
-                            ULTRA MALE
-                        </h3>
-
-                        <div class="product-meta">
-
-                            <span class="product-size">
-                                الحجم: 30ml
-                            </span>
-
-                            <span class="product-price">
-                                45 درهم
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            type="button"
-                            class="btn-order"
-                            onclick="openOrderModal('ULTRA MALE', 45)"
-                        >
-                            اطلب الآن
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- PRODUCT 5 -->
-
-                <div class="product-card">
-
-                    <span class="product-badge">
-                        30ML
-                    </span>
-
-                    <div class="product-img-wrapper">
-
-                        <img
-                            src="parfum3.jpg"
-                            alt="IMAGINATION LOUIS VUITTON"
-                            class="product-img"
-                            width="1536"
-                            height="1536"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                    </div>
-
-
-                    <div class="product-info">
-
-                        <span class="product-type">
-                            عطر مستوحى
-                        </span>
-
-                        <h3 class="product-title">
-                            IMAGINATION LOUIS VUITTON
-                        </h3>
-
-                        <div class="product-meta">
-
-                            <span class="product-size">
-                                الحجم: 30ml
-                            </span>
-
-                            <span class="product-price">
-                                45 درهم
-                            </span>
-
-                        </div>
-
-
-                        <button
-                            type="button"
-                            class="btn-order"
-                            onclick="openOrderModal('IMAGINATION LOUIS VUITTON', 45)"
-                        >
-                            اطلب الآن
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         BRAND STORY
-    ========================================================= -->
-
-    <section class="story-section">
-
-        <div class="container">
-
-            <div class="story-content">
-
-                <p class="story-quote">
-                    "AURA PARFUMS ليست مجرد عطور صُممت لتُشم،
-                    بل هي هالة أنيقة وحضور صامت يترك أثرًا لا يُنسى."
-                </p>
-
-                <span class="story-author">
-                    THE AURA PHILOSOPHY
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         WHY AURA
-    ========================================================= -->
-
-    <section id="why-aura" class="why-aura-section">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-subtitle">
-                    EXCELLENCE & ESSENCE
-                </span>
-
-                <h2 class="section-title">
-                    لماذا AURA PARFUMS؟
-                </h2>
-
-            </div>
-
-
-            <div class="why-grid">
-
-                <div class="why-card">
-
-                    <span class="why-number">
-                        01
-                    </span>
-
-                    <h3 class="why-title">
-                        اختيارات مميزة
-                    </h3>
-
-                    <p class="why-desc">
-                        ننتقي لك أرقى النوتات العطرية المستلهمة من
-                        أشهر الدور العالمية بدقة فائقة وثبات استثنائي.
-                    </p>
-
-                </div>
-
-
-                <div class="why-card">
-
-                    <span class="why-number">
-                        02
-                    </span>
-
-                    <h3 class="why-title">
-                        سعر مناسب
-                    </h3>
-
-                    <p class="why-desc">
-                        نقدم لك رفاهية العطور الفاخرة وتجربة الاقتناء
-                        الملكية بأسعار مدروسة تناسب تطلعك للتميز.
-                    </p>
-
-                </div>
-
-
-                <div class="why-card">
-
-                    <span class="why-number">
-                        03
-                    </span>
-
-                    <h3 class="why-title">
-                        تجربة طلب سهلة
-                    </h3>
-
-                    <p class="why-desc">
-                        خطوات طلب مباشرة وسلسة تضمن لك وصول عطرك
-                        المفضّل حتى باب منزلك بسرعة وأمان.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         HOW TO ORDER
-    ========================================================= -->
-
-    <section class="how-order-section">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-subtitle">
-                    FOUR SIMPLE STEPS
-                </span>
-
-                <h2 class="section-title">
-                    كيف تطلب؟
-                </h2>
-
-            </div>
-
-
-            <div class="steps-grid">
-
-                <div class="step-item">
-
-                    <div class="step-number-wrap">
-                        01
-                    </div>
-
-                    <h3 class="step-title">
-                        اختر عطرك
-                    </h3>
-
-                    <p class="step-desc">
-                        تصفح تشكيلة Signature Collection واختر عطرك المفضل.
-                    </p>
-
-                </div>
-
-
-                <div class="step-item">
-
-                    <div class="step-number-wrap">
-                        02
-                    </div>
-
-                    <h3 class="step-title">
-                        أرسل طلبك
-                    </h3>
-
-                    <p class="step-desc">
-                        اضغط على "اطلب الآن" وأدخل معلوماتك البسيطة.
-                    </p>
-
-                </div>
-
-
-                <div class="step-item">
-
-                    <div class="step-number-wrap">
-                        03
-                    </div>
-
-                    <h3 class="step-title">
-                        نؤكد معك عبر WhatsApp
-                    </h3>
-
-                    <p class="step-desc">
-                        يصلنا طلبك منسقاً لتأكيد العنوان والشحن مباشرة.
-                    </p>
-
-                </div>
-
-
-                <div class="step-item">
-
-                    <div class="step-number-wrap">
-                        04
-                    </div>
-
-                    <h3 class="step-title">
-                        استلم طلبك
-                    </h3>
-
-                    <p class="step-desc">
-                        استلم شحنتك حتى باب منزلك وادفع براحة عند الاستلام.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         REVIEWS
-    ========================================================= -->
-
-    <section id="reviews" class="reviews-section">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-subtitle">
-                    GUEST EXPERIENCES
-                </span>
-
-                <h2 class="section-title">
-                    آراء العملاء
-                </h2>
-
-            </div>
-
-
-            <div class="reviews-grid">
-
-
-                <div class="review-card">
-
-                    <div>
-
-                        <div class="review-stars">
-                            ★★★★★
-                        </div>
-
-                        <p class="review-text">
-                            "صراحة العطر فوق التوقعات، الرائحة ثابتة جداً
-                            والتغليف فاخر ومتقن."
-                        </p>
-
-                    </div>
-
-                    <div class="review-author">
-
-                        <span class="client-name">
-                            أمينة العبادي
-                        </span>
-
-                        <span class="client-city">
-                            الدار البيضاء
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="review-card">
-
-                    <div>
-
-                        <div class="review-stars">
-                            ★★★★★
-                        </div>
-
-                        <p class="review-text">
-                            "عطر ULTRA MALE ممتاز وثباته يدوم طوال اليوم.
-                            والتوصيل كان سريعاً."
-                        </p>
-
-                    </div>
-
-                    <div class="review-author">
-
-                        <span class="client-name">
-                            ياسين المنصوري
-                        </span>
-
-                        <span class="client-city">
-                            الرباط
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="review-card">
-
-                    <div>
-
-                        <div class="review-stars">
-                            ★★★★★
-                        </div>
-
-                        <p class="review-text">
-                            "تجربتي مع عطر IMAGINATION كانت رائعة جداً،
-                            جودة ممتازة."
-                        </p>
-
-                    </div>
-
-                    <div class="review-author">
-
-                        <span class="client-name">
-                            سارة الإدريسي
-                        </span>
-
-                        <span class="client-city">
-                            مراكش
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================= -->
-
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-grid">
-
-
-                <div class="footer-brand">
-
-                    <img
-                        src="Adobe Express - file.png"
-                        alt="A&P AURA PARFUMS"
-                        class="logo-img"
-                        width="180"
-                        height="46"
-                        loading="lazy"
-                        decoding="async"
-                    >
-
-                    <p>
-                        عطور أنيقة. حضور مختلف.
-                        نبتكر لك أرقى تجارب العطور المستلهمة
-                        من الفخامة لتلائم ذوقك الرفيع.
-                    </p>
-
-                </div>
-
-
-                <div>
-
-                    <h4 class="footer-title">
-                        التصفح السريع
-                    </h4>
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a href="#products">
-                                المجموعة
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#reviews">
-                                آراء العملاء
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#why-aura">
-                                لماذا AURA
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#products">
-                                اطلب الآن
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <div>
-
-                    <h4 class="footer-title">
-                        التواصل
-                    </h4>
-
-                    <ul class="footer-links">
-
-                        <li>
-                            <a
-                                href="https://wa.me/212649982831"
-                                target="_blank"
-                                rel="noopener"
-                            >
-                                WhatsApp: +212 649-982831
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#products">
-                                توصيل لجميع المدن
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#products">
-                                الدفع عند الاستلام
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="footer-bottom">
-
-                <p>
-                    &copy; 2026 A&P AURA PARFUMS.
-                    جميع الحقوق محفوظة.
-                </p>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <!-- =========================================================
-         ORDER MODAL
-    ========================================================= -->
-
-    <div
-        id="orderModal"
-        class="modal-overlay"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="orderModalTitle"
-    >
-
-        <div class="order-modal">
-
-            <button
-                type="button"
-                class="modal-close"
-                onclick="closeOrderModal()"
-                aria-label="إغلاق"
-            >
-                &times;
-            </button>
-
-
-            <div class="modal-header">
-
-                <h3 id="orderModalTitle">
-                    استمارة الطلب المباشر
-                </h3>
-
-                <p>
-                    تأكيد طلبك وتوصيله حتى باب منزلك
-                </p>
-
-            </div>
-
-
-            <!-- ORDER SUMMARY -->
-
-            <div class="order-summary-box">
-
-                <div class="summary-row">
-
-                    <span>
-                        العطر المختار:
-                    </span>
-
-                    <span
-                        id="displayPerfumeName"
-                        style="color:#fff;font-weight:500;"
-                    >
-                        ---
-                    </span>
-
-                </div>
-
-
-                <div class="summary-row">
-
-                    <span>
-                        السعر:
-                    </span>
-
-                    <span
-                        id="displayMainPrice"
-                        class="summary-price"
-                    >
-                        45 درهم
-                    </span>
-
-                </div>
-
-
-                <div
-                    id="extraPerfumeRow"
-                    class="summary-row"
-                    style="display:none;border-top:1px dashed rgba(255,255,255,0.08);margin-top:6px;padding-top:6px;"
-                >
-
-                    <span id="displayExtraName">
-                        ---
-                    </span>
-
-                    <span
-                        id="displayExtraPrice"
-                        class="summary-price"
-                    >
-                        0 درهم
-                    </span>
-
-                </div>
-
-
-                <div class="summary-row total">
-
-                    <span>
-                        المجموع
-                    </span>
-
-                    <span
-                        id="displayTotalPrice"
-                        class="summary-price"
-                        style="font-size:18px;"
-                    >
-                        45 درهم
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- ORDER FORM -->
-
-            <form
-                id="orderForm"
-                onsubmit="event.preventDefault(); sendToWhatsApp();"
-            >
-
-                <div class="form-group">
-
-                    <label for="perfumeQty">
-                        الكمية:
-                    </label>
-
-                    <input
-                        type="number"
-                        id="perfumeQty"
-                        class="form-control"
-                        value="1"
-                        min="1"
-                        inputmode="numeric"
-                        onchange="calculateTotal()"
-                        oninput="calculateTotal()"
-                        required
-                    >
-
-                </div>
-
-
-                <button
-                    type="button"
-                    class="btn-toggle-extra"
-                    id="toggleExtraBtn"
-                    onclick="toggleExtraPerfume()"
-                >
-                    ➕ إضافة عطر آخر للطلبية؟
-                </button>
-
-
-                <div
-                    id="extraSelectionBox"
-                    class="extra-box"
-                >
-
-                    <div class="form-group">
-
-                        <label for="extraPerfumeSelect">
-                            اختر العطر الإضافي:
-                        </label>
-
-                        <select
-                            id="extraPerfumeSelect"
-                            class="form-control"
-                            onchange="calculateTotal()"
-                        >
-
-                            <option value="">
-                                -- اختر عطراً --
-                            </option>
-
-                            <option value="STRONGER WITH YOU INTENSELY">
-                                STRONGER WITH YOU INTENSELY (45 درهم)
-                            </option>
-
-                            <option value="BLEU DE CHANEL">
-                                BLEU DE CHANEL (45 درهم)
-                            </option>
-
-                            <option value="1 MILLION">
-                                1 MILLION (45 درهم)
-                            </option>
-
-                            <option value="ULTRA MALE">
-                                ULTRA MALE (45 درهم)
-                            </option>
-
-                            <option value="IMAGINATION LOUIS VUITTON">
-                                IMAGINATION LOUIS VUITTON (45 درهم)
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div
-                        class="form-group"
-                        style="margin-bottom:0;"
-                    >
-
-                        <label for="extraPerfumeQty">
-                            كمية العطر الإضافي:
-                        </label>
-
-                        <input
-                            type="number"
-                            id="extraPerfumeQty"
-                            class="form-control"
-                            value="1"
-                            min="1"
-                            inputmode="numeric"
-                            onchange="calculateTotal()"
-                            oninput="calculateTotal()"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="name">
-                        الاسم الكامل:
-                    </label>
-
-                    <input
-                        type="text"
-                        id="name"
-                        class="form-control"
-                        placeholder="أدخل اسمك الكريم"
-                        autocomplete="name"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="address">
-                        المدينة والعنوان الكامل:
-                    </label>
-
-                    <textarea
-                        id="address"
-                        class="form-control"
-                        placeholder="أدخل مدينتك والعنوان بدقة"
-                        rows="2"
-                        autocomplete="street-address"
-                        required
-                    ></textarea>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="phone">
-                        رقم الهاتف:
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="phone"
-                        class="form-control"
-                        placeholder="06XXXXXXXX"
-                        autocomplete="tel"
-                        inputmode="tel"
-                        required
-                    >
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="btn-submit-wa"
-                >
-
-                    <span>
-                        💬
-                    </span>
-
-                    <span>
-                        تأكيد الطلب عبر WhatsApp
-                    </span>
-
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-
-    <!-- =========================================================
-         FLOATING WHATSAPP
-    ========================================================= -->
-
-    <a
-        href="https://wa.me/212649982831"
-        class="floating-wa"
-        target="_blank"
-        rel="noopener"
-        aria-label="تواصل معنا عبر الواتساب"
-    >
-
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            aria-hidden="true"
-        >
-
-            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3 18.6-68.1-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.9-186.6 184.9zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-
-        </svg>
-
-        <span class="floating-wa-text">
-            اطلب عبر WhatsApp
-        </span>
-
-    </a>
-
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================= -->
-
+<html lang="ar" dir="rtl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070706" />
+    <title>A&P AURA PARFUMS | تجربة العطور الفاخرة</title>
+    <meta
+      name="description"
+      content="AURA PARFUMS — دار عطور فاخرة. تشكيلة حصرية من أرقى العطور المستوحاة من الفخامة العالمية، بثبات يدوم طويلاً، دفع عند الاستلام وتوصيل لكافة مدن المغرب."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-
-        /* =========================================================
-           GLOBAL ORDER STATE
-        ========================================================= */
-
-        let currentPerfumePrice = 45;
-
-        let currentPerfumeName = '';
-
-        let isExtraActive = false;
-
-
-        /* =========================================================
-           OPTIMIZED HEADER SCROLL
-        ========================================================= */
-
-        const header = document.getElementById('mainHeader');
-
-        let scrollTicking = false;
-
-        function updateHeader() {
-
-            if (window.scrollY > 40) {
-
-                header.classList.add('scrolled');
-
-            } else {
-
-                header.classList.remove('scrolled');
-
-            }
-
-            scrollTicking = false;
-        }
-
-        window.addEventListener(
-            'scroll',
-            function () {
-
-                if (!scrollTicking) {
-
-                    window.requestAnimationFrame(updateHeader);
-
-                    scrollTicking = true;
-
-                }
-
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Readex Pro"', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
             },
-            {
-                passive: true
-            }
-        );
-
-
-        /* =========================================================
-           OPEN ORDER MODAL
-        ========================================================= */
-
-        function openOrderModal(name, price) {
-
-            currentPerfumeName = name;
-
-            currentPerfumePrice = price;
-
-
-            document.getElementById(
-                'displayPerfumeName'
-            ).innerText = name;
-
-
-            document.getElementById(
-                'displayMainPrice'
-            ).innerText = price + ' درهم';
-
-
-            const modal =
-                document.getElementById('orderModal');
-
-
-            modal.classList.add('active');
-
-
-            document.body.style.overflow = 'hidden';
-
-
-            calculateTotal();
-
-
-            setTimeout(function () {
-
-                const qty =
-                    document.getElementById('perfumeQty');
-
-                if (qty) {
-
-                    qty.focus();
-
-                }
-
-            }, 100);
-
-        }
-
-
-        /* =========================================================
-           CLOSE MODAL
-        ========================================================= */
-
-        function closeOrderModal() {
-
-            const modal =
-                document.getElementById('orderModal');
-
-
-            modal.classList.remove('active');
-
-
-            document.body.style.overflow = '';
-
-        }
-
-
-        /* =========================================================
-           CLOSE MODAL WHEN CLICKING BACKGROUND
-        ========================================================= */
-
-        document
-            .getElementById('orderModal')
-            .addEventListener(
-                'click',
-                function (event) {
-
-                    if (event.target === this) {
-
-                        closeOrderModal();
-
-                    }
-
-                }
-            );
-
-
-        /* =========================================================
-           ESC KEY
-        ========================================================= */
-
-        document.addEventListener(
-            'keydown',
-            function (event) {
-
-                if (
-                    event.key === 'Escape' &&
-                    document
-                        .getElementById('orderModal')
-                        .classList
-                        .contains('active')
-                ) {
-
-                    closeOrderModal();
-
-                }
-
-            }
-        );
-
-
-        /* =========================================================
-           TOGGLE EXTRA PERFUME
-        ========================================================= */
-
-        function toggleExtraPerfume() {
-
-            const box =
-                document.getElementById(
-                    'extraSelectionBox'
-                );
-
-
-            const row =
-                document.getElementById(
-                    'extraPerfumeRow'
-                );
-
-
-            const btn =
-                document.getElementById(
-                    'toggleExtraBtn'
-                );
-
-
-            isExtraActive = !isExtraActive;
-
-
-            if (isExtraActive) {
-
-                box.classList.add('active');
-
-                row.style.display = 'flex';
-
-                btn.innerHTML =
-                    '❌ إلغاء العطر الإضافي';
-
-            } else {
-
-                box.classList.remove('active');
-
-                row.style.display = 'none';
-
-                document.getElementById(
-                    'extraPerfumeSelect'
-                ).value = '';
-
-                document.getElementById(
-                    'extraPerfumeQty'
-                ).value = '1';
-
-                btn.innerHTML =
-                    '➕ إضافة عطر آخر للطلبية؟';
-
-            }
-
-
-            calculateTotal();
-
-        }
-
-
-        /* =========================================================
-           CALCULATE TOTAL
-        ========================================================= */
-
-        function calculateTotal() {
-
-            const mainQty =
-                parseInt(
-                    document.getElementById(
-                        'perfumeQty'
-                    ).value,
-                    10
-                ) || 1;
-
-
-            let total =
-                currentPerfumePrice * mainQty;
-
-
-            if (isExtraActive) {
-
-                const extraSelect =
-                    document.getElementById(
-                        'extraPerfumeSelect'
-                    );
-
-
-                const extraQty =
-                    parseInt(
-                        document.getElementById(
-                            'extraPerfumeQty'
-                        ).value,
-                        10
-                    ) || 1;
-
-
-                if (extraSelect.value !== '') {
-
-                    const extraPrice = 45;
-
-
-                    total +=
-                        extraPrice * extraQty;
-
-
-                    document.getElementById(
-                        'displayExtraName'
-                    ).innerText =
-                        extraSelect.value +
-                        ' (x' +
-                        extraQty +
-                        ')';
-
-
-                    document.getElementById(
-                        'displayExtraPrice'
-                    ).innerText =
-                        (extraPrice * extraQty) +
-                        ' درهم';
-
-                } else {
-
-                    document.getElementById(
-                        'displayExtraName'
-                    ).innerText =
-                        'لم يتم الاختيار';
-
-
-                    document.getElementById(
-                        'displayExtraPrice'
-                    ).innerText =
-                        '0 درهم';
-
-                }
-
-            }
-
-
-            document.getElementById(
-                'displayTotalPrice'
-            ).innerText =
-                total + ' درهم';
-
-        }
-
-
-        /* =========================================================
-           SEND ORDER TO WHATSAPP
-        ========================================================= */
-
-        function sendToWhatsApp() {
-
-            const phoneNum =
-                '212649982831';
-
-
-            const name =
-                document.getElementById(
-                    'name'
-                ).value.trim();
-
-
-            const address =
-                document.getElementById(
-                    'address'
-                ).value.trim();
-
-
-            const clientPhone =
-                document.getElementById(
-                    'phone'
-                ).value.trim();
-
-
-            const mainQty =
-                document.getElementById(
-                    'perfumeQty'
-                ).value;
-
-
-            const totalPrice =
-                document.getElementById(
-                    'displayTotalPrice'
-                ).innerText;
-
-
-            let msg =
-                'مرحباً A&P AURA PARFUMS، أرغب في تأكيد الطلب التالي:\n\n';
-
-
-            msg +=
-                '📌 *العطر الأساسي:* ' +
-                currentPerfumeName +
-                ' (الكمية: ' +
-                mainQty +
-                ')\n';
-
-
-            if (isExtraActive) {
-
-                const extraSelect =
-                    document.getElementById(
-                        'extraPerfumeSelect'
-                    ).value;
-
-
-                const extraQty =
-                    document.getElementById(
-                        'extraPerfumeQty'
-                    ).value;
-
-
-                if (extraSelect) {
-
-                    msg +=
-                        '📌 *العطر الإضافي:* ' +
-                        extraSelect +
-                        ' (الكمية: ' +
-                        extraQty +
-                        ')\n';
-
-                }
-
-            }
-
-
-            msg +=
-                '💰 *المجموع الكلي:* ' +
-                totalPrice +
-                '\n\n';
-
-
-            msg +=
-                '👤 *الاسم:* ' +
-                name +
-                '\n';
-
-
-            msg +=
-                '📍 *العنوان والمدينة:* ' +
-                address +
-                '\n';
-
-
-            msg +=
-                '📱 *رقم الهاتف:* ' +
-                clientPhone;
-
-
-            const encodedMsg =
-                encodeURIComponent(msg);
-
-
-            window.open(
-                'https://wa.me/' +
-                phoneNum +
-                '?text=' +
-                encodedMsg,
-                '_blank',
-                'noopener'
-            );
-
-        }
-
+            colors: {
+              background: '#070706',
+              foreground: '#f7f5f0',
+              surface: '#0e0e0d',
+              card: '#121210',
+              'primary-foreground': '#070706',
+              'muted-foreground': '#a3a099',
+              gold: '#c8a768',
+              'gold-champagne': '#e2c99b',
+              whatsapp: '#25d366',
+            },
+            letterSpacing: {
+              luxury: '0.35em',
+            },
+          },
+        },
+      }
     </script>
 
-</body>
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        background-color: #070706;
+        color: #f7f5f0;
+        background-image: radial-gradient(
+            circle at 50% 0%,
+            rgba(200, 167, 104, 0.08) 0%,
+            transparent 55%
+          ),
+          radial-gradient(circle at 85% 35%, rgba(200, 167, 104, 0.03) 0%, transparent 40%);
+        background-attachment: fixed;
+      }
+      .gold-gradient {
+        background: linear-gradient(135deg, #e2c99b 0%, #c8a768 100%);
+      }
+      .gold-gradient-text {
+        background: linear-gradient(135deg, #e2c99b 0%, #c8a768 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gold-soft {
+        background-color: rgba(200, 167, 104, 0.12);
+      }
+      .card-image-well {
+        background: radial-gradient(
+          circle at 50% 38%,
+          #26251f 0%,
+          #131210 45%,
+          #070706 100%
+        );
+      }
+      /* Arch frame for hero image */
+      .hero-arch-frame {
+        border-top-left-radius: 120px;
+        border-top-right-radius: 120px;
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+      }
+    </style>
+  </head>
+
+  <body class="font-sans antialiased">
+    <!-- ================= HEADER ================= -->
+    <header
+      id="site-header"
+      class="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-background/40 backdrop-blur-md transition-all duration-300"
+    >
+      <div class="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <a href="#top" class="flex flex-col items-start leading-none">
+          <span class="font-serif text-lg font-semibold tracking-[0.3em] text-foreground">AURA</span>
+          <span class="font-serif text-[10px] tracking-[0.42em] text-gold">PARFUMS</span>
+        </a>
+
+        <nav class="hidden items-center gap-9 lg:flex">
+          <a href="#collection" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">التشكيلة<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-gold-champagne transition-all duration-300 group-hover:w-full"></span></a>
+          <a href="#signature" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">العطور المميّزة<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-gold-champagne transition-all duration-300 group-hover:w-full"></span></a>
+          <a href="#craft" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">حرفتنا<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-gold-champagne transition-all duration-300 group-hover:w-full"></span></a>
+          <a href="#order" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">الطلب عبر واتساب<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-gold-champagne transition-all duration-300 group-hover:w-full"></span></a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <button type="button" id="cart-toggle" aria-label="سلة المشتريات" class="relative flex size-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-gold">
+            <i data-lucide="shopping-bag" class="size-[18px]" style="stroke-width: 1.4"></i>
+            <span id="cart-count" class="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-gold text-[9px] font-semibold text-primary-foreground">0</span>
+          </button>
+
+          <a data-wa="السلام عليكم، أريد الاستفسار عن عطور AURA PARFUMS." target="_blank" rel="noopener noreferrer" class="ms-1 hidden items-center gap-2 rounded-full border border-whatsapp/30 bg-whatsapp/10 px-4 py-2 text-xs text-whatsapp transition-all hover:-translate-y-0.5 hover:border-whatsapp hover:bg-whatsapp/15 md:inline-flex">
+            <i data-lucide="message-circle" class="size-4" style="stroke-width: 1.6"></i>
+            اطلب الآن
+          </a>
+          <button type="button" aria-label="القائمة" id="menu-toggle" class="flex size-9 items-center justify-center rounded-full text-foreground lg:hidden">
+            <i data-lucide="menu" class="size-5" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav id="mobile-nav" class="hidden border-t border-white/5 bg-background/95 px-6 py-4 backdrop-blur-xl lg:hidden">
+        <div class="flex flex-col gap-1">
+          <a href="#collection" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold">التشكيلة</a>
+          <a href="#signature" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold">العطور المميّزة</a>
+          <a href="#craft" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold">حرفتنا</a>
+          <a href="#order" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold">الطلب عبر واتساب</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ================= HERO ================= -->
+      <section id="top" class="relative overflow-hidden px-6 pb-20 pt-36 md:pb-28 md:pt-40">
+        <div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-20 h-[450px] w-[600px] -translate-x-1/2 rounded-full opacity-60 blur-3xl" style="background: radial-gradient(ellipse, rgba(200, 167, 104, 0.2) 0%, transparent 70%)"></div>
+
+        <div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-12">
+          
+          <!-- Text -->
+          <div class="text-center lg:col-span-7 lg:text-right">
+            <span class="mb-6 inline-block rounded-full border border-gold/25 gold-soft px-5 py-1.5 font-serif text-[11px] uppercase tracking-luxury text-gold">Luxury Fragrance Collection</span>
+            <h1 class="text-balance font-sans text-4xl font-medium leading-[1.25] text-foreground md:text-5xl lg:text-6xl">
+              جوهر الفخامة
+              <span class="mt-2 block gold-gradient-text">التي لا تُنطق</span>
+            </h1>
+            <p class="mx-auto mt-6 max-w-xl text-pretty text-[15px] font-light leading-relaxed text-muted-foreground lg:mx-0">
+              تشكيلة حصرية مستوحاة من أرقى العطور العالمية، مصنوعة بمكوّنات فرنسية نادرة وثبات يدوم طوال اليوم. دفع عند الاستلام وتوصيل لكافة مدن المغرب.
+            </p>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+              <a href="#collection" class="group inline-flex items-center gap-2 rounded-lg gold-gradient px-8 py-4 text-[13px] font-semibold text-primary-foreground shadow-[0_6px_24px_rgba(200,167,104,0.18)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(200,167,104,0.28)]">
+                اكتشف التشكيلة الخاصة
+                <i data-lucide="arrow-left" class="size-4 transition-transform group-hover:-translate-x-1" style="stroke-width: 1.8"></i>
+              </a>
+              <a data-wa="السلام عليكم، أريد طلب عطر من AURA PARFUMS." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-gold/25 px-8 py-4 text-[13px] font-light text-foreground transition-all hover:border-gold hover:gold-soft hover:text-gold">
+                <i data-lucide="message-circle" class="size-4" style="stroke-width: 1.6"></i>
+                طلب فوري عبر واتساب
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image Frame (NEW LUXURY DISPLAY) -->
+          <div class="relative mx-auto w-full max-w-sm lg:col-span-5">
+            <!-- Glow background -->
+            <div class="absolute -inset-1.5 rounded-[125px_125px_30px_30px] bg-gradient-to-b from-gold/30 to-transparent opacity-50 blur-xl"></div>
+            
+            <div class="hero-arch-frame relative aspect-[3/4] w-full overflow-hidden border border-gold/30 bg-surface p-2.5 shadow-2xl">
+              <div class="hero-arch-frame relative h-full w-full overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=800&auto=format&fit=crop" alt="عطر AURA PARFUMS الفاخر" class="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+                <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent"></div>
+              </div>
+
+              <!-- Floating Luxury Label -->
+              <div class="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-background/80 p-4 backdrop-blur-md">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="font-serif text-[10px] uppercase tracking-widest text-gold">AURA Edition</p>
+                    <p class="text-xs font-medium text-foreground">تركيز إكستري دو بارفان</p>
+                  </div>
+                  <span class="rounded-full bg-gold/10 px-2.5 py-1 text-[11px] font-semibold text-gold-champagne">30ML</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= CRAFTSMANSHIP (NEW OVERLAPPING DESIGN) ================= -->
+      <section id="craft" class="px-6 py-24 md:py-28">
+        <div class="mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-12">
+          
+          <!-- Double Overlapping Image Container -->
+          <div class="relative mx-auto w-full max-w-md lg:col-span-6">
+            <div class="relative aspect-[4/5] w-[82%] overflow-hidden rounded-3xl border border-gold/20 shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1615397349754-cfa2066a298e?q=80&w=800&auto=format&fit=crop" alt="مكوّنات العطور" class="h-full w-full object-cover" />
+              <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
+            </div>
+            
+            <!-- Secondary Overlapping Card -->
+            <div class="absolute -bottom-8 left-0 aspect-square w-[58%] overflow-hidden rounded-2xl border border-gold/30 bg-surface p-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+              <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=600&auto=format&fit=crop" alt="صناعة العطور" class="h-full w-full rounded-xl object-cover" />
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="lg:col-span-6">
+            <span class="mb-3 block font-serif text-[11px] uppercase tracking-luxury text-gold">The Art of Perfumery</span>
+            <h2 class="text-balance text-3xl font-medium leading-snug text-foreground md:text-4xl">حرفة تُصنع بشغف، لا تُنتج بكمية</h2>
+            <p class="mt-5 max-w-lg text-pretty text-[15px] font-light leading-relaxed text-muted-foreground">
+              في AURA نؤمن أن العطر ليس مجرد رائحة، بل توقيع شخصي وذاكرة تبقى. كل زجاجة تُحضّر بعناية لتمنحك تجربة فاخرة تبدأ من أول رشّة وتدوم.
+            </p>
+            <div class="mt-10 grid gap-6 sm:grid-cols-3">
+              <div>
+                <div class="mb-4 flex size-11 items-center justify-center rounded-xl border border-gold/20 gold-soft text-gold"><i data-lucide="droplets" class="size-5" style="stroke-width: 1.5"></i></div>
+                <h3 class="mb-1.5 text-sm font-medium text-foreground">نقاء المكوّنات</h3>
+                <p class="text-[13px] font-light leading-relaxed text-muted-foreground">زيوت عطرية مركّزة ومكوّنات فرنسية نادرة تُنتقى بعناية فائقة.</p>
+              </div>
+              <div>
+                <div class="mb-4 flex size-11 items-center justify-center rounded-xl border border-gold/20 gold-soft text-gold"><i data-lucide="clock" class="size-5" style="stroke-width: 1.5"></i></div>
+                <h3 class="mb-1.5 text-sm font-medium text-foreground">ثبات يدوم طويلاً</h3>
+                <p class="text-[13px] font-light leading-relaxed text-muted-foreground">تركيبة غنية تمنحك حضوراً يرافقك طوال اليوم دون أن يخفت.</p>
+              </div>
+              <div>
+                <div class="mb-4 flex size-11 items-center justify-center rounded-xl border border-gold/20 gold-soft text-gold"><i data-lucide="gem" class="size-5" style="stroke-width: 1.5"></i></div>
+                <h3 class="mb-1.5 text-sm font-medium text-foreground">تغليف فاخر</h3>
+                <p class="text-[13px] font-light leading-relaxed text-muted-foreground">عبوات أنيقة تعكس رقيّ الهدية وتليق بلحظاتك الاستثنائية.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ================= COLLECTION ================= -->
+      <section id="collection" class="px-6 py-24 md:py-28">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-12 text-center">
+            <span class="mb-2.5 block font-serif text-[11px] uppercase tracking-luxury text-gold">Bestsellers</span>
+            <h2 class="inline-block text-3xl font-medium text-foreground md:text-4xl">التشكيلة الحصرية</h2>
+            <div class="mx-auto mt-3.5 h-px w-9 bg-gold/60"></div>
+          </div>
+
+          <div id="signature" class="mb-12 flex flex-wrap items-center justify-center gap-2.5" data-filter-group></div>
+
+          <div id="product-grid" class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3"></div>
+        </div>
+      </section>
+
+      <!-- ================= STORY ================= -->
+      <section class="border-y border-white/5 bg-surface px-6 py-24 text-center md:py-28">
+        <div class="mx-auto max-w-3xl">
+          <p class="text-balance text-2xl font-light leading-relaxed text-foreground md:text-[28px]">«عطرك ليس ما ترتديه، بل ما يتذكّره الناس حين تغادر الغرفة.»</p>
+          <span class="mt-6 block font-serif text-xs uppercase tracking-luxury text-gold">AURA PARFUMS</span>
+        </div>
+      </section>
+
+      <!-- ================= VIP ORDER ================= -->
+      <section id="order" class="px-6 py-24 md:py-28">
+        <div class="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-gold/20 bg-surface p-8 md:p-14">
+          <div aria-hidden="true" class="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full opacity-60 blur-3xl" style="background: radial-gradient(circle, rgba(200, 167, 104, 0.18) 0%, transparent 70%)"></div>
+          <div class="relative grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <span class="mb-3 block font-serif text-[11px] uppercase tracking-luxury text-gold">VIP Ordering</span>
+              <h2 class="text-balance text-3xl font-medium leading-snug text-foreground md:text-4xl">اطلب عطرك بضغطة واحدة</h2>
+              <p class="mt-4 max-w-md text-pretty text-[15px] font-light leading-relaxed text-muted-foreground">
+                تواصل معنا مباشرة عبر واتساب واحصل على خدمة سريعة وشخصية. نساعدك في اختيار عطرك المثالي ونؤكد طلبك خلال دقائق.
+              </p>
+              <a data-wa="السلام عليكم، أريد المساعدة في اختيار وطلب عطر من AURA PARFUMS." target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-whatsapp px-8 py-4 text-[14px] font-semibold text-[#062a13] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.25)]">
+                <i data-lucide="message-circle" class="size-5" style="stroke-width: 1.8"></i>
+                اطلب عبر واتساب الآن
+              </a>
+            </div>
+            <div class="grid gap-4">
+              <div class="flex items-center gap-4 rounded-xl border border-white/5 bg-background/50 p-4">
+                <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-gold/20 gold-soft text-gold"><i data-lucide="hand-coins" class="size-5" style="stroke-width: 1.5"></i></div>
+                <div><h3 class="text-sm font-medium text-foreground">الدفع عند الاستلام</h3><p class="text-[12px] font-light text-muted-foreground">ادفع فقط عند وصول طلبك</p></div>
+              </div>
+              <div class="flex items-center gap-4 rounded-xl border border-white/5 bg-background/50 p-4">
+                <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-gold/20 gold-soft text-gold"><i data-lucide="truck" class="size-5" style="stroke-width: 1.5"></i></div>
+                <div><h3 class="text-sm font-medium text-foreground">توصيل لكل المغرب</h3><p class="text-[12px] font-light text-muted-foreground">إلى جميع المدن والمناطق</p></div>
+              </div>
+              <div class="flex items-center gap-4 rounded-xl border border-white/5 bg-background/50 p-4">
+                <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-gold/20 gold-soft text-gold"><i data-lucide="shield-check" class="size-5" style="stroke-width: 1.5"></i></div>
+                <div><h3 class="text-sm font-medium text-foreground">خدمة شخصية</h3><p class="text-[12px] font-light text-muted-foreground">تأكيد ومتابعة عبر واتساب</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ================= CART SIDEBAR / DRAWER ================= -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+      <div id="cart-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+      <div class="absolute inset-y-0 left-0 flex max-w-full pl-0 sm:pl-10">
+        <div class="w-screen max-w-md bg-surface border-r border-white/10 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+          <div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <h2 class="text-lg font-medium text-foreground flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="size-5 text-gold"></i>
+                سلة الطلبات ومعلومات الشحن
+              </h2>
+              <button id="cart-close" class="text-muted-foreground hover:text-foreground">
+                <i data-lucide="x" class="size-6"></i>
+              </button>
+            </div>
+            
+            <div id="cart-items" class="mt-4 flex flex-col gap-3 max-h-[30vh] overflow-y-auto pr-1"></div>
+
+            <div class="mt-6 border-t border-white/10 pt-4">
+              <h3 class="text-xs font-semibold text-gold uppercase tracking-wider mb-3">معلومات الشحن (الدفع عند الاستلام)</h3>
+              <div class="flex flex-col gap-2.5">
+                <div>
+                  <label class="text-[11px] text-muted-foreground mb-1 block">الاسم الكامل *</label>
+                  <input type="text" id="cust-name" placeholder="مثال: محمد العلوي" class="w-full rounded-lg border border-white/10 bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-gold focus:outline-none" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-muted-foreground mb-1 block">المدينة *</label>
+                  <input type="text" id="cust-city" placeholder="مثال: الدار البيضاء" class="w-full rounded-lg border border-white/10 bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-gold focus:outline-none" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-muted-foreground mb-1 block">العنوان الكامل *</label>
+                  <input type="text" id="cust-address" placeholder="الحي، شارع، رقم المنزل..." class="w-full rounded-lg border border-white/10 bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-gold focus:outline-none" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-muted-foreground mb-1 block">رقم الهاتف *</label>
+                  <input type="tel" id="cust-phone" placeholder="06XXXXXXXX" class="w-full rounded-lg border border-white/10 bg-background px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-gold focus:outline-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-white/10 pt-4 mt-6">
+            <div class="flex justify-between text-base font-medium text-foreground mb-3">
+              <span>المجموع الكلي:</span>
+              <span id="cart-total" class="text-gold-champagne font-semibold">0 درهم</span>
+            </div>
+            <button id="checkout-btn" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp py-3.5 text-sm font-semibold text-[#062a13] transition-all hover:bg-whatsapp/90">
+              <i data-lucide="message-circle" class="size-5"></i>
+              تأكيد وإرسال الطلب عبر واتساب
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-white/5 bg-surface px-6 pb-10 pt-20">
+      <div class="mx-auto max-w-6xl">
+        <div class="mb-16 grid gap-10 border-b border-white/5 pb-16 lg:grid-cols-2">
+          <div>
+            <h3 class="text-balance text-2xl font-medium text-foreground">انضم إلى الدائرة الخاصة</h3>
+            <p class="mt-3 max-w-md text-pretty text-[14px] font-light leading-relaxed text-muted-foreground">اشترك لتكون أول من يعرف عن الإصدارات الحصرية والعروض المميّزة.</p>
+          </div>
+          <form id="newsletter-form" class="flex flex-col justify-center gap-3">
+            <div class="flex gap-2">
+              <input id="newsletter-email" type="email" required placeholder="بريدك الإلكتروني" class="min-w-0 flex-1 rounded-lg border border-white/10 bg-background/60 px-4 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus:border-gold/50 focus:outline-none" />
+              <button type="submit" id="newsletter-btn" class="inline-flex shrink-0 items-center gap-2 rounded-lg gold-gradient px-5 py-3.5 text-[13px] font-semibold text-primary-foreground transition-transform hover:-translate-y-0.5">
+                <i data-lucide="mail" class="size-4"></i>
+                <span>اشترك</span>
+              </button>
+            </div>
+            <p id="newsletter-done" class="hidden text-[12px] text-gold">شكراً لك! أصبحت ضمن الدائرة الخاصة.</p>
+          </form>
+        </div>
+
+        <div class="grid gap-10 md:grid-cols-4">
+          <div class="md:col-span-2">
+            <div class="flex flex-col items-start leading-none">
+              <span class="font-serif text-lg font-semibold tracking-[0.3em] text-foreground">AURA</span>
+              <span class="font-serif text-[10px] tracking-[0.42em] text-gold">PARFUMS</span>
+            </div>
+            <p class="mt-4 max-w-sm text-[13px] font-light leading-relaxed text-muted-foreground">دار عطور فاخرة تقدّم تشكيلة مستوحاة من أرقى العطور العالمية، بثبات يدوم وخدمة توصيل ودفع عند الاستلام لكافة مدن المغرب.</p>
+            <div class="mt-6 flex gap-3">
+              <a data-wa="السلام عليكم AURA PARFUMS." target="_blank" rel="noopener noreferrer" aria-label="واتساب" class="flex size-10 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-colors hover:border-whatsapp hover:text-whatsapp"><i data-lucide="message-circle" class="size-[18px]" style="stroke-width: 1.5"></i></a>
+              <a href="#" aria-label="إنستغرام" class="flex size-10 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-colors hover:border-gold/40 hover:text-gold"><i data-lucide="at-sign" class="size-[18px]" style="stroke-width: 1.5"></i></a>
+              <a href="#" aria-label="الموقع" class="flex size-10 items-center justify-center rounded-full border border-white/10 text-muted-foreground transition-colors hover:border-gold/40 hover:text-gold"><i data-lucide="globe" class="size-[18px]" style="stroke-width: 1.5"></i></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="mb-4 text-sm font-medium text-foreground">التسوّق</h4>
+            <ul class="flex flex-col gap-3">
+              <li><a href="#collection" class="text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">التشكيلة</a></li>
+              <li><a href="#signature" class="text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">العطور المميّزة</a></li>
+              <li><a href="#order" class="text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">الطلب عبر واتساب</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="mb-4 text-sm font-medium text-foreground">الدار</h4>
+            <ul class="flex flex-col gap-3">
+              <li><a href="#craft" class="text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">حرفتنا</a></li>
+              <li><a href="#top" class="text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">من نحن</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-center md:flex-row md:text-right">
+          <p class="text-[12px] font-light text-muted-foreground/70">© <span id="year"></span> A&P AURA PARFUMS. جميع الحقوق محفوظة.</p>
+          <p class="text-[12px] font-light text-muted-foreground/70">واتساب: +212 649-982831</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+    <a data-wa="السلام عليكم، أريد طلب عطر من AURA PARFUMS." target="_blank" rel="noopener noreferrer" aria-label="اطلب عبر واتساب" class="fixed bottom-5 left-5 z-40 flex size-14 items-center justify-center rounded-full bg-whatsapp text-[#062a13] shadow-[0_8px_24px_rgba(37,211,102,0.35)] transition-transform hover:scale-105">
+      <i data-lucide="message-circle" class="relative size-7" style="stroke-width: 1.8"></i>
+    </a>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      const WHATSAPP_NUMBER = '212649982831'
+      const buildWhatsAppLink = (message) =>
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+
+      const families = [
+        { id: 'all', label: 'الكل' },
+        { id: 'woody', label: 'خشبي' },
+        { id: 'oriental', label: 'شرقي' },
+        { id: 'fresh', label: 'منعش' },
+        { id: 'spicy', label: 'حار' },
+      ]
+
+      const products = [
+        { id: 'stronger-intensely', name: 'STRONGER WITH YOU INTENSELY', type: 'عطر مستوحى', family: 'oriental', notes: ['فانيليا', 'عنبر', 'لافندر'], price: 45, size: '30ML', image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?q=80&w=600&auto=format&fit=crop', badge: 'الأكثر مبيعاً' },
+        { id: 'bleu-de-chanel', name: 'BLEU DE CHANEL', type: 'عطر مستوحى', family: 'woody', notes: ['خشب الصندل', 'حمضيات', 'زنجبيل'], price: 45, size: '30ML', image: 'https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=600&auto=format&fit=crop' },
+        { id: 'one-million', name: '1 MILLION', type: 'عطر مستوحى', family: 'spicy', notes: ['جلد', 'عنبر', 'قرفة'], price: 45, size: '30ML', image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=600&auto=format&fit=crop', badge: 'إصدار مميّز' },
+        { id: 'ultra-male', name: 'ULTRA MALE', type: 'عطر مستوحى', family: 'oriental', notes: ['كمثرى', 'فانيليا', 'مسك'], price: 45, size: '30ML', image: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?q=80&w=600&auto=format&fit=crop' },
+        { id: 'imagination-lv', name: 'IMAGINATION LOUIS VUITTON', type: 'عطر مستوحى', family: 'fresh', notes: ['شاي أسود', 'حمضيات', 'خشب الأرز'], price: 45, size: '30ML', image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=600&auto=format&fit=crop', badge: 'جديد' },
+      ]
+
+      let cart = []
+
+      const grid = document.getElementById('product-grid')
+      const filterGroup = document.querySelector('[data-filter-group]')
+      let active = 'all'
+
+      function productCard(p) {
+        const badge = p.badge
+          ? `<span class="absolute right-8 top-8 z-10 rounded-full border border-gold/30 bg-background/90 px-3 py-1 font-serif text-[10px] tracking-wider text-gold">${p.badge}</span>`
+          : ''
+        const notes = p.notes
+          .map(
+            (n) =>
+              `<span class="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] font-light text-muted-foreground">${n}</span>`,
+          )
+          .join('')
+        return `
+          <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-card p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/25 hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]">
+            ${badge}
+            <div class="card-image-well relative mb-5 aspect-square w-full overflow-hidden rounded-xl">
+              <img src="${p.image}" alt="${p.name}" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+            </div>
+            <span class="mb-1.5 text-[11px] font-light text-gold">${p.type}</span>
+            <h3 class="mb-3 min-h-[2.5rem] text-[15px] font-medium leading-snug text-foreground">${p.name}</h3>
+            <div class="mb-4 flex flex-wrap gap-1.5">${notes}</div>
+            
+            <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-4 mb-4">
+              <span class="text-[12px] text-muted-foreground">${p.size}</span>
+              <span class="text-xl font-semibold text-gold-champagne">${p.price} درهم</span>
+            </div>
+            
+            <div class="flex gap-2">
+              <button onclick="addToCart('${p.id}')" class="flex-1 inline-flex items-center justify-center gap-2 rounded-lg border border-gold/25 gold-soft py-3 text-[13px] font-medium text-gold transition-all group-hover:border-transparent group-hover:bg-[linear-gradient(135deg,#e2c99b,#c8a768)] group-hover:text-primary-foreground">
+                <i data-lucide="shopping-bag" class="size-4" style="stroke-width: 1.6"></i>
+                إضافة للسلة
+              </button>
+            </div>
+          </article>`
+      }
+
+      function renderProducts() {
+        const list = active === 'all' ? products : products.filter((p) => p.family === active)
+        grid.innerHTML = list.map(productCard).join('')
+        lucide.createIcons()
+      }
+
+      function renderFilters() {
+        filterGroup.innerHTML = families
+          .map((f) => {
+            const isActive = f.id === active
+            const cls = isActive
+              ? 'border-transparent bg-[linear-gradient(135deg,#e2c99b,#c8a768)] font-medium text-primary-foreground'
+              : 'border-white/10 font-light text-muted-foreground hover:border-gold/40 hover:text-gold'
+            return `<button type="button" data-family="${f.id}" class="rounded-full border px-5 py-2 text-[13px] transition-all ${cls}">${f.label}</button>`
+          })
+          .join('')
+      }
+
+      filterGroup.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-family]')
+        if (!btn) return
+        active = btn.dataset.family
+        renderFilters()
+        renderProducts()
+      })
+
+      function addToCart(productId) {
+        const product = products.find(p => p.id === productId)
+        if (!product) return
+
+        const existing = cart.find(item => item.id === productId)
+        if (existing) {
+          existing.qty += 1
+        } else {
+          cart.push({ ...product, qty: 1 })
+        }
+        updateCartUI()
+        openCart()
+      }
+
+      function updateQty(productId, delta) {
+        const item = cart.find(i => i.id === productId)
+        if (!item) return
+        item.qty += delta
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.id !== productId)
+        }
+        updateCartUI()
+      }
+
+      function updateCartUI() {
+        const cartCount = document.getElementById('cart-count')
+        const cartItems = document.getElementById('cart-items')
+        const cartTotal = document.getElementById('cart-total')
+
+        const totalItems = cart.reduce((acc, i) => acc + i.qty, 0)
+        const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.qty), 0)
+
+        cartCount.textContent = totalItems
+
+        if (cart.length === 0) {
+          cartItems.innerHTML = `<p class="text-center text-muted-foreground py-6 text-sm">سلة المشتريات فارغة</p>`
+        } else {
+          cartItems.innerHTML = cart.map(item => `
+            <div class="flex items-center gap-3 bg-background/50 p-2.5 rounded-xl border border-white/5">
+              <img src="${item.image}" alt="${item.name}" class="size-12 rounded-lg object-cover" />
+              <div class="flex-1 min-w-0">
+                <h4 class="text-xs font-medium text-foreground truncate">${item.name}</h4>
+                <p class="text-[11px] text-gold">${item.price} درهم</p>
+              </div>
+              <div class="flex items-center gap-2 border border-white/10 rounded-lg p-1 bg-surface">
+                <button onclick="updateQty('${item.id}', -1)" class="size-5 text-muted-foreground hover:text-foreground flex items-center justify-center text-xs">-</button>
+                <span class="text-xs font-medium">${item.qty}</span>
+                <button onclick="updateQty('${item.id}', 1)" class="size-5 text-muted-foreground hover:text-foreground flex items-center justify-center text-xs">+</button>
+              </div>
+            </div>
+          `).join('')
+        }
+
+        cartTotal.textContent = `${totalPrice} درهم`
+      }
+
+      const cartDrawer = document.getElementById('cart-drawer')
+      const cartToggle = document.getElementById('cart-toggle')
+      const cartClose = document.getElementById('cart-close')
+      const cartBackdrop = document.getElementById('cart-backdrop')
+      const checkoutBtn = document.getElementById('checkout-btn')
+
+      function openCart() {
+        cartDrawer.classList.remove('hidden')
+      }
+
+      function closeCart() {
+        cartDrawer.classList.add('hidden')
+      }
+
+      cartToggle.addEventListener('click', openCart)
+      cartClose.addEventListener('click', closeCart)
+      cartBackdrop.addEventListener('click', closeCart)
+
+      checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+          alert('الرجاء اختيار عطر واحد على الأقل.')
+          return
+        }
+
+        const name = document.getElementById('cust-name').value.trim()
+        const city = document.getElementById('cust-city').value.trim()
+        const address = document.getElementById('cust-address').value.trim()
+        const phone = document.getElementById('cust-phone').value.trim()
+
+        if (!name || !city || !address || !phone) {
+          alert('الرجاء إدخال جميع معلومات الشحن (الاسم، المدينة، العنوان، ورقم الهاتف) لإتمام الطلب.')
+          return
+        }
+
+        let message = "📦 *طلب جديد من AURA PARFUMS*\n"
+        message += "-----------------------------------\n\n"
+        message += "👤 *معلومات الزبون:*\n"
+        message += `• *الاسم:* ${name}\n`
+        message += `• *المدينة:* ${city}\n`
+        message += `• *العنوان:* ${address}\n`
+        message += `• *الهاتف:* ${phone}\n\n`
+        
+        message += "🛍️ *المنتجات المطلوبة:*\n"
+        let total = 0
+
+        cart.forEach(item => {
+          const itemTotal = item.price * item.qty
+          total += itemTotal
+          message += `• ${item.name} (${item.size}) | العدد: ${item.qty} | السعر: ${itemTotal} درهم\n`
+        })
+
+        message += `\n💰 *المجموع الكلي:* ${total} درهم\n`
+        message += "-----------------------------------\n"
+        message += "طريقة الدفع: الدفع عند الاستلام (COD)"
+
+        window.open(buildWhatsAppLink(message), '_blank')
+      })
+
+      document.querySelectorAll('[data-wa]').forEach((el) => {
+        el.setAttribute('href', buildWhatsAppLink(el.dataset.wa))
+      })
+
+      const header = document.getElementById('site-header')
+      const onScroll = () => {
+        if (window.scrollY > 20) {
+          header.className =
+            'fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 border-gold/25 bg-background/90 shadow-[0_8px_30px_rgba(0,0,0,0.55)] backdrop-blur-xl'
+        } else {
+          header.className =
+            'fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 border-white/5 bg-background/40 backdrop-blur-md'
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true })
+      onScroll()
+
+      const menuToggle = document.getElementById('menu-toggle')
+      const mobileNav = document.getElementById('mobile-nav')
+      const menuIcon = document.getElementById('menu-icon')
+      let menuOpen = false
+      function setMenu(open) {
+        menuOpen = open
+        mobileNav.classList.toggle('hidden', !open)
+        menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu')
+        lucide.createIcons()
+      }
+      menuToggle.addEventListener('click', () => setMenu(!menuOpen))
+      document.querySelectorAll('.mobile-link').forEach((l) =>
+        l.addEventListener('click', () => setMenu(false)),
+      )
+
+      const form = document.getElementById('newsletter-form')
+      form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const email = document.getElementById('newsletter-email')
+        if (!email.value) return
+        email.value = ''
+        document.getElementById('newsletter-done').classList.remove('hidden')
+        const btn = document.getElementById('newsletter-btn')
+        btn.querySelector('span').textContent = 'تم'
+        btn.querySelector('i').setAttribute('data-lucide', 'check')
+        lucide.createIcons()
+      })
+
+      document.getElementById('year').textContent = new Date().getFullYear()
+
+      renderFilters()
+      renderProducts()
+      updateCartUI()
+      lucide.createIcons()
+    </script>
+  </body>
 </html>
