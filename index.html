@@ -1,533 +1,342 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="ar" dir="rtl" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#050505" />
-    
-    <!-- SEO & Metadata -->
-    <title>ZELVÉN PARFUMS | Luxury Fragrances in Agadir</title>
+    <meta name="theme-color" content="#080808" />
+    <title>ZELVÉN PARFUMS | عطور فاخرة</title>
     <meta
       name="description"
-      content="Discover ZELVÉN PARFUMS — luxury fragrances in Agadir, Morocco. Explore our signature collection and find your scent."
+      content="ZELVÉN — دار عطور فاخرة وحديثة. تشكيلة حصرية مصممة لأصحاب الذوق الرفيع بثبات يدوم طويلاً ودفع عند الاستلام."
     />
-    <meta property="og:title" content="ZELVÉN PARFUMS | Luxury Fragrances in Agadir" />
-    <meta property="og:description" content="Discover ZELVÉN PARFUMS — luxury fragrances in Agadir, Morocco. Explore our signature collection and find your scent." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://aura-parfums.github.io/zelvenparfums/" />
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
-    <!-- Tailwind CSS CDN -->
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['"Cormorant Garamond"', 'serif'],
+              sans: ['"Readex Pro"', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
             },
             colors: {
-              'maison-black': '#050505',
-              'maison-dark': '#0D0D0D',
-              'maison-card': '#121212',
-              'maison-silver': '#C7C7C7',
-              'maison-silver-light': '#E5E5E5',
-              'maison-text': '#F5F5F5',
-              'maison-muted': '#8A8A8A',
-              'maison-border': 'rgba(199, 199, 199, 0.15)',
-              whatsapp: '#25D366',
+              'deep-black': '#080808',
+              anthracite: '#17191C',
+              'satin-silver': '#B8BCC2',
+              'off-white': '#F2F2EE',
+              background: '#080808',
+              foreground: '#F2F2EE',
+              surface: '#17191C',
+              card: '#121417',
+              'primary-foreground': '#080808',
+              'muted-foreground': '#8E939B',
+              whatsapp: '#25d366',
             },
             letterSpacing: {
-              widestLuxury: '0.25em',
-              ultraLuxury: '0.35em',
+              luxury: '0.35em',
             },
           },
         },
       }
     </script>
 
-    <!-- Lucide Icons -->
+    <!-- Lucide icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
       :root {
-        --bg-main: #050505;
-        --bg-secondary: #0D0D0D;
-        --text-primary: #F5F5F5;
-        --silver: #C7C7C7;
-        --muted: #8A8A8A;
+        --deep-black: #080808;
+        --anthracite: #17191C;
+        --satin-silver: #B8BCC2;
+        --off-white: #F2F2EE;
       }
 
       body {
-        background-color: var(--bg-main);
-        color: var(--text-primary);
-        font-family: 'Inter', sans-serif;
-        overflow-x: hidden;
+        background-color: var(--deep-black);
+        color: var(--off-white);
+        background-image: radial-gradient(
+            circle at 50% 0%,
+            rgba(184, 188, 194, 0.05) 0%,
+            transparent 55%
+          ),
+          radial-gradient(circle at 85% 35%, rgba(184, 188, 194, 0.02) 0%, transparent 40%);
+        background-attachment: fixed;
       }
 
-      /* Subtle Metallic Silver Text Gradient */
-      .silver-text-gradient {
-        background: linear-gradient(135deg, #FFFFFF 0%, #C7C7C7 50%, #8A8A8A 100%);
+      /* Silver Metallic Gradients */
+      .silver-gradient {
+        background: linear-gradient(135deg, #E6E8EA 0%, #B8BCC2 50%, #8A9099 100%);
+      }
+      .silver-gradient-text {
+        background: linear-gradient(135deg, #FFFFFF 0%, #B8BCC2 60%, #8A9099 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
-      /* Silver Metallic Button Background */
-      .silver-button-bg {
-        background: linear-gradient(135deg, #E5E5E5 0%, #C7C7C7 50%, #A3A3A3 100%);
-        color: #050505;
+      .silver-soft {
+        background-color: rgba(184, 188, 194, 0.1);
+      }
+      .card-image-well {
+        background: radial-gradient(
+          circle at 50% 38%,
+          #22252A 0%,
+          #141619 45%,
+          #080808 100%
+        );
       }
 
-      /* Subtle Hover Glow for Cards */
-      .card-hover-glow {
-        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      .footer-social-btn {
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(184, 188, 194, 0.25);
+        background-color: #121417;
+        color: var(--satin-silver);
+        font-size: 1.25rem;
+        transition: all 0.3s ease;
       }
-      .card-hover-glow:hover {
-        border-color: rgba(199, 199, 199, 0.4);
-        box-shadow: 0 10px 30px -10px rgba(199, 199, 199, 0.1);
+      .footer-social-btn:hover {
+        background: linear-gradient(135deg, #E6E8EA 0%, #B8BCC2 100%);
+        color: var(--deep-black);
         transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(184, 188, 194, 0.2);
       }
 
-      /* Custom Subtle Glow behind Perfume Assets */
-      .hero-product-glow {
-        background: radial-gradient(circle at 50% 50%, rgba(199, 199, 199, 0.12) 0%, transparent 65%);
-      }
-
-      /* Custom Loading Screen Animation */
+      /* Loader styles */
       #loading-screen {
-        transition: opacity 0.6s ease, visibility 0.6s ease;
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background-color: var(--deep-black);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
       }
       #loading-screen.fade-out {
         opacity: 0;
         visibility: hidden;
       }
-
-      /* Custom Scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
+      .silver-loader-line {
+        width: 120px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--satin-silver), transparent);
+        animation: pulseLine 1.8s infinite ease-in-out;
       }
-      ::-webkit-scrollbar-track {
-        background: #050505;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #262626;
-        border-radius: 3px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #C7C7C7;
+      @keyframes pulseLine {
+        0%, 100% { opacity: 0.2; transform: scaleX(0.7); }
+        50% { opacity: 1; transform: scaleX(1); }
       }
     </style>
   </head>
 
-  <body class="antialiased selection:bg-maison-silver selection:text-maison-black">
-
+  <body class="font-sans antialiased">
     <!-- ================= LUXURY LOADING SCREEN ================= -->
-    <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-maison-black">
+    <div id="loading-screen">
       <div class="flex flex-col items-center leading-none mb-6">
-        <span class="font-serif text-2xl font-normal tracking-[0.35em] text-maison-text mb-2">ZELVÉN</span>
-        <span class="font-serif text-[10px] tracking-[0.45em] text-maison-silver uppercase">PARFUMS</span>
+        <span class="font-serif text-3xl font-semibold tracking-[0.35em] text-foreground mb-2">ZELVÉN</span>
+        <span class="font-serif text-xs tracking-[0.5em] text-satin-silver">PARFUMS</span>
       </div>
-      <div class="h-[1px] w-24 bg-gradient-to-r from-transparent via-maison-silver to-transparent animate-pulse"></div>
+      <div class="silver-loader-line"></div>
     </div>
 
     <!-- ================= NOTIFICATION TOAST ================= -->
-    <div id="toast-notification" class="fixed top-24 left-1/2 z-50 -translate-x-1/2 transition-all duration-300 opacity-0 pointer-events-none translate-y-[-10px] w-[90%] max-w-sm">
-      <div class="flex items-center gap-3 rounded-lg border border-maison-border bg-maison-dark px-5 py-3.5 text-xs shadow-2xl backdrop-blur-md">
-        <div class="flex size-7 shrink-0 items-center justify-center rounded-full bg-maison-silver/10 text-maison-silver">
+    <div id="toast-notification" class="fixed top-24 left-1/2 z-50 -translate-x-1/2 transition-all duration-300 opacity-0 pointer-events-none translate-y-[-10px] w-[90%] max-w-md">
+      <div class="flex items-center gap-3 rounded-2xl border border-satin-silver/30 bg-surface/95 px-5 py-3.5 text-xs shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md">
+        <div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-satin-silver/20 text-satin-silver">
           <i data-lucide="check" class="size-4"></i>
         </div>
         <div>
-          <p id="toast-title" class="font-medium text-maison-text text-xs"></p>
-          <p id="toast-subtitle" class="text-maison-muted text-[11px] mt-0.5"></p>
+          <p id="toast-title" class="font-medium text-foreground text-sm"></p>
+          <p id="toast-subtitle" class="text-muted-foreground text-[12px] mt-0.5"></p>
         </div>
       </div>
     </div>
 
     <!-- ================= HEADER ================= -->
-    <header id="site-header" class="fixed inset-x-0 top-0 z-40 transition-all duration-300 border-b border-transparent">
-      <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 md:px-12">
-        <!-- Brand Logo -->
-        <a href="#top" class="flex flex-col items-start leading-none group">
-          <span class="font-serif text-xl font-normal tracking-[0.3em] text-maison-text group-hover:text-maison-silver transition-colors">ZELVÉN</span>
-          <span class="font-serif text-[9px] tracking-[0.4em] text-maison-silver mt-0.5">PARFUMS</span>
+    <header
+      id="site-header"
+      class="fixed inset-x-0 top-0 z-40 border-b border-satin-silver/10 bg-background/50 backdrop-blur-md transition-all duration-300"
+    >
+      <div class="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <a href="#top" class="flex items-center gap-3">
+          <div class="flex flex-col items-start leading-none">
+            <span class="font-serif text-xl font-semibold tracking-[0.3em] text-foreground">ZELVÉN</span>
+            <span class="font-serif text-[10px] tracking-[0.42em] text-satin-silver">PARFUMS</span>
+          </div>
         </a>
 
-        <!-- Desktop Navigation Links -->
-        <nav class="hidden items-center gap-10 lg:flex">
-          <a href="#top" class="text-xs font-light tracking-widest text-maison-muted transition-colors hover:text-maison-text uppercase">ACCUEIL</a>
-          <a href="#collection" class="text-xs font-light tracking-widest text-maison-muted transition-colors hover:text-maison-text uppercase">COLLECTION</a>
-          <a href="#signature" class="text-xs font-light tracking-widest text-maison-muted transition-colors hover:text-maison-text uppercase">À PROPOS</a>
-          <a href="#contact" class="text-xs font-light tracking-widest text-maison-muted transition-colors hover:text-maison-text uppercase">CONTACT</a>
+        <nav class="hidden items-center gap-9 lg:flex">
+          <a href="#collection" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-satin-silver">التشكيلة<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-satin-silver transition-all duration-300 group-hover:w-full"></span></a>
+          <a href="#signature" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-satin-silver">العطور المميّزة<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-satin-silver transition-all duration-300 group-hover:w-full"></span></a>
+          <a href="#order" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-satin-silver">الطلب عبر واتساب<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-satin-silver transition-all duration-300 group-hover:w-full"></span></a>
         </nav>
 
-        <!-- Right Side Cart & Mobile Actions -->
-        <div class="flex items-center gap-4">
-          <button
-            type="button"
-            id="cart-toggle"
-            aria-label="Panier"
-            class="group relative flex items-center gap-2 rounded-full border border-maison-border bg-maison-dark/50 px-4 py-2 text-xs font-light tracking-widest text-maison-text transition-all hover:border-maison-silver/50"
-          >
-            <i data-lucide="shopping-bag" class="size-4 text-maison-silver stroke-[1.5]"></i>
-            <span class="hidden sm:inline">PANIER</span>
-            <span id="cart-count" class="ml-1 flex size-4 items-center justify-center rounded-full bg-maison-silver text-[10px] font-medium text-maison-black">0</span>
+        <div class="flex items-center gap-2">
+          <!-- Cart Toggle Button -->
+          <button type="button" id="cart-toggle" aria-label="سلة المشتريات" class="relative flex size-10 items-center justify-center rounded-full border border-satin-silver/20 bg-surface text-muted-foreground transition-colors hover:border-satin-silver/50 hover:text-satin-silver">
+            <i data-lucide="shopping-bag" class="size-[18px]" style="stroke-width: 1.5"></i>
+            <span id="cart-count" class="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-satin-silver text-[10px] font-bold text-primary-foreground">0</span>
           </button>
 
-          <button type="button" aria-label="Menu" id="menu-toggle" class="flex size-9 items-center justify-center text-maison-text lg:hidden">
+          <a data-wa="السلام عليكم، أريد الاستفسار عن عطور ZELVÉN الفاخرة." target="_blank" rel="noopener noreferrer" class="ms-1 hidden items-center gap-2 rounded-full border border-satin-silver/30 bg-satin-silver/10 px-4 py-2 text-xs text-satin-silver transition-all hover:-translate-y-0.5 hover:border-satin-silver hover:bg-satin-silver/20 md:inline-flex">
+            <i data-lucide="message-circle" class="size-4" style="stroke-width: 1.6"></i>
+            تواصل معنا
+          </a>
+          <button type="button" aria-label="القائمة" id="menu-toggle" class="flex size-9 items-center justify-center rounded-full text-foreground lg:hidden">
             <i data-lucide="menu" class="size-5" id="menu-icon"></i>
           </button>
         </div>
       </div>
 
-      <!-- Mobile Dropdown Navigation -->
-      <nav id="mobile-nav" class="hidden border-b border-maison-border bg-maison-dark/95 px-6 py-6 backdrop-blur-xl lg:hidden">
-        <div class="flex flex-col gap-4">
-          <a href="#top" class="mobile-link text-xs tracking-widest text-maison-muted hover:text-maison-text uppercase">ACCUEIL</a>
-          <a href="#collection" class="mobile-link text-xs tracking-widest text-maison-muted hover:text-maison-text uppercase">COLLECTION</a>
-          <a href="#signature" class="mobile-link text-xs tracking-widest text-maison-muted hover:text-maison-text uppercase">À PROPOS</a>
-          <a href="#contact" class="mobile-link text-xs tracking-widest text-maison-muted hover:text-maison-text uppercase">CONTACT</a>
+      <nav id="mobile-nav" class="hidden border-t border-satin-silver/10 bg-background/95 px-6 py-4 backdrop-blur-xl lg:hidden">
+        <div class="flex flex-col gap-1">
+          <a href="#collection" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-satin-silver">التشكيلة</a>
+          <a href="#signature" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-satin-silver">العطور المميّزة</a>
+          <a href="#order" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-satin-silver">الطلب عبر واتساب</a>
         </div>
       </nav>
     </header>
 
     <main>
-      <!-- ================= HERO SECTION ================= -->
-      <section id="top" class="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-16 overflow-hidden">
-        <div aria-hidden="true" class="hero-product-glow pointer-events-none absolute inset-0 z-0"></div>
+      <!-- ================= HERO ================= -->
+      <section id="top" class="relative overflow-hidden px-6 pb-16 pt-36 md:pb-20 md:pt-40">
+        <div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-20 h-[450px] w-[600px] -translate-x-1/2 rounded-full opacity-40 blur-3xl" style="background: radial-gradient(ellipse, rgba(184, 188, 194, 0.15) 0%, transparent 70%)"></div>
 
-        <div class="relative z-10 mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <!-- Text Content -->
-          <div class="lg:col-span-6 text-center lg:text-left order-2 lg:order-1">
-            <p class="font-sans text-[11px] font-medium tracking-ultraLuxury text-maison-silver uppercase mb-4">
-              Luxury Fragrances • Agadir, Morocco
-            </p>
+        <div class="relative mx-auto max-w-4xl text-center">
+          <span class="mb-5 inline-block rounded-full border border-satin-silver/30 bg-satin-silver/10 px-5 py-1.5 font-sans text-[12px] font-medium text-satin-silver tracking-widest uppercase">
+            ZELVÉN — PARFUMERIE DE LUXE
+          </span>
 
-            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-maison-text leading-[1.15]">
-              THE ART OF SCENT
-            </h1>
+          <h1 class="text-balance font-sans text-3xl font-medium leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
+            THE ART OF SCENT
+            <span class="mt-2 block font-sans silver-gradient-text font-semibold">بصمة عطرية لا تُنسى</span>
+          </h1>
 
-            <p class="mt-4 font-serif italic text-lg sm:text-xl text-maison-silver/90 font-normal">
-              Des fragrances créées pour laisser une impression.
-            </p>
+          <p class="mx-auto mt-6 max-w-xl text-pretty font-sans text-[14px] font-light leading-relaxed text-muted-foreground sm:text-[15px]">
+            تشكيلة حصرية مصممة لأصحاب الذوق الرفيع. صُممت بمكونات نادرة وبتركيز عالي ليدوم حضورك أينما حللت. توصيل سريع ودفع عند الاستلام.
+          </p>
 
-            <p class="mt-6 text-xs sm:text-sm font-light leading-relaxed text-maison-muted max-w-md mx-auto lg:mx-0">
-              Conçues à Agadir, nos créations olfactives célèbrent l'élégance contemporaine et la haute parfumerie française. Une présence inoubliable, capturée dans chaque flacon.
-            </p>
-
-            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a
-                href="#collection"
-                class="w-full sm:w-auto inline-flex items-center justify-center silver-button-bg px-8 py-4 text-xs font-medium tracking-widest uppercase transition-all hover:opacity-90"
-              >
-                DÉCOUVRIR LA COLLECTION
-              </a>
-              <a
-                href="#signature"
-                class="w-full sm:w-auto inline-flex items-center justify-center border border-maison-border px-8 py-4 text-xs font-light tracking-widest text-maison-text uppercase transition-all hover:border-maison-silver/50 hover:bg-white/[0.02]"
-              >
-                EXPLORE ZELVÉN
-              </a>
-            </div>
-          </div>
-
-          <!-- Hero Perfume Product Focal Visual -->
-          <div class="lg:col-span-6 flex justify-center order-1 lg:order-2">
-            <div class="relative w-full max-w-md aspect-[3/4] flex items-center justify-center">
-              <div class="absolute inset-0 rounded-full bg-maison-silver/5 blur-3xl"></div>
-              <img
-                src="zelven-blue.png"
-                alt="ZELVÉN PARFUMS — Signature Fragrance Bottle"
-                class="relative z-10 max-h-[480px] w-auto object-contain filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] transition-transform duration-700 hover:scale-[1.02]"
-                loading="eager"
-              />
-            </div>
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a href="#collection" class="group inline-flex items-center gap-2 rounded-lg silver-gradient px-8 py-4 text-[13px] font-semibold text-primary-foreground shadow-[0_6px_24px_rgba(184,188,194,0.15)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(184,188,194,0.25)]">
+              استكشف المجموعة
+              <i data-lucide="arrow-left" class="size-4 transition-transform group-hover:-translate-x-1" style="stroke-width: 1.8"></i>
+            </a>
           </div>
         </div>
       </section>
 
-      <!-- ================= COLLECTION SECTION ================= -->
-      <section id="collection" class="px-6 py-24 border-t border-maison-border/50 bg-maison-dark/30">
-        <div class="mx-auto max-w-7xl">
-          <div class="mb-16 text-center">
-            <h2 class="font-serif text-3xl sm:text-4xl font-normal tracking-wide text-maison-text">
-              OUR COLLECTION
-            </h2>
-            <p class="mt-2 text-xs tracking-widest text-maison-muted uppercase">
-              Discover fragrances that define your presence.
-            </p>
-            <div class="mx-auto mt-4 h-[1px] w-12 bg-maison-silver/30"></div>
+      <!-- ================= COLLECTION ================= -->
+      <section id="collection" class="px-6 py-16 md:py-20">
+        <div class="mx-auto max-w-5xl">
+          <div class="mb-12 text-center">
+            <span class="mb-2.5 block font-serif text-[11px] uppercase tracking-luxury text-satin-silver">Exclusive Collection</span>
+            <h2 class="inline-block text-3xl font-medium text-foreground md:text-4xl">التشكيلة الحصرية</h2>
+            <div class="mx-auto mt-3.5 h-px w-9 bg-satin-silver/50"></div>
           </div>
+
+          <div id="signature" class="mb-12 flex flex-wrap items-center justify-center gap-2.5" data-filter-group></div>
 
           <!-- Product Grid -->
-          <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto"></div>
+          <div id="product-grid" class="grid gap-8 sm:grid-cols-2 max-w-3xl mx-auto"></div>
         </div>
       </section>
 
-      <!-- ================= SIGNATURE SECTION ================= -->
-      <section id="signature" class="relative px-6 py-28 border-t border-maison-border/50 bg-maison-dark overflow-hidden">
-        <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-6 flex justify-center">
-            <div class="relative w-full max-w-sm aspect-[3/4] flex items-center justify-center rounded-2xl bg-maison-black/40 border border-maison-border/40 p-8">
-              <img
-                id="signature-image"
-                src=""
-                alt="ZELVÉN Signature Fragrance"
-                class="max-h-[380px] w-auto object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.9)]"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          <div class="lg:col-span-6 text-center lg:text-left">
-            <span class="text-[10px] font-medium tracking-ultraLuxury text-maison-silver uppercase block mb-3">Maison de Parfum</span>
-            <h2 class="font-serif text-3xl sm:text-5xl font-light tracking-wide text-maison-text leading-tight">
-              FIND YOUR SIGNATURE
-            </h2>
-            <p class="mt-6 font-serif text-xl italic text-maison-silver/80">
-              Every fragrance tells a story. What will yours say?
-            </p>
-            <p class="mt-4 text-xs sm:text-sm font-light text-maison-muted leading-relaxed max-w-lg">
-              Chaque note est pensée comme un chapitre. Nos jus sont développés avec une exigence extrême de tenue et de sillage, révélant la personnalité unique de celui ou celle qui la porte.
-            </p>
-            <div class="mt-8">
-              <a
-                href="#collection"
-                class="inline-flex items-center gap-2 border-b border-maison-silver pb-1 text-xs font-light tracking-widest text-maison-text uppercase transition-colors hover:text-maison-silver"
-              >
-                EXPLORE ZELVÉN <i data-lucide="arrow-right" class="size-3.5"></i>
+      <!-- ================= VIP ORDER SECTION ================= -->
+      <section id="order" class="px-6 py-24 md:py-28">
+        <div class="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-satin-silver/20 bg-surface p-8 md:p-14">
+          <div aria-hidden="true" class="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full opacity-40 blur-3xl" style="background: radial-gradient(circle, rgba(184, 188, 194, 0.15) 0%, transparent 70%)"></div>
+          <div class="relative grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <span class="mb-3 block font-sans text-[12px] font-medium text-satin-silver tracking-wider uppercase">ZELVÉN Direct Delivery</span>
+              <h2 class="text-balance text-3xl font-medium leading-snug text-foreground md:text-4xl">اختر عطرك الخاص وسنصلك أينما كنت</h2>
+              <p class="mt-4 max-w-md text-pretty text-[15px] font-light leading-relaxed text-muted-foreground">
+                اختر العطور التي تناسب شخصيتك وحدد الكمية، ثم افتح السلة لإدخال تفاصيل عنوانك وإرسال طلبك مباشرة عبر الواتساب.
+              </p>
+              <a data-wa="السلام عليكم، أريد الطلب واستفسار عن خدمة التوصيل المباشر لعطور ZELVÉN." target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-whatsapp px-8 py-4 text-[14px] font-semibold text-[#062a13] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.25)]">
+                <i data-lucide="message-circle" class="size-5" style="stroke-width: 1.8"></i>
+                محادثة مباشرة عبر واتساب
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= WHY ZELVÉN ================= -->
-      <section class="px-6 py-24 border-t border-maison-border/50 bg-maison-black">
-        <div class="mx-auto max-w-7xl">
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- 01 -->
-            <div class="border border-maison-border bg-maison-dark/40 p-8 flex flex-col justify-between h-60">
-              <span class="font-serif text-2xl font-light text-maison-silver">01</span>
-              <div>
-                <h3 class="text-xs font-semibold tracking-widest text-maison-text uppercase mb-2">QUALITY</h3>
-                <p class="text-xs font-light text-maison-muted leading-relaxed">Des fragrances soigneusement sélectionnées.</p>
+            <div class="grid gap-4">
+              <div class="flex items-center gap-4 rounded-xl border border-satin-silver/10 bg-background/50 p-4">
+                <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-satin-silver/20 silver-soft text-satin-silver"><i data-lucide="hand-coins" class="size-5" style="stroke-width: 1.5"></i></div>
+                <div><h3 class="text-sm font-medium text-foreground">الدفع عند الاستلام</h3><p class="text-[12px] font-light text-muted-foreground">ادفع بعد معاينة واستلام طلبك الفاخر</p></div>
               </div>
-            </div>
-            <!-- 02 -->
-            <div class="border border-maison-border bg-maison-dark/40 p-8 flex flex-col justify-between h-60">
-              <span class="font-serif text-2xl font-light text-maison-silver">02</span>
-              <div>
-                <h3 class="text-xs font-semibold tracking-widest text-maison-text uppercase mb-2">ELEGANCE</h3>
-                <p class="text-xs font-light text-maison-muted leading-relaxed">L’élégance dans chaque détail.</p>
+              <div class="flex items-center gap-4 rounded-xl border border-satin-silver/10 bg-background/50 p-4">
+                <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-satin-silver/20 silver-soft text-satin-silver"><i data-lucide="truck" class="size-5" style="stroke-width: 1.5"></i></div>
+                <div><h3 class="text-sm font-medium text-foreground">توصيل سريع وسلس</h3><p class="text-[12px] font-light text-muted-foreground">تغليف فاخر وعناية فائقة بطلبك</p></div>
               </div>
-            </div>
-            <!-- 03 -->
-            <div class="border border-maison-border bg-maison-dark/40 p-8 flex flex-col justify-between h-60">
-              <span class="font-serif text-2xl font-light text-maison-silver">03</span>
-              <div>
-                <h3 class="text-xs font-semibold tracking-widest text-maison-text uppercase mb-2">AUTHENTICITY</h3>
-                <p class="text-xs font-light text-maison-muted leading-relaxed">Une identité unique.</p>
-              </div>
-            </div>
-            <!-- 04 -->
-            <div class="border border-maison-border bg-maison-dark/40 p-8 flex flex-col justify-between h-60">
-              <span class="font-serif text-2xl font-light text-maison-silver">04</span>
-              <div>
-                <h3 class="text-xs font-semibold tracking-widest text-maison-text uppercase mb-2">AGADIR</h3>
-                <p class="text-xs font-light text-maison-muted leading-relaxed">Born for Agadir. Made to be remembered.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= AGADIR SECTION ================= -->
-      <section class="px-6 py-28 border-t border-maison-border/50 bg-maison-dark/60">
-        <div class="mx-auto max-w-5xl text-center">
-          <span class="text-[10px] font-medium tracking-ultraLuxury text-maison-silver uppercase block mb-3">Territoire & Inspiration</span>
-          <h2 class="font-serif text-3xl sm:text-5xl font-light tracking-wide text-maison-text mb-6">
-            ZELVÉN × AGADIR
-          </h2>
-          <p class="font-serif text-lg sm:text-xl italic text-maison-silver/90 max-w-2xl mx-auto mb-4">
-            Une signature olfactive née à Agadir.
-          </p>
-          <p class="text-xs sm:text-sm font-light text-maison-muted max-w-xl mx-auto leading-relaxed mb-10">
-            Découvrez ZELVÉN et trouvez le parfum qui vous ressemble. Un hommage au raffinement moderne et à la douceur atlantique.
-          </p>
-          <a
-            href="#collection"
-            class="inline-block border border-maison-silver px-10 py-4 text-xs font-medium tracking-widest text-maison-text uppercase transition-all hover:bg-maison-silver hover:text-maison-black"
-          >
-            SHOP NOW
-          </a>
-        </div>
-      </section>
-
-      <!-- ================= HOW TO ORDER ================= -->
-      <section class="px-6 py-24 border-t border-maison-border/50 bg-maison-black">
-        <div class="mx-auto max-w-7xl">
-          <div class="mb-16 text-center">
-            <h2 class="font-serif text-3xl sm:text-4xl font-normal tracking-wide text-maison-text">
-              YOUR ZELVÉN EXPERIENCE
-            </h2>
-            <div class="mx-auto mt-4 h-[1px] w-12 bg-maison-silver/30"></div>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <!-- Step 1 -->
-            <div class="text-center p-6">
-              <span class="font-serif text-xl font-light text-maison-silver block mb-2">01 — CHOOSE</span>
-              <p class="text-xs font-light text-maison-muted">Choisissez votre fragrance.</p>
-            </div>
-            <!-- Step 2 -->
-            <div class="text-center p-6">
-              <span class="font-serif text-xl font-light text-maison-silver block mb-2">02 — ORDER</span>
-              <p class="text-xs font-light text-maison-muted">Commandez facilement en ligne.</p>
-            </div>
-            <!-- Step 3 -->
-            <div class="text-center p-6">
-              <span class="font-serif text-xl font-light text-maison-silver block mb-2">03 — RECEIVE</span>
-              <p class="text-xs font-light text-maison-muted">Recevez votre parfum à Agadir.</p>
-            </div>
-          </div>
-
-          <!-- Information Badge -->
-          <div class="max-w-xl mx-auto border border-maison-border bg-maison-dark p-6 rounded-lg text-center">
-            <span class="inline-block rounded-full border border-maison-silver/30 bg-white/[0.03] px-4 py-1.5 text-[10px] font-medium tracking-widest text-maison-silver uppercase mb-3">
-              PAIEMENT À LA LIVRAISON
-            </span>
-            <p class="text-xs font-light text-maison-muted leading-relaxed">
-              Livraison rapide et sécurisée à Agadir et dans tout le Maroc. Essayez et vérifiez votre commande avant le paiement.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= WHATSAPP HELP ================= -->
-      <section id="contact" class="px-6 py-24 border-t border-maison-border/50 bg-maison-dark/80">
-        <div class="mx-auto max-w-4xl text-center">
-          <h2 class="font-serif text-3xl sm:text-4xl font-normal tracking-wide text-maison-text mb-4">
-            NEED HELP CHOOSING?
-          </h2>
-          <p class="text-xs sm:text-sm font-light text-maison-muted max-w-md mx-auto mb-8">
-            Our team is here to help you find your signature scent.
-          </p>
-          <a
-            data-wa="Bonjour ZELVÉN PARFUMS, j'aimerais avoir des conseils pour choisir mon parfum sur mesure."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-3 rounded-lg bg-whatsapp px-8 py-4 text-xs font-semibold tracking-wider text-[#062a13] uppercase transition-all hover:opacity-90 shadow-lg"
-          >
-            <i data-lucide="message-circle" class="size-4"></i>
-            CHAT WITH US ON WHATSAPP
-          </a>
-        </div>
-      </section>
-
-      <!-- ================= INSTAGRAM SECTION ================= -->
-      <section class="px-6 py-20 border-t border-maison-border/50 bg-maison-black">
-        <div class="mx-auto max-w-7xl text-center">
-          <h2 class="font-serif text-2xl sm:text-3xl font-light tracking-widest text-maison-text mb-2">
-            FOLLOW THE ZELVÉN WORLD
-          </h2>
-          <a
-            href="https://www.instagram.com/zelvenparfums/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-xs font-light tracking-ultraLuxury text-maison-silver hover:underline uppercase block mb-10"
-          >
-            @zelvenparfums
-          </a>
-
-          <!-- Placeholder Product Imagery Grid -->
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            <div class="aspect-square bg-maison-dark border border-maison-border/40 p-4 flex items-center justify-center">
-              <span class="font-serif text-xs text-maison-muted tracking-widest">ZELVÉN I</span>
-            </div>
-            <div class="aspect-square bg-maison-dark border border-maison-border/40 p-4 flex items-center justify-center">
-              <span class="font-serif text-xs text-maison-muted tracking-widest">AGADIR</span>
-            </div>
-            <div class="aspect-square bg-maison-dark border border-maison-border/40 p-4 flex items-center justify-center">
-              <span class="font-serif text-xs text-maison-muted tracking-widest">SOCIÉTÉ</span>
-            </div>
-            <div class="aspect-square bg-maison-dark border border-maison-border/40 p-4 flex items-center justify-center">
-              <span class="font-serif text-xs text-maison-muted tracking-widest">ZELVÉN II</span>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- ================= SHOPPING CART / CHECKOUT DRAWER ================= -->
+    <!-- ================= CART DRAWER / SIDEBAR ================= -->
     <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
       <div id="cart-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
-      <div class="absolute inset-y-0 right-0 flex max-w-full pl-10">
-        <div class="w-screen max-w-md bg-maison-dark border-l border-maison-border p-6 sm:p-8 flex flex-col justify-between shadow-2xl overflow-y-auto">
+      <div class="absolute inset-y-0 left-0 flex max-w-full pl-0 sm:pl-10">
+        <div class="w-screen max-w-md bg-surface border-r border-satin-silver/20 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
           <div>
-            <div class="flex items-center justify-between border-b border-maison-border pb-4">
-              <h2 class="font-serif text-lg font-normal tracking-wider text-maison-text flex items-center gap-2">
-                <i data-lucide="shopping-bag" class="size-4 text-maison-silver"></i>
-                VOTRE PANIER
+            <div class="flex items-center justify-between border-b border-satin-silver/10 pb-4">
+              <h2 class="text-lg font-medium text-foreground flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="size-5 text-satin-silver"></i>
+                طلب ZELVÉN عبر الواتساب
               </h2>
-              <button id="cart-close" class="text-maison-muted hover:text-maison-text">
-                <i data-lucide="x" class="size-5"></i>
+              <button id="cart-close" class="text-muted-foreground hover:text-foreground">
+                <i data-lucide="x" class="size-6"></i>
               </button>
             </div>
             
-            <!-- Items Container -->
-            <div id="cart-items" class="mt-6 flex flex-col gap-4 max-h-[30vh] overflow-y-auto pr-1"></div>
+            <div id="cart-items" class="mt-4 flex flex-col gap-3 max-h-[30vh] overflow-y-auto pr-1"></div>
 
-            <!-- Moroccan Customer Form -->
-            <div class="mt-8 border-t border-maison-border pt-6">
-              <h3 class="text-[11px] font-semibold text-maison-silver uppercase tracking-widest mb-4">Informations de livraison</h3>
+            <div class="mt-6 border-t border-satin-silver/10 pt-4">
+              <h3 class="text-xs font-semibold text-satin-silver uppercase tracking-wider mb-3">معلومات التوصيل</h3>
               <div class="flex flex-col gap-3">
                 <div>
-                  <label class="text-[10px] text-maison-muted uppercase tracking-wider mb-1 block">Nom complet *</label>
-                  <input type="text" id="cust-name" placeholder="Ex: Youssef Alami" class="w-full rounded border border-maison-border bg-maison-black px-3 py-2 text-xs text-maison-text placeholder:text-maison-muted/50 focus:border-maison-silver focus:outline-none" />
+                  <label class="text-[11px] text-muted-foreground mb-1 block">الاسم الكامل *</label>
+                  <input type="text" id="cust-name" placeholder="مثال: يوسف" class="w-full rounded-lg border border-satin-silver/15 bg-background px-3 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-satin-silver focus:outline-none" />
                 </div>
                 <div>
-                  <label class="text-[10px] text-maison-muted uppercase tracking-wider mb-1 block">Téléphone *</label>
-                  <input type="tel" id="cust-phone" placeholder="06XXXXXXXX" class="w-full rounded border border-maison-border bg-maison-black px-3 py-2 text-xs text-maison-text placeholder:text-maison-muted/50 focus:border-maison-silver focus:outline-none" />
+                  <label class="text-[11px] text-muted-foreground mb-1 block">المدينة والعنوان *</label>
+                  <input type="text" id="cust-address" placeholder="ادخل مدينتك والعنوان بالتفصيل..." class="w-full rounded-lg border border-satin-silver/15 bg-background px-3 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-satin-silver focus:outline-none" />
                 </div>
                 <div>
-                  <label class="text-[10px] text-maison-muted uppercase tracking-wider mb-1 block">Ville *</label>
-                  <input type="text" id="cust-city" placeholder="Ex: Agadir" class="w-full rounded border border-maison-border bg-maison-black px-3 py-2 text-xs text-maison-text placeholder:text-maison-muted/50 focus:border-maison-silver focus:outline-none" />
-                </div>
-                <div>
-                  <label class="text-[10px] text-maison-muted uppercase tracking-wider mb-1 block">Adresse *</label>
-                  <input type="text" id="cust-address" placeholder="Adresse quartier, rue..." class="w-full rounded border border-maison-border bg-maison-black px-3 py-2 text-xs text-maison-text placeholder:text-maison-muted/50 focus:border-maison-silver focus:outline-none" />
+                  <label class="text-[11px] text-muted-foreground mb-1 block">رقم الهاتف *</label>
+                  <input type="tel" id="cust-phone" placeholder="06XXXXXXXX" class="w-full rounded-lg border border-satin-silver/15 bg-background px-3 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-satin-silver focus:outline-none" />
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="border-t border-maison-border pt-6 mt-6">
-            <div class="flex items-center justify-between text-xs text-maison-muted mb-2">
-              <span>Paiement:</span>
-              <span class="text-maison-text">Paiement à la livraison</span>
+          <div class="border-t border-satin-silver/10 pt-4 mt-6">
+            <div class="flex justify-between text-base font-medium text-foreground mb-4">
+              <span>المجموع الكلي:</span>
+              <span id="cart-total" class="text-satin-silver font-semibold">0 درهم</span>
             </div>
-            <div class="flex justify-between text-sm font-medium text-maison-text mb-6">
-              <span>Total:</span>
-              <span id="cart-total" class="text-maison-silver font-semibold">0 MAD</span>
-            </div>
-            <button id="checkout-btn" class="w-full inline-flex items-center justify-center gap-2 rounded bg-whatsapp py-4 text-xs font-semibold tracking-wider text-[#062a13] uppercase transition-all hover:opacity-90">
-              <i data-lucide="message-circle" class="size-4"></i>
-              COMMANDER VIA WHATSAPP
+            <button id="checkout-btn" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp py-3.5 text-sm font-semibold text-[#062a13] transition-all hover:bg-whatsapp/90">
+              <i data-lucide="message-circle" class="size-5"></i>
+              تأكيد الطلب عبر واتساب
             </button>
           </div>
         </div>
@@ -535,47 +344,75 @@
     </div>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="border-t border-maison-border bg-maison-black pt-16 pb-12 px-6">
-      <div class="mx-auto max-w-7xl">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
-          <div class="flex flex-col items-center md:items-start leading-none">
-            <span class="font-serif text-2xl font-normal tracking-[0.3em] text-maison-text">ZELVÉN PARFUMS</span>
-            <span class="font-serif text-[10px] tracking-[0.4em] text-maison-silver mt-1">The Art of Scent.</span>
-          </div>
-
-          <div class="flex items-center gap-8 text-xs font-light tracking-widest text-maison-muted uppercase">
-            <a href="#collection" class="hover:text-maison-text transition-colors">Collection</a>
-            <a href="#signature" class="hover:text-maison-text transition-colors">À propos</a>
-            <a href="#contact" class="hover:text-maison-text transition-colors">Contact</a>
-            <a href="https://www.instagram.com/zelvenparfums/" target="_blank" rel="noopener noreferrer" class="hover:text-maison-text transition-colors">Instagram</a>
-            <a data-wa="Bonjour ZELVÉN PARFUMS" target="_blank" rel="noopener noreferrer" class="hover:text-maison-text transition-colors">WhatsApp</a>
-          </div>
+    <footer class="border-t border-satin-silver/15 bg-surface pt-12 pb-8 px-6">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex items-center justify-center gap-5 mb-8">
+          <a
+            href="https://wa.me/212649982831?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D9%8F%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%8BD%20ZELVÉN."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            class="footer-social-btn"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/zelven_parfums"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="footer-social-btn"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+            class="footer-social-btn"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
         </div>
 
-        <div class="border-t border-maison-border/40 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-light text-maison-muted">
-          <span>Agadir, Morocco</span>
-          <span>© 2026 ZELVÉN PARFUMS. All rights reserved.</span>
+        <nav class="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8 text-xs font-light text-muted-foreground">
+          <a href="#collection" class="transition-colors hover:text-satin-silver">التشكيلة</a>
+          <a href="#signature" class="transition-colors hover:text-satin-silver">العطور المميّزة</a>
+          <a href="#order" class="transition-colors hover:text-satin-silver">الطلب عبر واتساب</a>
+        </nav>
+
+        <div class="mx-auto h-px w-full max-w-md bg-satin-silver/10 mb-6"></div>
+
+        <div class="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-right">
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col items-center leading-none md:items-start">
+              <span class="font-serif text-base font-semibold tracking-[0.3em] text-foreground">ZELVÉN</span>
+              <span class="font-serif text-[9px] tracking-[0.42em] text-satin-silver">PARFUMS</span>
+            </div>
+          </div>
+          <p class="text-[12px] font-light text-muted-foreground/70">© <span id="year"></span> ZELVÉN PARFUMS. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
 
-    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <!-- ================= SCRIPTS ================= -->
     <script>
-      // Loading Screen
+      // Loading Screen Handler
       window.addEventListener('load', () => {
-        const loader = document.getElementById('loading-screen');
+        const loader = document.getElementById('loading-screen')
         if (loader) {
           setTimeout(() => {
-            loader.classList.add('fade-out');
-          }, 400);
+            loader.classList.add('fade-out')
+          }, 300)
         }
-      });
+      })
 
-      const WHATSAPP_NUMBER = '212649982831';
+      const WHATSAPP_NUMBER = '212649982831'
       const buildWhatsAppLink = (message) =>
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
-      // Amber Bottle SVG Asset
+      // Amber Bottle Photo Generator for Product #2
       function generateZelvenAmberBottlePhoto() {
         const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" class="w-full h-full object-cover">
           <defs>
@@ -584,6 +421,7 @@
               <stop offset="50%" stop-color="#141211" />
               <stop offset="100%" stop-color="#050505" />
             </radialGradient>
+            
             <linearGradient id="metal-cap" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#888" />
               <stop offset="25%" stop-color="#fff" />
@@ -591,254 +429,340 @@
               <stop offset="80%" stop-color="#fff" />
               <stop offset="100%" stop-color="#666" />
             </linearGradient>
+
             <linearGradient id="amber-liquid" x1="0%" y1="0%" x2="0%" y2="100%">
               <stop offset="0%" stop-color="#d4af37" stop-opacity="0.75" />
               <stop offset="100%" stop-color="#aa5500" stop-opacity="0.9" />
             </linearGradient>
+
+            <filter id="photoshadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="30" stdDeviation="25" flood-color="#000000" flood-opacity="0.95"/>
+            </filter>
           </defs>
+
           <rect width="800" height="800" fill="url(#amber-bg)" />
-          <g>
+          <ellipse cx="400" cy="710" rx="190" ry="25" fill="#000" opacity="0.9" filter="blur(15px)" />
+          
+          <g filter="url(#photoshadow)">
+            <rect x="490" y="240" width="220" height="430" rx="4" fill="#121212" stroke="#222" stroke-width="1" />
+            <text x="600" y="420" font-family="Cinzel, serif" font-size="28" font-weight="600" fill="#e0e0e0" text-anchor="middle" letter-spacing="6">ZELVÉN</text>
+            <text x="600" y="445" font-family="Cinzel, serif" font-size="11" font-weight="400" fill="#888" text-anchor="middle" letter-spacing="4">PARFUMS</text>
+            <text x="600" y="500" font-family="Cinzel, serif" font-size="16" fill="#888" text-anchor="middle">✦</text>
+
             <rect x="290" y="340" width="180" height="340" rx="20" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2" />
             <rect x="292" y="342" width="176" height="336" rx="18" fill="#0d0d0d" opacity="0.85" />
             <rect x="306" y="360" width="148" height="300" rx="10" fill="url(#amber-liquid)" />
             <rect x="300" y="420" width="160" height="180" fill="#111" stroke="#ccc" stroke-width="1.5" />
-            <text x="380" y="515" font-family="Cormorant Garamond, serif" font-size="20" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="4">ZELVÉN</text>
-            <text x="380" y="533" font-family="Cormorant Garamond, serif" font-size="8" font-weight="400" fill="#aaa" text-anchor="middle" letter-spacing="3">PARFUMS</text>
+
+            <text x="380" y="515" font-family="Cinzel, serif" font-size="20" font-weight="600" fill="#fff" text-anchor="middle" letter-spacing="4">ZELVÉN</text>
+            <text x="380" y="533" font-family="Cinzel, serif" font-size="8" font-weight="400" fill="#aaa" text-anchor="middle" letter-spacing="3">PARFUMS</text>
             <line x1="330" y1="550" x2="430" y2="550" stroke="#777" stroke-width="1" />
-            <text x="380" y="572" font-family="Inter, sans-serif" font-size="9" fill="#ccc" text-anchor="middle" letter-spacing="2">EAU DE PARFUM</text>
+            <text x="380" y="572" font-family="Readex Pro, sans-serif" font-size="9" fill="#ccc" text-anchor="middle" letter-spacing="2">EAU DE PARFUM</text>
+            <text x="380" y="588" font-family="Readex Pro, sans-serif" font-size="8" fill="#999" text-anchor="middle">50 ML</text>
             <rect x="315" y="220" width="130" height="122" rx="4" fill="url(#metal-cap)" stroke="#444" stroke-width="1" />
           </g>
         </svg>`;
+
         return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
       }
 
-      // Products Master Data
+      const families = [
+        { id: 'all', label: 'الكل' },
+        { id: 'fresh', label: 'منعش' },
+        { id: 'oriental', label: 'شرقي' },
+      ]
+
+      // PRODUCTS LIST (Product #1 links to local image zelven-blue.png)
       const products = [
         { 
           id: 'zelven-royal-blue', 
-          name: 'YOU', 
+          name: 'ZELVÉN ROYAL BLEU', 
           type: 'Eau de Parfum', 
-          price: 149, 
-          image: 'zelven-blue.png' 
+          family: 'fresh', 
+          notes: ['حمضيات فرنسية', 'عنبر فضي', 'مسك أزرق'], 
+          price: 290, 
+          size: '50ML', 
+          image: 'zelven-blue.png', 
+          badge: 'الأكثر مبيعاً' 
         },
         { 
           id: 'zelven-auren-gold', 
-          name: 'AUREN', 
+          name: 'ZELVÉN AUREN GOLD', 
           type: 'Extrait de Parfum', 
+          family: 'oriental', 
+          notes: ['عنبر ذهبي', 'فانيليا سوداء', 'خشب الصندل'], 
           price: 320, 
-          image: generateZelvenAmberBottlePhoto() 
+          size: '50ML', 
+          image: generateZelvenAmberBottlePhoto(), 
+          badge: 'إصدار خاص' 
         }
-      ];
+      ]
 
-      // Set Signature Section Image
-      document.getElementById('signature-image').src = products[0].image;
+      let cart = []
 
-      let cart = [];
+      const grid = document.getElementById('product-grid')
+      const filterGroup = document.querySelector('[data-filter-group]')
+      let active = 'all'
 
-      function renderProducts() {
-        const grid = document.getElementById('product-grid');
-        grid.innerHTML = products.map(p => {
-          const cartItem = cart.find(i => i.id === p.id);
-          const qty = cartItem ? cartItem.qty : 0;
+      function productCard(p) {
+        const badge = p.badge
+          ? `<span class="absolute right-8 top-8 z-10 rounded-full border border-satin-silver/30 bg-background/90 px-3 py-1 font-sans text-[10px] tracking-wider text-satin-silver">${p.badge}</span>`
+          : ''
+        const notes = p.notes
+          .map(
+            (n) =>
+              `<span class="rounded-full border border-satin-silver/15 bg-white/[0.02] px-2.5 py-1 text-[11px] font-light text-muted-foreground">${n}</span>`,
+          )
+          .join('')
 
-          const actionArea = qty > 0 
-            ? `<div class="flex items-center justify-between border border-maison-silver/40 bg-maison-dark p-1">
-                <button type="button" onclick="changeQty('${p.id}', -1)" class="flex size-8 items-center justify-center bg-white/5 text-maison-text hover:bg-maison-silver hover:text-maison-black font-bold text-sm">-</button>
-                <span class="text-xs font-semibold text-maison-silver">${qty}</span>
-                <button type="button" onclick="changeQty('${p.id}', 1)" class="flex size-8 items-center justify-center bg-white/5 text-maison-text hover:bg-maison-silver hover:text-maison-black font-bold text-sm">+</button>
-               </div>`
-            : `<button type="button" onclick="addToCart('${p.id}')" class="w-full border border-maison-silver/30 py-3 text-[11px] font-medium tracking-widest text-maison-text uppercase transition-all hover:border-maison-silver hover:bg-maison-silver hover:text-maison-black">
-                DÉCOUVRIR
-               </button>`;
+        const cartItem = cart.find(i => i.id === p.id)
+        const qty = cartItem ? cartItem.qty : 0
 
-          return `
-            <article class="card-hover-glow relative flex flex-col overflow-hidden bg-maison-dark border border-maison-border/50 p-6">
-              <div class="relative mb-6 aspect-square w-full overflow-hidden bg-maison-black flex items-center justify-center p-4">
-                <img src="${p.image}" alt="${p.name}" class="h-full w-auto object-contain transition-transform duration-500 hover:scale-105" loading="lazy" />
+        const actionArea = qty > 0 
+          ? `<div class="flex items-center justify-between rounded-lg border border-satin-silver/40 bg-surface p-1">
+              <button type="button" onclick="changeQty('${p.id}', -1)" class="flex size-9 items-center justify-center rounded bg-white/5 text-foreground transition-colors hover:bg-satin-silver hover:text-primary-foreground text-base font-bold">-</button>
+              <div class="text-center">
+                <span class="text-xs text-muted-foreground block text-[10px]">الكمية المختارة</span>
+                <span class="text-sm font-bold text-satin-silver">${qty}</span>
               </div>
-              
-              <span class="text-[10px] font-light text-maison-silver tracking-widest uppercase mb-1">${p.type}</span>
-              <h3 class="font-serif text-xl font-normal text-maison-text mb-2">${p.name}</h3>
-              
-              <div class="mt-auto flex items-center justify-between border-t border-maison-border/40 pt-4 mb-4">
-                <span class="text-xs text-maison-muted">Prix</span>
-                <span class="text-sm font-semibold text-maison-silver">${p.price} MAD</span>
-              </div>
+              <button type="button" onclick="changeQty('${p.id}', 1)" class="flex size-9 items-center justify-center rounded bg-white/5 text-foreground transition-colors hover:bg-satin-silver hover:text-primary-foreground text-base font-bold">+</button>
+             </div>`
+          : `<button type="button" onclick="addToCart('${p.id}')" class="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-satin-silver/30 silver-soft py-3 text-[13px] font-medium text-satin-silver transition-all hover:bg-[linear-gradient(135deg,#E6E8EA,#B8BCC2)] hover:text-primary-foreground hover:border-transparent">
+              <i data-lucide="shopping-bag" class="size-4" style="stroke-width: 1.6"></i>
+              أضف إلى السلة
+             </button>`
 
-              <div id="action-${p.id}">${actionArea}</div>
-            </article>`;
-        }).join('');
-        lucide.createIcons();
+        return `
+          <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-satin-silver/10 bg-card p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-satin-silver/30 hover:shadow-[0_18px_40px_rgba(0,0,0,0.7)]">
+            ${badge}
+            <div class="card-image-well relative mb-5 aspect-square w-full overflow-hidden rounded-xl">
+              <img src="${p.image}" alt="${p.name}" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]" />
+            </div>
+            <span class="mb-1.5 text-[11px] font-light text-satin-silver tracking-wider uppercase">${p.type}</span>
+            <h3 class="mb-3 min-h-[2.5rem] text-[15px] font-medium leading-snug text-foreground">${p.name}</h3>
+            <div class="mb-4 flex flex-wrap gap-1.5">${notes}</div>
+            
+            <div class="mt-auto flex items-center justify-between border-t border-satin-silver/10 pt-4 mb-4">
+              <span class="text-[12px] text-muted-foreground">${p.size}</span>
+              <span class="text-xl font-semibold text-satin-silver">${p.price} درهم</span>
+            </div>
+
+            <div id="action-${p.id}">${actionArea}</div>
+          </article>`
       }
 
-      function showToast(productName) {
-        const toast = document.getElementById('toast-notification');
-        const title = document.getElementById('toast-title');
-        const subtitle = document.getElementById('toast-subtitle');
+      function renderProducts() {
+        const list = active === 'all' ? products : products.filter((p) => p.family === active)
+        grid.innerHTML = list.map(productCard).join('')
+        lucide.createIcons()
+      }
 
-        title.textContent = `Ajouté au panier`;
-        subtitle.textContent = `${productName} a été ajouté avec succès.`;
+      function renderFilters() {
+        filterGroup.innerHTML = families
+          .map((f) => {
+            const isActive = f.id === active
+            const cls = isActive
+              ? 'border-transparent bg-[linear-gradient(135deg,#E6E8EA,#B8BCC2)] font-medium text-primary-foreground'
+              : 'border-satin-silver/15 font-light text-muted-foreground hover:border-satin-silver/40 hover:text-satin-silver'
+            return `<button type="button" data-family="${f.id}" class="rounded-full border px-5 py-2 text-[13px] transition-all ${cls}">${f.label}</button>`
+          })
+          .join('')
+      }
 
-        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
-        toast.classList.add('opacity-100', 'translate-y-0');
+      filterGroup.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-family]')
+        if (!btn) return
+        active = btn.dataset.family
+        renderFilters()
+        renderProducts()
+      })
 
-        setTimeout(() => {
-          toast.classList.remove('opacity-100', 'translate-y-0');
-          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
-        }, 3000);
+      // Toast Notification
+      let toastTimeout
+      function showToast(productName, uniqueTypesCount) {
+        const toast = document.getElementById('toast-notification')
+        const title = document.getElementById('toast-title')
+        const subtitle = document.getElementById('toast-subtitle')
+
+        title.textContent = `تمت إضافة ${productName} إلى السلة!`
+        subtitle.textContent = `لديك الآن ${uniqueTypesCount} ${uniqueTypesCount === 1 ? 'عطر' : 'عطور'} في سلتك.`
+
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-10px]')
+        toast.classList.add('opacity-100', 'translate-y-0')
+
+        clearTimeout(toastTimeout)
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('opacity-100', 'translate-y-0')
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]')
+        }, 3500)
       }
 
       function addToCart(productId) {
-        const existingItem = cart.find(i => i.id === productId);
+        const existingItem = cart.find(i => i.id === productId)
+
         if (existingItem) {
-          existingItem.qty += 1;
+          existingItem.qty += 1
         } else {
-          const product = products.find(p => p.id === productId);
-          if (product) cart.push({ ...product, qty: 1 });
+          const product = products.find(p => p.id === productId)
+          if (!product) return
+          cart.push({ ...product, qty: 1 })
         }
-        updateCartUI();
-        renderProducts();
-        const product = products.find(p => p.id === productId);
-        showToast(product.name);
+
+        updateCartUI()
+        renderProducts()
+
+        const product = products.find(p => p.id === productId)
+        const uniqueTypesCount = cart.length 
+        showToast(product.name, uniqueTypesCount)
       }
 
       function changeQty(productId, delta) {
-        const item = cart.find(i => i.id === productId);
-        if (!item) return;
-        item.qty += delta;
+        const item = cart.find(i => i.id === productId)
+        if (!item) return
+
+        item.qty += delta
+
         if (item.qty <= 0) {
-          cart = cart.filter(i => i.id !== productId);
+          cart = cart.filter(i => i.id !== productId)
         }
-        updateCartUI();
-        renderProducts();
+
+        updateCartUI()
+        renderProducts()
       }
 
       function removeFromCart(productId) {
-        cart = cart.filter(i => i.id !== productId);
-        updateCartUI();
-        renderProducts();
+        cart = cart.filter(i => i.id !== productId)
+        updateCartUI()
+        renderProducts()
       }
 
       function updateCartUI() {
-        const cartCount = document.getElementById('cart-count');
-        const cartItems = document.getElementById('cart-items');
-        const cartTotal = document.getElementById('cart-total');
+        const cartCount = document.getElementById('cart-count')
+        const cartItems = document.getElementById('cart-items')
+        const cartTotal = document.getElementById('cart-total')
 
-        const totalItemsCount = cart.reduce((acc, i) => acc + i.qty, 0);
-        const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.qty), 0);
+        const uniqueTypesCount = cart.length 
+        const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.qty), 0)
 
-        cartCount.textContent = totalItemsCount;
+        cartCount.textContent = uniqueTypesCount
 
         if (cart.length === 0) {
-          cartItems.innerHTML = `<p class="text-center text-maison-muted py-8 text-xs font-light">Votre panier est actuellement vide.</p>`;
+          cartItems.innerHTML = `<p class="text-center text-muted-foreground py-6 text-sm">سلة المشتريات فارغة</p>`
         } else {
           cartItems.innerHTML = cart.map(item => `
-            <div class="flex items-center justify-between gap-3 bg-maison-black p-3 border border-maison-border/40">
+            <div class="flex items-center justify-between gap-3 bg-background/50 p-3 rounded-xl border border-satin-silver/10">
               <div class="flex items-center gap-3">
-                <img src="${item.image}" alt="${item.name}" class="size-10 object-contain" />
+                <img src="${item.image}" alt="${item.name}" class="size-12 rounded-lg object-cover" />
                 <div>
-                  <h4 class="font-serif text-sm font-normal text-maison-text">${item.name}</h4>
-                  <p class="text-[10px] text-maison-muted">Qté: ${item.qty} × ${item.price} MAD</p>
+                  <h4 class="text-xs font-medium text-foreground truncate max-w-[180px]">${item.name}</h4>
+                  <p class="text-[11px] text-satin-silver mt-0.5">الكمية: <span class="font-bold text-foreground">${item.qty}</span> | المجموع: ${item.price * item.qty} درهم</p>
                 </div>
               </div>
-              <button type="button" onclick="removeFromCart('${item.id}')" class="text-maison-muted hover:text-red-400 p-1">
+              <button type="button" onclick="removeFromCart('${item.id}')" class="text-muted-foreground hover:text-red-400 p-1">
                 <i data-lucide="trash-2" class="size-4"></i>
               </button>
             </div>
-          `).join('');
+          `).join('')
         }
 
-        cartTotal.textContent = `${totalPrice} MAD`;
-        lucide.createIcons();
+        cartTotal.textContent = `${totalPrice} درهم`
+        lucide.createIcons()
       }
 
-      // Drawer Open/Close
-      const cartDrawer = document.getElementById('cart-drawer');
-      const cartToggle = document.getElementById('cart-toggle');
-      const cartClose = document.getElementById('cart-close');
-      const cartBackdrop = document.getElementById('cart-backdrop');
+      const cartDrawer = document.getElementById('cart-drawer')
+      const cartToggle = document.getElementById('cart-toggle')
+      const cartClose = document.getElementById('cart-close')
+      const cartBackdrop = document.getElementById('cart-backdrop')
+      const checkoutBtn = document.getElementById('checkout-btn')
 
-      cartToggle.addEventListener('click', () => cartDrawer.classList.remove('hidden'));
-      cartClose.addEventListener('click', () => cartDrawer.classList.add('hidden'));
-      cartBackdrop.addEventListener('click', () => cartDrawer.classList.add('hidden'));
+      function openCart() {
+        cartDrawer.classList.remove('hidden')
+      }
 
-      // Checkout Handler
-      document.getElementById('checkout-btn').addEventListener('click', () => {
+      function closeCart() {
+        cartDrawer.classList.add('hidden')
+      }
+
+      cartToggle.addEventListener('click', openCart)
+      cartClose.addEventListener('click', closeCart)
+      cartBackdrop.addEventListener('click', closeCart)
+
+      checkoutBtn.addEventListener('click', () => {
         if (cart.length === 0) {
-          alert('Votre panier est vide.');
-          return;
+          alert('الرجاء اختيار عطر واحد على الأقل.')
+          return
         }
 
-        const name = document.getElementById('cust-name').value.trim();
-        const phone = document.getElementById('cust-phone').value.trim();
-        const city = document.getElementById('cust-city').value.trim();
-        const address = document.getElementById('cust-address').value.trim();
+        const name = document.getElementById('cust-name').value.trim()
+        const address = document.getElementById('cust-address').value.trim()
+        const phone = document.getElementById('cust-phone').value.trim()
 
-        if (!name || !phone || !city || !address) {
-          alert('Veuillez remplir tous les champs de livraison.');
-          return;
+        if (!name || !address || !phone) {
+          alert('الرجاء إدخال كافة معلومات التوصيل لإتمام الطلب.')
+          return
         }
 
-        let message = "✨ *NOUVELLE COMMANDE - ZELVÉN PARFUMS*\n";
-        message += "-----------------------------------\n\n";
-        message += "👤 *INFORMATIONS CLIENT:*\n";
-        message += `• *Nom:* ${name}\n`;
-        message += `• *Téléphone:* ${phone}\n`;
-        message += `• *Ville:* ${city}\n`;
-        message += `• *Adresse:* ${address}\n\n`;
+        let message = "✨ *طلب جديد - ZELVÉN PARFUMS*\n"
+        message += "-----------------------------------\n\n"
+        message += "👤 *معلومات الزبون:*\n"
+        message += `• *الاسم:* ${name}\n`
+        message += `• *العنوان:* ${address}\n`
+        message += `• *الهاتف:* ${phone}\n\n`
         
-        message += "🛍️ *PARFUMS COMMANDÉS:*\n";
-        let total = 0;
+        message += "🛍️ *المنتجات المطلوبة:*\n"
+        let total = 0
 
         cart.forEach(item => {
-          const itemTotal = item.price * item.qty;
-          total += itemTotal;
-          message += `• ${item.name} (${item.type}) | Quantité: ${item.qty} | Prix: ${itemTotal} MAD\n`;
-        });
+          const itemTotal = item.price * item.qty
+          total += itemTotal
+          message += `• ${item.name} (${item.size}) | الكمية: ${item.qty} | السعر: ${itemTotal} درهم\n`
+        })
 
-        message += `\n💰 *TOTAL COMMANDE:* ${total} MAD\n`;
-        message += "-----------------------------------\n";
-        message += "Paiement: Paiement à la livraison";
+        message += `\n💰 *المجموع الكلي:* ${total} درهم\n`
+        message += "-----------------------------------\n"
+        message += "طريقة الدفع: الدفع عند الاستلام"
 
-        window.open(buildWhatsAppLink(message), '_blank');
-      });
+        window.open(buildWhatsAppLink(message), '_blank')
+      })
 
-      // Dynamic Header Background on Scroll
-      const header = document.getElementById('site-header');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 30) {
-          header.classList.add('bg-maison-black/90', 'backdrop-blur-md', 'border-maison-border/50');
-          header.classList.remove('border-transparent');
+      document.querySelectorAll('[data-wa]').forEach((el) => {
+        el.setAttribute('href', buildWhatsAppLink(el.dataset.wa))
+      })
+
+      const header = document.getElementById('site-header')
+      const onScroll = () => {
+        if (window.scrollY > 20) {
+          header.className =
+            'fixed inset-x-0 top-0 z-40 border-b transition-all duration-300 border-satin-silver/20 bg-background/90 shadow-[0_8px_30px_rgba(0,0,0,0.8)] backdrop-blur-xl'
         } else {
-          header.classList.remove('bg-maison-black/90', 'backdrop-blur-md', 'border-maison-border/50');
-          header.classList.add('border-transparent');
+          header.className =
+            'fixed inset-x-0 top-0 z-40 border-b transition-all duration-300 border-satin-silver/10 bg-background/50 backdrop-blur-md'
         }
-      });
+      }
+      window.addEventListener('scroll', onScroll, { passive: true })
+      onScroll()
 
-      // Mobile Menu Toggle
-      const menuToggle = document.getElementById('menu-toggle');
-      const mobileNav = document.getElementById('mobile-nav');
-      let menuOpen = false;
+      const menuToggle = document.getElementById('menu-toggle')
+      const mobileNav = document.getElementById('mobile-nav')
+      const menuIcon = document.getElementById('menu-icon')
+      let menuOpen = false
+      function setMenu(open) {
+        menuOpen = open
+        mobileNav.classList.toggle('hidden', !open)
+        menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu')
+        lucide.createIcons()
+      }
+      menuToggle.addEventListener('click', () => setMenu(!menuOpen))
+      document.querySelectorAll('.mobile-link').forEach((l) =>
+        l.addEventListener('click', () => setMenu(false)),
+      )
 
-      menuToggle.addEventListener('click', () => {
-        menuOpen = !menuOpen;
-        mobileNav.classList.toggle('hidden', !menuOpen);
-      });
+      document.getElementById('year').textContent = new Date().getFullYear()
 
-      document.querySelectorAll('.mobile-link').forEach(l => {
-        l.addEventListener('click', () => {
-          menuOpen = false;
-          mobileNav.classList.add('hidden');
-        });
-      });
-
-      document.querySelectorAll('[data-wa]').forEach(el => {
-        el.setAttribute('href', buildWhatsAppLink(el.dataset.wa));
-      });
-
-      renderProducts();
-      updateCartUI();
-      lucide.createIcons();
+      renderFilters()
+      renderProducts()
+      updateCartUI()
+      lucide.createIcons()
     </script>
   </body>
 </html>
