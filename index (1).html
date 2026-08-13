@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070706" />
+    <title>A&P AURA PARFUMS | عطور فاخرة في أكادير</title>
+    <meta
+      name="description"
+      content="AURA PARFUMS — دار عطور فاخرة بأكادير. تشكيلة حصرية من أرقى العطور المستوحاة من الفخامة العالمية، بثبات يدوم طويلاً ودفع عند الاستلام."
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Readex+Pro:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome للأيقونات الخاصّة بالـ Footer -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Readex Pro"', 'sans-serif'],
+              serif: ['Cinzel', 'serif'],
+            },
+            colors: {
+              background: '#070706',
+              foreground: '#f7f5f0',
+              surface: '#0e0e0d',
+              card: '#121210',
+              'primary-foreground': '#070706',
+              'muted-foreground': '#a3a099',
+              gold: '#c8a768',
+              'gold-champagne': '#e2c99b',
+              whatsapp: '#25d366',
+            },
+            letterSpacing: {
+              luxury: '0.35em',
+            },
+          },
+        },
+      }
+    </script>
+
+    <!-- Lucide icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        background-color: #070706;
+        color: #f7f5f0;
+        background-image: radial-gradient(
+            circle at 50% 0%,
+            rgba(200, 167, 104, 0.08) 0%,
+            transparent 55%
+          ),
+          radial-gradient(circle at 85% 35%, rgba(200, 167, 104, 0.03) 0%, transparent 40%);
+        background-attachment: fixed;
+      }
+      .gold-gradient {
+        background: linear-gradient(135deg, #e2c99b 0%, #c8a768 100%);
+      }
+      .gold-gradient-text {
+        background: linear-gradient(135deg, #e2c99b 0%, #c8a768 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gold-soft {
+        background-color: rgba(200, 167, 104, 0.12);
+      }
+      .card-image-well {
+        background: radial-gradient(
+          circle at 50% 38%,
+          #26251f 0%,
+          #131210 45%,
+          #070706 100%
+        );
+      }
+
+      .footer-social-btn {
+        width: 48px;
+        height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        border: 1px solid rgba(200, 167, 104, 0.3);
+        background-color: #121210;
+        color: #c8a768;
+        font-size: 1.25rem;
+        transition: all 0.3s ease;
+      }
+      .footer-social-btn:hover {
+        background: linear-gradient(135deg, #e2c99b 0%, #c8a768 100%);
+        color: #070706;
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(200, 167, 104, 0.25);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans antialiased">
+    <!-- ================= NOTIFICATION TOAST ================= -->
+    <div id="toast-notification" class="fixed top-24 left-1/2 z-50 -translate-x-1/2 transition-all duration-300 opacity-0 pointer-events-none translate-y-[-10px] w-[90%] max-w-md">
+      <div class="flex items-center gap-3 rounded-2xl border border-gold/40 bg-surface/95 px-5 py-3.5 text-xs shadow-[0_10px_30px_rgba(0,0,0,0.8)] backdrop-blur-md">
+        <div class="flex size-8 shrink-0 items-center justify-center rounded-full bg-gold/20 text-gold">
+          <i data-lucide="check" class="size-4"></i>
+        </div>
+        <div>
+          <p id="toast-title" class="font-medium text-foreground text-sm"></p>
+          <p id="toast-subtitle" class="text-muted-foreground text-[12px] mt-0.5"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= HEADER ================= -->
+    <header
+      id="site-header"
+      class="fixed inset-x-0 top-0 z-40 border-b border-white/5 bg-background/40 backdrop-blur-md transition-all duration-300"
+    >
+      <div class="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <a href="#top" class="flex flex-col items-start leading-none">
+          <span class="font-serif text-lg font-semibold tracking-[0.3em] text-foreground">AURA</span>
+          <span class="font-serif text-[10px] tracking-[0.42em] text-gold">PARFUMS</span>
+        </a>
+
+        <nav class="hidden items-center gap-9 lg:flex">
+          <a href="#collection" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">التشكيلة<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-gold-champagne transition-all duration-300 group-hover:w-full"></span></a>
+          <a href="#signature" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">العطور المميّزة<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-gold-champagne transition-all duration-300 group-hover:w-full"></span></a>
+          <a href="#order" class="group relative text-[13px] font-light text-muted-foreground transition-colors hover:text-gold">الطلب عبر واتساب<span class="absolute -bottom-1.5 right-0 h-px w-0 bg-gold-champagne transition-all duration-300 group-hover:w-full"></span></a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <!-- Cart Toggle Button -->
+          <button type="button" id="cart-toggle" aria-label="سلة المشتريات" class="relative flex size-10 items-center justify-center rounded-full border border-white/10 bg-surface text-muted-foreground transition-colors hover:border-gold/40 hover:text-gold">
+            <i data-lucide="shopping-bag" class="size-[18px]" style="stroke-width: 1.5"></i>
+            <span id="cart-count" class="absolute -right-1 -top-1 flex size-5 items-center justify-center rounded-full bg-gold text-[10px] font-bold text-primary-foreground">0</span>
+          </button>
+
+          <a data-wa="السلام عليكم، أريد الاستفسار عن عطور AURA PARFUMS بأكادير." target="_blank" rel="noopener noreferrer" class="ms-1 hidden items-center gap-2 rounded-full border border-whatsapp/30 bg-whatsapp/10 px-4 py-2 text-xs text-whatsapp transition-all hover:-translate-y-0.5 hover:border-whatsapp hover:bg-whatsapp/15 md:inline-flex">
+            <i data-lucide="message-circle" class="size-4" style="stroke-width: 1.6"></i>
+            تواصل معنا
+          </a>
+          <button type="button" aria-label="القائمة" id="menu-toggle" class="flex size-9 items-center justify-center rounded-full text-foreground lg:hidden">
+            <i data-lucide="menu" class="size-5" id="menu-icon"></i>
+          </button>
+        </div>
+      </div>
+
+      <nav id="mobile-nav" class="hidden border-t border-white/5 bg-background/95 px-6 py-4 backdrop-blur-xl lg:hidden">
+        <div class="flex flex-col gap-1">
+          <a href="#collection" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold">التشكيلة</a>
+          <a href="#signature" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold">العطور المميّزة</a>
+          <a href="#order" class="mobile-link rounded-lg px-3 py-3 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-gold">الطلب عبر واتساب</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ================= HERO ================= -->
+      <section id="top" class="relative overflow-hidden px-6 pb-16 pt-36 md:pb-20 md:pt-40">
+        <div aria-hidden="true" class="pointer-events-none absolute left-1/2 top-20 h-[450px] w-[600px] -translate-x-1/2 rounded-full opacity-60 blur-3xl" style="background: radial-gradient(ellipse, rgba(200, 167, 104, 0.2) 0%, transparent 70%)"></div>
+
+        <div class="relative mx-auto max-w-4xl text-center">
+          <span class="mb-5 inline-block rounded-full border border-gold/30 bg-gold/10 px-5 py-1.5 font-sans text-[12px] font-medium text-gold">
+            خدمة حصرية لمدينة أكادير
+          </span>
+
+          <h1 class="text-balance font-sans text-3xl font-medium leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
+            جوهر الفخامة
+            <span class="mt-2 block font-sans gold-gradient-text font-semibold">التي لا تُنطق</span>
+          </h1>
+
+          <p class="mx-auto mt-6 max-w-xl text-pretty font-sans text-[14px] font-light leading-relaxed text-muted-foreground sm:text-[15px]">
+            تشكيلة حصرية مستوحاة من أرقى العطور العالمية، مصنوعة بمكوّنات فرنسية نادرة وثبات يدوم طوال اليوم. توصيل سريع ودفع عند الاستلام بمدينة **أكادير**.
+          </p>
+
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+            <a href="#collection" class="group inline-flex items-center gap-2 rounded-lg gold-gradient px-8 py-4 text-[13px] font-semibold text-primary-foreground shadow-[0_6px_24px_rgba(200,167,104,0.18)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(200,167,104,0.28)]">
+              اكتشف التشكيلة الخاصة
+              <i data-lucide="arrow-left" class="size-4 transition-transform group-hover:-translate-x-1" style="stroke-width: 1.8"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= COLLECTION ================= -->
+      <section id="collection" class="px-6 py-16 md:py-20">
+        <div class="mx-auto max-w-6xl">
+          <div class="mb-12 text-center">
+            <span class="mb-2.5 block font-serif text-[11px] uppercase tracking-luxury text-gold">Bestsellers</span>
+            <h2 class="inline-block text-3xl font-medium text-foreground md:text-4xl">التشكيلة الحصرية</h2>
+            <div class="mx-auto mt-3.5 h-px w-9 bg-gold/60"></div>
+          </div>
+
+          <div id="signature" class="mb-12 flex flex-wrap items-center justify-center gap-2.5" data-filter-group></div>
+
+          <div id="product-grid" class="grid gap-7 sm:grid-cols-2 lg:grid-cols-3"></div>
+        </div>
+      </section>
+
+      <!-- ================= VIP ORDER SECTION ================= -->
+      <section id="order" class="px-6 py-24 md:py-28">
+        <div class="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-gold/20 bg-surface p-8 md:p-14">
+          <div aria-hidden="true" class="pointer-events-none absolute -left-20 -top-20 h-64 w-64 rounded-full opacity-60 blur-3xl" style="background: radial-gradient(circle, rgba(200, 167, 104, 0.18) 0%, transparent 70%)"></div>
+          <div class="relative grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <span class="mb-3 block font-sans text-[12px] font-medium text-gold">التوصيل بأكادير</span>
+              <h2 class="text-balance text-3xl font-medium leading-snug text-foreground md:text-4xl">اختر عطورك وسنصلك أينما كنت بأكادير</h2>
+              <p class="mt-4 max-w-md text-pretty text-[15px] font-light leading-relaxed text-muted-foreground">
+                اختر العطور التي تعجبك وحدد الكمية، ثم افتح السلة لإدخال عنوانك بمدينة أكادير وإرسال طلبك مباشرة عبر الواتساب.
+              </p>
+              <a data-wa="السلام عليكم، أريد الاستفسار عن خدمة التوصيل بمدينة أكادير." target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex items-center gap-2.5 rounded-lg bg-whatsapp px-8 py-4 text-[14px] font-semibold text-[#062a13] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(37,211,102,0.25)]">
+                <i data-lucide="message-circle" class="size-5" style="stroke-width: 1.8"></i>
+                محادثة مباشرة عبر واتساب
+              </a>
+            </div>
+            <div class="grid gap-4">
+              <div class="flex items-center gap-4 rounded-xl border border-white/5 bg-background/50 p-4">
+                <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-gold/20 gold-soft text-gold"><i data-lucide="hand-coins" class="size-5" style="stroke-width: 1.5"></i></div>
+                <div><h3 class="text-sm font-medium text-foreground">الدفع عند الاستلام</h3><p class="text-[12px] font-light text-muted-foreground">ادفع بعد معاينة واستلام طلبك بأكادير</p></div>
+              </div>
+              <div class="flex items-center gap-4 rounded-xl border border-white/5 bg-background/50 p-4">
+                <div class="flex size-11 shrink-0 items-center justify-center rounded-lg border border-gold/20 gold-soft text-gold"><i data-lucide="map-pin" class="size-5" style="stroke-width: 1.5"></i></div>
+                <div><h3 class="text-sm font-medium text-foreground">توصيل خاص بأكادير</h3><p class="text-[12px] font-light text-muted-foreground">توصيل سريع لكافة أحياء ومناطق أكادير</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= CART DRAWER / SIDEBAR ================= -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+      <div id="cart-backdrop" class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
+      <div class="absolute inset-y-0 left-0 flex max-w-full pl-0 sm:pl-10">
+        <div class="w-screen max-w-md bg-surface border-r border-white/10 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto">
+          <div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-4">
+              <h2 class="text-lg font-medium text-foreground flex items-center gap-2">
+                <i data-lucide="shopping-bag" class="size-5 text-gold"></i>
+                طلب عبر الواتساب (أكادير)
+              </h2>
+              <button id="cart-close" class="text-muted-foreground hover:text-foreground">
+                <i data-lucide="x" class="size-6"></i>
+              </button>
+            </div>
+            
+            <!-- List of selected items -->
+            <div id="cart-items" class="mt-4 flex flex-col gap-3 max-h-[30vh] overflow-y-auto pr-1"></div>
+
+            <!-- Agadir Shipping Form -->
+            <div class="mt-6 border-t border-white/10 pt-4">
+              <h3 class="text-xs font-semibold text-gold uppercase tracking-wider mb-3">معلومات التوصيل بأكادير</h3>
+              <div class="flex flex-col gap-3">
+                <div>
+                  <label class="text-[11px] text-muted-foreground mb-1 block">الاسم الكامل *</label>
+                  <input type="text" id="cust-name" placeholder="مثال: يوسف" class="w-full rounded-lg border border-white/10 bg-background px-3 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-gold focus:outline-none" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-muted-foreground mb-1 block">الحي / العنوان بأكادير *</label>
+                  <input type="text" id="cust-address" placeholder="مثال: السلام، الهدى، إسلام، الشرف..." class="w-full rounded-lg border border-white/10 bg-background px-3 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-gold focus:outline-none" />
+                </div>
+                <div>
+                  <label class="text-[11px] text-muted-foreground mb-1 block">رقم الهاتف *</label>
+                  <input type="tel" id="cust-phone" placeholder="06XXXXXXXX" class="w-full rounded-lg border border-white/10 bg-background px-3 py-2.5 text-xs text-foreground placeholder:text-muted-foreground/50 focus:border-gold focus:outline-none" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-white/10 pt-4 mt-6">
+            <div class="flex justify-between text-base font-medium text-foreground mb-4">
+              <span>المجموع الكلي:</span>
+              <span id="cart-total" class="text-gold-champagne font-semibold">0 درهم</span>
+            </div>
+            <button id="checkout-btn" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-whatsapp py-3.5 text-sm font-semibold text-[#062a13] transition-all hover:bg-whatsapp/90">
+              <i data-lucide="message-circle" class="size-5"></i>
+              تأكيد الطلب عبر واتساب
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="border-t border-gold/20 bg-surface pt-12 pb-8 px-6">
+      <div class="mx-auto max-w-6xl">
+        <div class="flex items-center justify-center gap-5 mb-8">
+          <a
+            href="https://wa.me/212649982831?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D9%8F%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%8BD%20%D8%B9%D8%B7%D9%88%D8%B1%20AURA%20PARFUMS."
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            class="footer-social-btn"
+          >
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/aura_parfums_01?igsh=ejBtY2hhcWc0dTk2"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="footer-social-btn"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="https://tiktok.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+            class="footer-social-btn"
+          >
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+        </div>
+
+        <nav class="flex flex-wrap items-center justify-center gap-6 md:gap-10 mb-8 text-xs font-light text-muted-foreground">
+          <a href="#collection" class="transition-colors hover:text-gold">التشكيلة</a>
+          <a href="#signature" class="transition-colors hover:text-gold">العطور المميّزة</a>
+          <a href="#order" class="transition-colors hover:text-gold">الطلب عبر واتساب</a>
+        </nav>
+
+        <div class="mx-auto h-px w-full max-w-md bg-white/5 mb-6"></div>
+
+        <div class="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-right">
+          <div class="flex flex-col items-center leading-none md:items-start">
+            <span class="font-serif text-base font-semibold tracking-[0.3em] text-foreground">AURA</span>
+            <span class="font-serif text-[9px] tracking-[0.42em] text-gold">PARFUMS</span>
+          </div>
+          <p class="text-[12px] font-light text-muted-foreground/70">© <span id="year"></span> A&P AURA PARFUMS. جميع الحقوق محفوظة - أكادير.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      const WHATSAPP_NUMBER = '212649982831'
+      const buildWhatsAppLink = (message) =>
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+
+      const families = [
+        { id: 'all', label: 'الكل' },
+        { id: 'woody', label: 'خشبي' },
+        { id: 'oriental', label: 'شرقي' },
+        { id: 'fresh', label: 'منعش' },
+        { id: 'spicy', label: 'حار' },
+      ]
+
+      const products = [
+        { id: 'stronger-intensely', name: 'STRONGER WITH YOU INTENSELY', type: 'عطر مستوحى', family: 'oriental', notes: ['فانيليا', 'عنبر', 'لافندر'], price: 45, size: '30ML', image: 'parfum5_STRONGER_WITH_YOU_INTENSELY.jpg', badge: 'الأكثر مبيعاً' },
+        { id: 'bleu-de-chanel', name: 'BLEU DE CHANEL', type: 'عطر مستوحى', family: 'woody', notes: ['خشب الصندل', 'حمضيات', 'زنجبيل'], price: 45, size: '30ML', image: 'parfum2_bleu de chanel.jpg' },
+        { id: 'one-million', name: '1 MILLION', type: 'عطر مستوحى', family: 'spicy', notes: ['جلد', 'عنبر', 'قرفة'], price: 45, size: '30ML', image: 'parfum1_1milion.jpg', badge: 'إصدار مميّز' },
+        { id: 'ultra-male', name: 'ULTRA MALE', type: 'عطر مستوحى', family: 'oriental', notes: ['كمثرى', 'فانيليا', 'مسك'], price: 45, size: '30ML', image: 'parfum4_ultra_male.jpg' },
+        { id: 'imagination-lv', name: 'IMAGINATION LOUIS VUITTON', type: 'عطر مستوحى', family: 'fresh', notes: ['شاي أسود', 'حمضيات', 'خشب الأرز'], price: 45, size: '30ML', image: 'parfum3_imaginition.jpg', badge: 'جديد' },
+      ]
+
+      let cart = []
+
+      const grid = document.getElementById('product-grid')
+      const filterGroup = document.querySelector('[data-filter-group]')
+      let active = 'all'
+
+      function productCard(p) {
+        const badge = p.badge
+          ? `<span class="absolute right-8 top-8 z-10 rounded-full border border-gold/30 bg-background/90 px-3 py-1 font-sans text-[10px] tracking-wider text-gold">${p.badge}</span>`
+          : ''
+        const notes = p.notes
+          .map(
+            (n) =>
+              `<span class="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] font-light text-muted-foreground">${n}</span>`,
+          )
+          .join('')
+
+        const cartItem = cart.find(i => i.id === p.id)
+        const qty = cartItem ? cartItem.qty : 0
+
+        const actionArea = qty > 0 
+          ? `<div class="flex items-center justify-between rounded-lg border border-gold/40 bg-surface p-1">
+              <button type="button" onclick="changeQty('${p.id}', -1)" class="flex size-9 items-center justify-center rounded bg-white/5 text-foreground transition-colors hover:bg-gold hover:text-primary-foreground text-base font-bold">-</button>
+              <div class="text-center">
+                <span class="text-xs text-muted-foreground block text-[10px]">الكمية المختارة</span>
+                <span class="text-sm font-bold text-gold-champagne">${qty}</span>
+              </div>
+              <button type="button" onclick="changeQty('${p.id}', 1)" class="flex size-9 items-center justify-center rounded bg-white/5 text-foreground transition-colors hover:bg-gold hover:text-primary-foreground text-base font-bold">+</button>
+             </div>`
+          : `<button type="button" onclick="addToCart('${p.id}')" class="w-full inline-flex items-center justify-center gap-2 rounded-lg border border-gold/30 gold-soft py-3 text-[13px] font-medium text-gold transition-all hover:bg-[linear-gradient(135deg,#e2c99b,#c8a768)] hover:text-primary-foreground hover:border-transparent">
+              <i data-lucide="shopping-bag" class="size-4" style="stroke-width: 1.6"></i>
+              أضف إلى السلة
+             </button>`
+
+        return `
+          <article class="group relative flex flex-col overflow-hidden rounded-2xl border border-white/5 bg-card p-5 transition-all duration-300 hover:-translate-y-1.5 hover:border-gold/25 hover:shadow-[0_18px_40px_rgba(0,0,0,0.5)]">
+            ${badge}
+            <div class="card-image-well relative mb-5 aspect-square w-full overflow-hidden rounded-xl">
+              <img src="${p.image}" alt="${p.name}" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+            </div>
+            <span class="mb-1.5 text-[11px] font-light text-gold">${p.type}</span>
+            <h3 class="mb-3 min-h-[2.5rem] text-[15px] font-medium leading-snug text-foreground">${p.name}</h3>
+            <div class="mb-4 flex flex-wrap gap-1.5">${notes}</div>
+            
+            <div class="mt-auto flex items-center justify-between border-t border-white/5 pt-4 mb-4">
+              <span class="text-[12px] text-muted-foreground">${p.size}</span>
+              <span class="text-xl font-semibold text-gold-champagne">${p.price} درهم</span>
+            </div>
+
+            <div id="action-${p.id}">${actionArea}</div>
+          </article>`
+      }
+
+      function renderProducts() {
+        const list = active === 'all' ? products : products.filter((p) => p.family === active)
+        grid.innerHTML = list.map(productCard).join('')
+        lucide.createIcons()
+      }
+
+      function renderFilters() {
+        filterGroup.innerHTML = families
+          .map((f) => {
+            const isActive = f.id === active
+            const cls = isActive
+              ? 'border-transparent bg-[linear-gradient(135deg,#e2c99b,#c8a768)] font-medium text-primary-foreground'
+              : 'border-white/10 font-light text-muted-foreground hover:border-gold/40 hover:text-gold'
+            return `<button type="button" data-family="${f.id}" class="rounded-full border px-5 py-2 text-[13px] transition-all ${cls}">${f.label}</button>`
+          })
+          .join('')
+      }
+
+      filterGroup.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-family]')
+        if (!btn) return
+        active = btn.dataset.family
+        renderFilters()
+        renderProducts()
+      })
+
+      // Toast Notification
+      let toastTimeout
+      function showToast(productName, uniqueTypesCount) {
+        const toast = document.getElementById('toast-notification')
+        const title = document.getElementById('toast-title')
+        const subtitle = document.getElementById('toast-subtitle')
+
+        title.textContent = `تمت إضافة ${productName} إلى السلة!`
+        subtitle.textContent = `لديك الآن ${uniqueTypesCount} ${uniqueTypesCount === 1 ? 'منتج' : 'منتجات'} في سلتك.`
+
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-10px]')
+        toast.classList.add('opacity-100', 'translate-y-0')
+
+        clearTimeout(toastTimeout)
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('opacity-100', 'translate-y-0')
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]')
+        }, 3500)
+      }
+
+      function addToCart(productId) {
+        const existingItem = cart.find(i => i.id === productId)
+
+        if (existingItem) {
+          existingItem.qty += 1
+        } else {
+          const product = products.find(p => p.id === productId)
+          if (!product) return
+          cart.push({ ...product, qty: 1 })
+        }
+
+        updateCartUI()
+        renderProducts()
+
+        const product = products.find(p => p.id === productId)
+        const uniqueTypesCount = cart.length 
+        showToast(product.name, uniqueTypesCount)
+      }
+
+      function changeQty(productId, delta) {
+        const item = cart.find(i => i.id === productId)
+        if (!item) return
+
+        item.qty += delta
+
+        if (item.qty <= 0) {
+          cart = cart.filter(i => i.id !== productId)
+        }
+
+        updateCartUI()
+        renderProducts()
+      }
+
+      function removeFromCart(productId) {
+        cart = cart.filter(i => i.id !== productId)
+        updateCartUI()
+        renderProducts()
+      }
+
+      function updateCartUI() {
+        const cartCount = document.getElementById('cart-count')
+        const cartItems = document.getElementById('cart-items')
+        const cartTotal = document.getElementById('cart-total')
+
+        const uniqueTypesCount = cart.length 
+        const totalPrice = cart.reduce((acc, i) => acc + (i.price * i.qty), 0)
+
+        cartCount.textContent = uniqueTypesCount
+
+        if (cart.length === 0) {
+          cartItems.innerHTML = `<p class="text-center text-muted-foreground py-6 text-sm">سلة المشتريات فارغة</p>`
+        } else {
+          cartItems.innerHTML = cart.map(item => `
+            <div class="flex items-center justify-between gap-3 bg-background/50 p-3 rounded-xl border border-white/5">
+              <div class="flex items-center gap-3">
+                <img src="${item.image}" alt="${item.name}" class="size-12 rounded-lg object-cover" />
+                <div>
+                  <h4 class="text-xs font-medium text-foreground truncate max-w-[180px]">${item.name}</h4>
+                  <p class="text-[11px] text-gold mt-0.5">الكمية: <span class="font-bold text-foreground">${item.qty}</span> | المجموع: ${item.price * item.qty} درهم</p>
+                </div>
+              </div>
+              <button type="button" onclick="removeFromCart('${item.id}')" class="text-muted-foreground hover:text-red-400 p-1">
+                <i data-lucide="trash-2" class="size-4"></i>
+              </button>
+            </div>
+          `).join('')
+        }
+
+        cartTotal.textContent = `${totalPrice} درهم`
+        lucide.createIcons()
+      }
+
+      const cartDrawer = document.getElementById('cart-drawer')
+      const cartToggle = document.getElementById('cart-toggle')
+      const cartClose = document.getElementById('cart-close')
+      const cartBackdrop = document.getElementById('cart-backdrop')
+      const checkoutBtn = document.getElementById('checkout-btn')
+
+      function openCart() {
+        cartDrawer.classList.remove('hidden')
+      }
+
+      function closeCart() {
+        cartDrawer.classList.add('hidden')
+      }
+
+      cartToggle.addEventListener('click', openCart)
+      cartClose.addEventListener('click', closeCart)
+      cartBackdrop.addEventListener('click', closeCart)
+
+      checkoutBtn.addEventListener('click', () => {
+        if (cart.length === 0) {
+          alert('الرجاء اختيار عطر واحد على الأقل.')
+          return
+        }
+
+        const name = document.getElementById('cust-name').value.trim()
+        const address = document.getElementById('cust-address').value.trim()
+        const phone = document.getElementById('cust-phone').value.trim()
+
+        if (!name || !address || !phone) {
+          alert('الرجاء إدخال معلومات التوصيل لإتمام الطلب.')
+          return
+        }
+
+        let message = "📦 *طلب جديد من AURA PARFUMS (أكادير)*\n"
+        message += "-----------------------------------\n\n"
+        message += "👤 *معلومات الزبون:*\n"
+        message += `• *الاسم:* ${name}\n`
+        message += `• *المدينة:* أكادير\n`
+        message += `• *الحي / العنوان:* ${address}\n`
+        message += `• *الهاتف:* ${phone}\n\n`
+        
+        message += "🛍️ *المنتجات المطلوبة:*\n"
+        let total = 0
+
+        cart.forEach(item => {
+          const itemTotal = item.price * item.qty
+          total += itemTotal
+          message += `• ${item.name} (${item.size}) | الكمية: ${item.qty} | السعر: ${itemTotal} درهم\n`
+        })
+
+        message += `\n💰 *المجموع الكلي:* ${total} درهم\n`
+        message += "-----------------------------------\n"
+        message += "طريقة الدفع: الدفع عند الاستلام (أكادير)"
+
+        window.open(buildWhatsAppLink(message), '_blank')
+      })
+
+      document.querySelectorAll('[data-wa]').forEach((el) => {
+        el.setAttribute('href', buildWhatsAppLink(el.dataset.wa))
+      })
+
+      const header = document.getElementById('site-header')
+      const onScroll = () => {
+        if (window.scrollY > 20) {
+          header.className =
+            'fixed inset-x-0 top-0 z-40 border-b transition-all duration-300 border-gold/25 bg-background/90 shadow-[0_8px_30px_rgba(0,0,0,0.55)] backdrop-blur-xl'
+        } else {
+          header.className =
+            'fixed inset-x-0 top-0 z-40 border-b transition-all duration-300 border-white/5 bg-background/40 backdrop-blur-md'
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true })
+      onScroll()
+
+      const menuToggle = document.getElementById('menu-toggle')
+      const mobileNav = document.getElementById('mobile-nav')
+      const menuIcon = document.getElementById('menu-icon')
+      let menuOpen = false
+      function setMenu(open) {
+        menuOpen = open
+        mobileNav.classList.toggle('hidden', !open)
+        menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu')
+        lucide.createIcons()
+      }
+      menuToggle.addEventListener('click', () => setMenu(!menuOpen))
+      document.querySelectorAll('.mobile-link').forEach((l) =>
+        l.addEventListener('click', () => setMenu(false)),
+      )
+
+      document.getElementById('year').textContent = new Date().getFullYear()
+
+      renderFilters()
+      renderProducts()
+      updateCartUI()
+      lucide.createIcons()
+    </script>
+  </body>
+</html>
